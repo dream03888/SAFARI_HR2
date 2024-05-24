@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+// You can add global styles to this file, and also import other style files
+$color1: #265F61;
+$color2: #36858A;
+$color3: #10A37F;
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+hr {
+    background-color: #{$color1};
+    height: 2px;
+}

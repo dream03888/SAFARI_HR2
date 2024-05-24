@@ -1,0 +1,33 @@
+<nav>
+    <div class="container">
+        <div class="nav-warp">
+            <div class="hamberger" (click)="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="logo">
+                <a href="#"><img src="assets/dms-icon.webp" alt="logo"></a>
+            </div>
+            <div class="logout">
+                <a href="#"><img src="assets/home.png" alt="logout"></a>
+            </div>
+        </div>
+        <div class="overlay" [class.active]="menuActive"></div>
+        <div class="menu" [class.active]="menuActive">
+            <div class="logo-menu">
+                <p><img src="assets/dms-icon.webp" alt="">DMS Passport</p>
+            </div>
+            <div class="menu-item">
+                <a href="#"><img src="assets/home.png" alt="home">Home</a>
+                <a href="#"><img src="assets/user.png" alt="profile">Profile</a>
+                <a href="#"><img src="assets/portfolio.png" alt="Pass">Employee Pass</a>
+                <a href="#"><img src="assets/car.png" alt="car">Car Request</a>
+                <a href="#"><img src="assets/customer-support.png" alt="car">Service</a>
+            </div>
+            <div class="logout-icon">
+                <a href="#"><img src="assets/logout.png" alt="logout">Log out</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="header-warp">
+        <div class="personal-info">
+            <div class="profle-pic">
+                <img src="assets/avatar.png" alt="profile">
+            </div>
+            <div class="info">
+                <div class="name">
+                    <h1>Name:</h1>
+                    <p>Julia Roberts</p>
+                </div>
+                <div class="id">
+                    <h1>ID:</h1>
+                    <p>DM-12345</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-wrap">
+        <h2>APP IN</h2>
+        <div class="app-container">
+            <div class="app-item" *ngFor="let app of appIn">
+                <a href="#">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </a>
+                <p>{{ app.name }}</p>
+            </div>
+        </div>
+        <hr style="margin: 30px 0 0 0  ;">
+        <h2>APP OUT</h2>
+        <div class="app-container">
+            <div class="app-item" *ngFor="let app of appOut">
+                <a href="#">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </a>
+                <p>{{ app.name }}</p>
+            </div>
+        </div>
+    </div>
+</div>
