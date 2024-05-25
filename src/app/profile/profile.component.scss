@@ -27,45 +27,48 @@ $color4: #d4e4e4;
 
         .profile-body {
             height: 280px;
-            text-align: center;
             background-color: #{$color2};
             border-radius: 5px;
             margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-            .profile-pic {
-                img {
-                    width: auto;
-                    height: 115px;
-                    border-radius: 100%;
-                    background-color: white;
-                }
-            }
+            .profile-body-wrap{
+                padding-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .profile-pic {
 
-            .info {
-                .info-item {
-                    display: flex;
-                    justify-content: center;
-                    margin: 10px;
-                    color: white;
-
-                    h1 {
-                        font-size: 12px;
-                        font-weight: bold;
-                        margin-right: 5px;
+                    img {
+                        width: auto;
+                        height: 115px;
+                        border-radius: 100%;
+                        background-color: white;
                     }
+                }
 
-                    p {
-                        font-size: 12px;
+                .info {
+                    .info-item {
+                        display: flex;
+                        justify-content: center;
+                        margin: 10px;
+                        color: white;
+
+                        h1 {
+                            font-size: 12px;
+                            font-weight: bold;
+                            margin-right: 5px;
+                        }
+
+                        p {
+                            font-size: 12px;
+                        }
                     }
                 }
             }
         }
 
-        .profile-btn {
+        .btn-wrap {
             margin-top: 36px;
 
             .edit-btn {
@@ -107,9 +110,194 @@ $color4: #d4e4e4;
                     font-weight: bold;
                 }
             }
+
             .change-btn:hover {
                 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                 cursor: pointer;
+            }
+        }
+    }
+}
+
+/* profile.component.css */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.animate-alert-in {
+    animation: zoomIn 0.1s ease-out forwards;
+}
+
+.animate-alert-out {
+    animation: zoomOut 0.1s ease-out forwards;
+}
+
+.alert-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ----------------------------------------------------------------------------------
+
+@media (min-width: 600px) {
+    .profile {
+        .profile-wrap {
+            .profile-body {
+                height: 280px;
+                margin-top: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .profile-body-wrap{
+                    width: 460px;
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    .profile-pic {
+                        img {
+                            width: auto;
+                            height: 175px;
+                        }
+                    }
+                    .info {
+                        .info-item {
+                            display: flex;
+                            justify-content: start;
+                            margin: 12px;
+                            color: white;
+                            h1 {
+                                font-size: 14px;
+                            }
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btn-wrap {
+                margin-top: 36px;
+                display: flex;
+                justify-content: space-between;
+                .edit-btn {
+                    height: 45px;
+                    width: 48%;
+                    p {
+                        color: white;
+                        font-size: 14px;
+                    }
+                }
+
+                .change-btn {
+                    margin-top: 0px;
+                    height: 45px;
+                    width: 48%;
+
+                    p {
+                        color: #{$color1};
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ----------------------------------------------------------------------------------
+
+@media (min-width: 1024px) {
+    .profile {
+        .profile-wrap {
+            .profile-body {
+                height: 500px;
+                margin-top: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .profile-body-wrap{
+                    // border: solid red 1px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    .profile-pic {
+                        img {
+                            width: auto;
+                            height: 350px;
+                        }
+                    }
+                    .info {
+                        // margin-left: 200px;
+                        .info-item {
+                            display: flex;
+                            justify-content: start;
+                            margin: 20px;
+                            color: white;
+                            h1 {
+                                font-size: 18px;
+                            }
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btn-wrap {
+                margin-top: 36px;
+                display: flex;
+                justify-content: space-between;
+                .edit-btn {
+                    height: 55px;
+                    width: 48%;
+                    p {
+                        color: white;
+                        font-size: 18px;
+                    }
+                }
+
+                .change-btn {
+                    margin-top: 0px;
+                    height: 55px;
+                    width: 48%;
+
+                    p {
+                        color: #{$color1};
+                        font-size: 18px;
+                    }
+                }
             }
         }
     }

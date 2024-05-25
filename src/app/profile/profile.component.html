@@ -8,21 +8,39 @@
             </div>
 
             <div class="profile-body">
-                <div class="profile-pic">
-                    <img src="assets/avatar.png" alt="profile">
-                </div>
-                <div class="info">
-                    <div class="info-item" *ngFor="let user of users">
-                        <h1>{{user.title}}</h1>
-                        <p>{{user.info}}</p>
+                <div class="profile-body-wrap">
+                    <div class="profile-pic">
+                        <img src="assets/avatar.png" alt="profile">
+                    </div>
+
+                    <div class="info">
+                        <div class="info-item" *ngFor="let user of users">
+                            <h1>{{user.title}}</h1>
+                            <p>{{user.info}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="profile-btn">
-                <div class="edit-btn"><p>Edit Profile</p></div>
-                <div class="change-btn"><p>Change Password</p></div>
+            <div class="btn-wrap">
+                <div class="edit-btn" (click)="showEditProfile($event)">
+                    <p>Edit Profile</p>
+                </div>
+                <div class="change-btn" (click)="showChangePass($event)">
+                    <p>Change Password</p>
+                </div>
             </div>
         </div>
+
+        <!-- alert -->
+        <div *ngIf="isEditProfileVisible || isAnimating" class="alert-backdrop" (click)="closeEditProfile()">
+            <app-edit-profile [ngClass]="{'animate-alert-in': isEditProfileVisible, 'animate-alert-out': isAnimating}"
+                (click)="$event.stopPropagation()"></app-edit-profile>
+        </div>
+        <div *ngIf="isChangePassVisible || isAnimating" class="alert-backdrop" (click)="closeChangePass()">
+            <app-change-pass [ngClass]="{'animate-alert-in': isChangePassVisible, 'animate-alert-out': isAnimating}"
+                (click)="$event.stopPropagation()"></app-change-pass>
+        </div>
+
     </div>
 </div>

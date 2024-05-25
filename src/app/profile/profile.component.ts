@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
+  isEditProfileVisible: boolean = false;
+  isChangePassVisible: boolean = false;
+  isAnimating: boolean = false;
   users = [
     { 
       title:  "Name:",
-      info: "Proflie",
+      info: "Julia Roberts",
     },{ 
       title: "ID:", 
       info: 'DMS.12345',
@@ -26,4 +29,33 @@ export class ProfileComponent {
       info: 'Julia@dms-isolutions.com',
     },
   ];
+
+  showEditProfile(event: MouseEvent) {
+    this.isEditProfileVisible = true;
+    this.isAnimating = false;
+    event.stopPropagation();
+  }
+
+  showChangePass(event: MouseEvent) {
+    this.isChangePassVisible = true;
+    this.isAnimating = false;
+    event.stopPropagation();
+  }
+
+
+  closeEditProfile() {
+    this.isEditProfileVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    },25); 
+  }
+
+  closeChangePass() {
+    this.isChangePassVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    },25); 
+  }
 }
