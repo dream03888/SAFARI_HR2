@@ -10,7 +10,7 @@ export class HomeComponent {
     { 
       img:  "assets/user.png",
       name: "Proflie",
-      path: ""
+      path: "/profile"
     },{ 
       img: "assets/portfolio.png", 
       name: 'Employee Pass',
@@ -23,15 +23,7 @@ export class HomeComponent {
       img: "assets/customer-support.png", 
       name: 'Service',
       path: ""
-    },{ 
-      img: "assets/customer-support.png", 
-      name: 'Service',
-      path: ""
-    },{ 
-      img: "assets/customer-support.png", 
-      name: 'Service',
-      path: ""
-    },
+    }
   ];
   appOut = [
     {

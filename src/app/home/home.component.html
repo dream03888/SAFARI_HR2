@@ -22,7 +22,7 @@
         <h2>APP IN</h2>
         <div class="app-container">
             <div class="app-item" *ngFor="let app of appIn">
-                <a href="#">
+                <a [routerLink]="app.path">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>
@@ -34,7 +34,7 @@
         <h2>APP OUT</h2>
         <div class="app-container">
             <div class="app-item" *ngFor="let app of appOut">
-                <a href="#">
+                <a [routerLink]="app.path">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>

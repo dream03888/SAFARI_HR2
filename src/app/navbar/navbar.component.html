@@ -7,10 +7,10 @@
                 <div class="bar"></div>
             </div>
             <div class="logo">
-                <a href="#"><img src="assets/dms-icon.webp" alt="logo"></a>
+                <a routerLink="/home"><img src="assets/dms-icon.webp" alt="logo"></a>
             </div>
-            <div class="logout">
-                <a href="#"><img src="assets/home.png" alt="logout"></a>
+            <div class="home">
+                <a routerLink="/home"><img src="assets/home.png" alt="home"></a>
             </div>
         </div>
         <div class="overlay" [class.active]="menuActive"></div>
@@ -19,8 +19,8 @@
                 <p><img src="assets/dms-icon.webp" alt="">DMS Passport</p>
             </div>
             <div class="menu-item">
-                <a href="#"><img src="assets/home.png" alt="home">Home</a>
-                <a href="#"><img src="assets/user.png" alt="profile">Profile</a>
+                <a routerLink="/home"><img src="assets/home.png" alt="home">Home</a>
+                <a routerLink="/profile"><img src="assets/user.png" alt="profile">Profile</a>
                 <a href="#"><img src="assets/portfolio.png" alt="Pass">Employee Pass</a>
                 <a href="#"><img src="assets/car.png" alt="car">Car Request</a>
                 <a href="#"><img src="assets/customer-support.png" alt="car">Service</a>

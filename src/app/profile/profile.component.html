@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="profile">
+    <div class="container">
+        <div class="profile-wrap">
+            <div class="profile-head">
+                <img src="assets/user.png" alt="">
+                <h1>My Profile</h1>
+            </div>
+
+            <div class="profile-body">
+                <div class="profile-pic">
+                    <img src="assets/avatar.png" alt="profile">
+                </div>
+                <div class="info">
+                    <div class="info-item" *ngFor="let user of users">
+                        <h1>{{user.title}}</h1>
+                        <p>{{user.info}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-btn">
+                <div class="edit-btn"><p>Edit Profile</p></div>
+                <div class="change-btn"><p>Change Password</p></div>
+            </div>
+        </div>
+    </div>
+</div>
