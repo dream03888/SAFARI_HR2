@@ -21,16 +21,21 @@
     <div class="app-wrap">
         <h2>APP IN</h2>
         <div class="app-container">
-            <div class="app-item" *ngFor="let app of appIn">
-                <a [routerLink]="app.path">
+            <div class="app-item" *ngFor="let app of appIn" (click)="onAppClick(app, $event)">
+                <a [routerLink]="app.path" *ngIf="app.name !== 'Car Request' && app.name !== 'Employee Pass' ; else RequestLink">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>
                 </a>
+                <ng-template #RequestLink>
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </ng-template>
                 <p>{{ app.name }}</p>
             </div>
         </div>
-        <hr style="margin: 30px 0 0 0  ;">
+        <hr style="margin: 30px 0 0 0;">
         <h2>APP OUT</h2>
         <div class="app-container">
             <div class="app-item" *ngFor="let app of appOut">
@@ -42,5 +47,15 @@
                 <p>{{ app.name }}</p>
             </div>
         </div>
+    </div>
+
+    <div *ngIf="isPassAlertVisible || isAnimating" class="backdrop" (click)="closePassAlert()">
+        <app-pass-alert [ngClass]="{'animate-alert-in': isPassAlertVisible, 'animate-alert-out': isAnimating}"
+        ></app-pass-alert>
+    </div>
+
+    <div *ngIf="isCarAlertVisible || isAnimating" class="backdrop" (click)="closeCarAlert()">
+        <app-car-alert [ngClass]="{'animate-alert-in': isCarAlertVisible, 'animate-alert-out': isAnimating}"
+        ></app-car-alert>
     </div>
 </div>

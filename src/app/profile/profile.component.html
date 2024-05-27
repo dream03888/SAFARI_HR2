@@ -23,23 +23,23 @@
             </div>
 
             <div class="btn-wrap">
-                <div class="edit-btn" (click)="showEditProfile($event)">
+                <div class="edit-btn" (click)="showEditProfile()">
                     <p>Edit Profile</p>
                 </div>
-                <div class="change-btn" (click)="showChangePass($event)">
+                <div class="change-btn" (click)="showChangePass()">
                     <p>Change Password</p>
                 </div>
             </div>
         </div>
 
         <!-- alert -->
-        <div *ngIf="isEditProfileVisible || isAnimating" class="alert-backdrop" (click)="closeEditProfile()">
-            <app-edit-profile [ngClass]="{'animate-alert-in': isEditProfileVisible, 'animate-alert-out': isAnimating}"
-                (click)="$event.stopPropagation()"></app-edit-profile>
+        <div *ngIf="isEditProfileVisible || isAnimating_1" class="alert-backdrop" (click)="closeEditProfile()">
+            <app-edit-profile [ngClass]="{'animate-alert-in': isEditProfileVisible, 'animate-alert-out': isAnimating_1}"
+                ></app-edit-profile>
         </div>
-        <div *ngIf="isChangePassVisible || isAnimating" class="alert-backdrop" (click)="closeChangePass()">
-            <app-change-pass [ngClass]="{'animate-alert-in': isChangePassVisible, 'animate-alert-out': isAnimating}"
-                (click)="$event.stopPropagation()"></app-change-pass>
+        <div *ngIf="isChangePassVisible || isAnimating_2" class="alert-backdrop" (click)="closeChangePass()">
+            <app-change-pass [ngClass]="{'animate-alert-in': isChangePassVisible, 'animate-alert-out': isAnimating_2}"
+                ></app-change-pass>
         </div>
 
     </div>

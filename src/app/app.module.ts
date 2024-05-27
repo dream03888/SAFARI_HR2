@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
+import { CarAlertComponent } from './car-alert/car-alert.component';
+import { PassAlertComponent } from './pass-alert/pass-alert.component';
+import { PassFormComponent } from './pass-form/pass-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ChangePassComponent } from './change-pass/change-pass.component';
     HomeComponent,
     ProfileComponent,
     EditProfileComponent,
-    ChangePassComponent
+    ChangePassComponent,
+    CarAlertComponent,
+    PassAlertComponent,
+    PassFormComponent
   ],
   imports: [
     BrowserModule,

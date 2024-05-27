@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class ProfileComponent {
   isEditProfileVisible: boolean = false;
   isChangePassVisible: boolean = false;
-  isAnimating: boolean = false;
+  isAnimating_1: boolean = false;
+  isAnimating_2: boolean = false;
   users = [
     { 
       title:  "Name:",
@@ -18,7 +19,7 @@ export class ProfileComponent {
       info: 'DMS.12345',
     },{ 
       title: "Position:", 
-      info: 'Programmer',
+      info: 'Marketing',
     },
     { 
       title: "Phone:", 
@@ -30,32 +31,32 @@ export class ProfileComponent {
     },
   ];
 
-  showEditProfile(event: MouseEvent) {
+  showEditProfile() {
     this.isEditProfileVisible = true;
-    this.isAnimating = false;
-    event.stopPropagation();
+    this.isAnimating_1 = false;
   }
 
-  showChangePass(event: MouseEvent) {
+  showChangePass() {
     this.isChangePassVisible = true;
-    this.isAnimating = false;
-    event.stopPropagation();
+    this.isAnimating_2 = false;
   }
 
 
   closeEditProfile() {
     this.isEditProfileVisible = false;
-    this.isAnimating = true;
+    this.isAnimating_1 = true;
     setTimeout(() => {
-      this.isAnimating = false;
-    },25); 
+      this.isAnimating_1 = false;
+    },300); 
+    
   }
 
   closeChangePass() {
     this.isChangePassVisible = false;
-    this.isAnimating = true;
+    this.isAnimating_2 = true;
     setTimeout(() => {
-      this.isAnimating = false;
-    },25); 
+      this.isAnimating_2 = false;
+    },300); 
+    
   }
 }

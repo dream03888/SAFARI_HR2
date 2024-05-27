@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  isCarAlertVisible: boolean = false;
+  isAnimating: boolean = false;
+  isPassAlertVisible: boolean = false;
+
   appIn = [
     { 
       img:  "assets/user.png",
@@ -25,6 +29,7 @@ export class HomeComponent {
       path: ""
     }
   ];
+
   appOut = [
     {
       img:  "assets/database.png",
@@ -47,5 +52,33 @@ export class HomeComponent {
       name: 'Github',
       path: ""
     },
-  ]
+  ];
+
+  onAppClick(app: any, event: MouseEvent): void {
+    if (app.name === 'Car Request') {
+      this.isCarAlertVisible = true;
+      this.isAnimating = false;   
+    }
+
+    if (app.name === 'Employee Pass') {
+      this.isPassAlertVisible = true;
+      this.isAnimating = false;
+    }
+  }
+
+  closePassAlert(): void {
+    this.isPassAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300); 
+  }
+
+  closeCarAlert(): void {
+    this.isCarAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300); 
+  }
 }
