@@ -11,6 +11,7 @@ import { ChangePassComponent } from './change-pass/change-pass.component';
 import { CarAlertComponent } from './car-alert/car-alert.component';
 import { PassAlertComponent } from './pass-alert/pass-alert.component';
 import { PassFormComponent } from './pass-form/pass-form.component';
+import { CarFormComponent } from './car-form/car-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PassFormComponent } from './pass-form/pass-form.component';
     ChangePassComponent,
     CarAlertComponent,
     PassAlertComponent,
-    PassFormComponent
+    PassFormComponent,
+    CarFormComponent
   ],
   imports: [
     BrowserModule,
