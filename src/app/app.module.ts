@@ -12,6 +12,7 @@ import { CarAlertComponent } from './car-alert/car-alert.component';
 import { PassAlertComponent } from './pass-alert/pass-alert.component';
 import { PassFormComponent } from './pass-form/pass-form.component';
 import { CarFormComponent } from './car-form/car-form.component';
+import { PassListComponent } from './pass-list/pass-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CarFormComponent } from './car-form/car-form.component';
     CarAlertComponent,
     PassAlertComponent,
     PassFormComponent,
-    CarFormComponent
+    CarFormComponent,
+    PassListComponent
   ],
   imports: [
     BrowserModule,

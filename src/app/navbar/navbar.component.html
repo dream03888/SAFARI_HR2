@@ -21,13 +21,23 @@
             <div class="menu-item">
                 <a routerLink="/home"><img src="assets/home.png" alt="home">Home</a>
                 <a routerLink="/profile"><img src="assets/user.png" alt="profile">Profile</a>
-                <a href="#"><img src="assets/portfolio.png" alt="Pass">Employee Pass</a>
-                <a href="#"><img src="assets/car.png" alt="car">Car Request</a>
+                <a (click)="showPassAlert()"><img src="assets/portfolio.png" alt="Pass">Employee Pass</a>
+                <a (click)="showCarAlert()"><img src="assets/car.png" alt="car">Car Request</a>
                 <a href="#"><img src="assets/customer-support.png" alt="car">Service</a>
             </div>
             <div class="logout-icon">
                 <a href="#"><img src="assets/logout.png" alt="logout">Log out</a>
             </div>
+        </div>
+
+        <div *ngIf="isPassAlertVisible || isAnimating" class="backdrop" (click)="closePassAlert()">
+            <app-pass-alert [ngClass]="{'animate-alert-in': isPassAlertVisible, 'animate-alert-out': isAnimating}"
+            ></app-pass-alert>
+        </div>
+    
+        <div *ngIf="isCarAlertVisible || isAnimating" class="backdrop" (click)="closeCarAlert()">
+            <app-car-alert [ngClass]="{'animate-alert-in': isCarAlertVisible, 'animate-alert-out': isAnimating}"
+            ></app-car-alert>
         </div>
     </div>
 </nav>

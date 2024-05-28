@@ -5,264 +5,266 @@ $color4: #d4e4e4;
 $color5: #A9A9AC;
 
 .pass-form {
-    .pass-form-warp {
-        margin-top: 90px;
-
-        .head {
-            display: flex;
-            align-items: center;
-
-            img {
-                width: 30px;
-                height: 30px;
-                margin-right: 12px;
-                filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
+    .pass-form-box{
+        .pass-form-warp {
+            margin-top: 90px;
+    
+            .head {
+                display: flex;
+                align-items: center;
+    
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 12px;
+                    filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
+                }
+    
+                h1 {
+                    margin-top: 12px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $color1;
+                }
             }
-
-            h1 {
-                margin-top: 12px;
-                font-size: 18px;
-                font-weight: bold;
-                color: $color1;
-            }
-        }
-
-        .form {
-            .form-wrap {
-                margin-top: 20px;
-
-                .departure-form {
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .departure-input {
-                        display: flex;
-                        justify-content: space-between;
-
-                        input[type="date"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-
-                        input[type="time"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-
-                        input[type="date"]:focus,
-                        input[type="time"]:focus {
-                            outline: none;
-                            background-color: $color4;
-                        }
-                    }
-                }
-
-                .return-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .return-input {
-                        display: flex;
-                        justify-content: space-between;
-
-                        input[type="date"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-
-                        input[type="time"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-
-                        input[type="date"]:focus,
-                        input[type="time"]:focus {
-                            outline: none;
-                            background-color: $color4;
-                        }
-
-                    }
-                }
-
-                .location-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .location-input {
-                        select {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-
-                        }
-
-                        select:focus {
-                            background-color: $color4;
-                            outline: none;
-                        }
-                    }
-                }
-
-                .purpose-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .purpose-input {
-                        display: flex;
-
-                        input {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-                    }
-
-                    input:focus {
-                        background-color: $color4;
-                        outline: none;
-                    }
-                }
-
-                .remark-form {
-                    margin-top: 16px;
-
-                    P {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .remark-input {
-                        display: flex;
-
-                        textarea {
-                            width: 100%;
-                            height: 90px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 5px;
-                        }
-                    }
-
-                    textarea:focus {
-                        background-color: $color4;
-                        outline: none;
-                    }
-                }
-
-                .passenger-form {
-                    margin-top: 16px;
-                    display: flex;
-
-                    .passenger-input {
-                        display: flex;
-                        align-items: center;
-
-                        input[type="checkbox"] {
-                            margin-left: 0px;
-                        }
-
-                        label {
+    
+            .form {
+                .form-wrap {
+                    margin-top: 20px;
+    
+                    .departure-form {
+                        p {
                             font-size: 12px;
                             font-weight: bold;
                             color: $color1;
+                            margin-bottom: 3px;
+                        }
+    
+                        .departure-input {
+                            display: flex;
+                            justify-content: space-between;
+    
+                            input[type="date"] {
+                                width: 45%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+                            }
+    
+                            input[type="time"] {
+                                width: 45%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+                            }
+    
+                            input[type="date"]:focus,
+                            input[type="time"]:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+                        }
+                    }
+    
+                    .return-form {
+                        margin-top: 16px;
+    
+                        p {
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: $color1;
+                            margin-bottom: 3px;
+                        }
+    
+                        .return-input {
+                            display: flex;
+                            justify-content: space-between;
+    
+                            input[type="date"] {
+                                width: 45%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+                            }
+    
+                            input[type="time"] {
+                                width: 45%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+                            }
+    
+                            input[type="date"]:focus,
+                            input[type="time"]:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+    
+                        }
+                    }
+    
+                    .location-form {
+                        margin-top: 16px;
+    
+                        p {
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: $color1;
+                            margin-bottom: 3px;
+                        }
+    
+                        .location-input {
+                            select {
+                                width: 100%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+    
+                            }
+    
+                            select:focus {
+                                background-color: $color4;
+                                outline: none;
+                            }
+                        }
+                    }
+    
+                    .purpose-form {
+                        margin-top: 16px;
+    
+                        p {
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: $color1;
+                            margin-bottom: 3px;
+                        }
+    
+                        .purpose-input {
+                            display: flex;
+    
+                            input {
+                                width: 100%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+                            }
+                        }
+    
+                        input:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+    
+                    .remark-form {
+                        margin-top: 16px;
+    
+                        P {
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: $color1;
+                            margin-bottom: 3px;
+                        }
+    
+                        .remark-input {
+                            display: flex;
+    
+                            textarea {
+                                width: 100%;
+                                height: 90px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 5px;
+                            }
+                        }
+    
+                        textarea:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+    
+                    .passenger-form {
+                        margin-top: 16px;
+                        display: flex;
+    
+                        .passenger-input {
+                            display: flex;
+                            align-items: center;
+    
+                            input[type="checkbox"] {
+                                margin-left: 0px;
+                            }
+    
+                            label {
+                                font-size: 12px;
+                                font-weight: bold;
+                                color: $color1;
+                            }
                         }
                     }
                 }
             }
-        }
-
-        .btn-wrap {
-            margin: 25px 0;
-
-            .confirm-btn {
-                width: 100%;
-                background-color: $color1;
-                color: white;
-                font-weight: bold;
-                border-radius: 5px;
-                border: 0px;
-                height: 41px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-
-                p {
-                    font-size: 12px;
+    
+            .btn-wrap {
+                margin: 25px 0;
+    
+                .confirm-btn {
+                    width: 100%;
+                    background-color: $color1;
+                    color: white;
                     font-weight: bold;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
                 }
-            }
-
-            .confirm-btn:hover {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                cursor: pointer;
-            }
-
-            .cancel-btn {
-                margin-top: 16px;
-                width: 100%;
-                color: $color1;
-                background-color: $color4;
-                border-radius: 5px;
-                border: 0px;
-                height: 41px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-
-                p {
-                    font-size: 12px;
-                    font-weight: bold;
+    
+                .confirm-btn:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
                 }
-            }
-
-            .cancel-btn:hover {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                cursor: pointer;
+    
+                .cancel-btn {
+                    margin-top: 16px;
+                    width: 100%;
+                    color: $color1;
+                    background-color: $color4;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+    
+                .cancel-btn:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -272,172 +274,226 @@ $color5: #A9A9AC;
 
 @media (min-width: 500px) {
     .pass-form {
-        .pass-form-warp {
-            .form {
-                .form-wrap {
-                    .departure-form {
-                        .departure-input {
-                            input[type="date"] {
-                                width: 47%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 47%;
+        .pass-form-box{
+            .pass-form-warp {
+                .form {
+                    .form-wrap {
+                        .departure-form {
+                            .departure-input {
+                                input[type="date"] {
+                                    width: 47%;
+                                    height: 30px;
+                                }
+    
+                                input[type="time"] {
+                                    width: 47%;
+                                }
                             }
                         }
-                    }
-
-                    .return-form {
-                        .return-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 47%;
-                            }
-
-                            input[type="time"] {
-                                width: 47%;
+    
+                        .return-form {
+                            .return-input {
+                                display: flex;
+                                justify-content: space-between;
+    
+                                input[type="date"] {
+                                    width: 47%;
+                                }
+    
+                                input[type="time"] {
+                                    width: 47%;
+                                }
                             }
                         }
                     }
                 }
-            }
-            .btn-wrap {
-                margin: 25px 0;
-                display: flex;
-                justify-content: space-between;
-                .confirm-btn {
-                    width: 49%;
-                }
-                .cancel-btn {
-                    margin-top: 0px;
-                    width: 49%;
+    
+                .btn-wrap {
+                    margin: 30px 0;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .confirm-btn {
+                        width: 49%;
+                    }
+    
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
                 }
             }
         }
     }
-
-
 }
 
 // ---------------------------------------------------------------------------------------------------------
 @media (min-width: 800px) {
     .pass-form {
-        .pass-form-warp {
-            .form {
-                .form-wrap {
-                    .departure-form {
-                        .departure-input {
-                            input[type="date"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 48%;
+        .pass-form-box{
+            .pass-form-warp {
+                .form {
+                    .form-wrap {
+                        .departure-form {
+                            .departure-input {
+                                input[type="date"] {
+                                    width: 48%;
+                                    height: 30px;
+                                }
+    
+                                input[type="time"] {
+                                    width: 48%;
+                                }
                             }
                         }
-                    }
-
-                    .return-form {
-                        .return-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 48%;
-                            }
-
-                            input[type="time"] {
-                                width: 48%;
+    
+                        .return-form {
+                            .return-input {
+                                display: flex;
+                                justify-content: space-between;
+    
+                                input[type="date"] {
+                                    width: 48%;
+                                }
+    
+                                input[type="time"] {
+                                    width: 48%;
+                                }
                             }
                         }
                     }
                 }
-            }
-
-            .btn-wrap {
-                margin: 25px 0;
-                display: flex;
-                justify-content: space-between;
-                .confirm-btn {
-                    width: 49%;
-                }
-                .cancel-btn {
-                    margin-top: 0px;
-                    width: 49%;
+    
+                .btn-wrap {
+                    margin: 25px 0;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .confirm-btn {
+                        width: 49%;
+                    }
+    
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
                 }
             }
         }
     }
 }
 
-
 // ---------------------------------------------------------------------------------------------------------
 
 @media (min-width: 1024px) {
     .pass-form {
-        .pass-form-warp {
-            width: 50%;
-            position: fixed;
-            top: 35%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            .head {
-                display: flex;
-                align-items: center;
-                img {
-                    width: 30px;
-                    height: 30px;
-                    margin-right: 12px;
-                    filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
+        height: 100vh;
+        .pass-form-box {
+            display: flex;
+            justify-content: center;
+            .pass-form-warp {
+                width: 50%;
+
+                .head {
+                    margin-top: 30px;
+                    display: flex;
+                    align-items: center;
                 }
-                h1 {
-                    margin-top: 12px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    color: $color1;
-                }
-            }
-            .form {
-                .form-wrap {
-                    .departure-form {
-                        .departure-input {
-                            input[type="date"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-                            input[type="time"] {
-                                width: 48%;
+
+                .form {
+                    .form-wrap {
+                        .departure-form {
+                            margin-top: 50px;
+
+                            .departure-input {
+                                input[type="date"] {
+                                    width: 47%;
+                                    height: 40px;
+                                }
+
+                                input[type="time"] {
+                                    width: 47%;
+                                    height: 40px;
+                                }
                             }
                         }
-                    }
-                    .return-form {
-                        .return-input {
+
+                        .return-form {
+                            margin-top: 30px;
+
+                            .return-input {
+                                display: flex;
+                                justify-content: space-between;
+
+                                input[type="date"] {
+                                    width: 47%;
+                                    height: 40px;
+                                }
+
+                                input[type="time"] {
+                                    width: 47%;
+                                    height: 40px;
+                                }
+                            }
+                        }
+
+                        .location-form {
+                            margin-top: 30px;
+
+                            .location-input {
+                                select {
+                                    width: 100%;
+                                    height: 40px;
+                                }
+                            }
+                        }
+
+                        .purpose-form {
+                            margin-top: 30px;
+
+                            .purpose-input {
+                                display: flex;
+
+                                input {
+                                    width: 100%;
+                                    height: 40px;
+                                }
+                            }
+                        }
+
+                        .remark-form {
+                            margin-top: 30px;
+
+                            .remark-input {
+                                display: flex;
+
+                                textarea {
+                                    width: 100%;
+                                    height: 90px;
+                                }
+                            }
+                        }
+
+                        .passenger-form {
+                            margin-top: 16px;
                             display: flex;
-                            justify-content: space-between;
-                            input[type="date"] {
-                                width: 48%;
-                            }
-                            input[type="time"] {
-                                width: 48%;
-                            }
                         }
                     }
                 }
-            }
-            .btn-wrap {
-                margin: 25px 0;
-                display: flex;
-                justify-content: space-between;
-                .confirm-btn {
-                    width: 49%;
-                }
-                .cancel-btn {
-                    margin-top: 0px;
-                    width: 49%;
+
+                .btn-wrap {
+                    margin: 100px 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .confirm-btn {
+                        width: 49%;
+                    }
+
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
                 }
             }
         }

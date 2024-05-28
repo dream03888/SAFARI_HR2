@@ -7,6 +7,9 @@ import { Component, HostListener, ElementRef } from '@angular/core';
 })
 export class NavbarComponent {
   menuActive = false;
+  isCarAlertVisible: boolean = false;
+  isAnimating: boolean = false;
+  isPassAlertVisible: boolean = false;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -22,4 +25,29 @@ export class NavbarComponent {
     }
   }
 
+  showCarAlert() {
+    this.isCarAlertVisible = true;
+    this.isAnimating = false;
+  }
+
+  showPassAlert() {
+    this.isPassAlertVisible = true;
+    this.isAnimating = false;
+  }
+
+  closePassAlert(): void {
+    this.isPassAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300); 
+  }
+
+  closeCarAlert(): void {
+    this.isCarAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300); 
+  }
 }
