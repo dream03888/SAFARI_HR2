@@ -4,10 +4,17 @@ $color2: #36858A;
 $color3: #10A37F;
 
 * {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
+    // font-family: "Roboto", sans-serif;
+    // font-weight: 100;
+    // font-style: normal;
+
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
     font-style: normal;
+
 }
+
+
 
 body {
     margin: 0;
@@ -34,7 +41,7 @@ hr {
     height: 2px;
 }
 
-a{
+a {
     text-decoration: none;
     cursor: pointer;
 }

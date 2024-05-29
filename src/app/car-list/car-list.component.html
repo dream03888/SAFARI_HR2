@@ -1,8 +1,8 @@
-<div class="pass-list">
+<div class="car-list">
     <div class="container">
         <div class="head">
-            <img src="/assets/portfolio.png" alt="pass">
-            <h1>Employee Pass List</h1>
+            <img src="/assets/car.png" alt="pass">
+            <h1>Car Request List</h1>
         </div>
         <div class="table-wrap">
             <table>
@@ -13,6 +13,7 @@
                         <th scope="col">Departure time</th>
                         <th scope="col">Return date</th>
                         <th scope="col">Return time</th>
+                        <th scope="col">Car</th>
                         <th scope="col">Location</th>
                         <th scope="col">Status</th>
                         <!-- <th scope="col">Print</th> -->
@@ -26,6 +27,7 @@
                         <td data-label="Departure time">{{ row.departureTime }}</td>
                         <td data-label="Return date">{{ row.returnDate }}</td>
                         <td data-label="Return time">{{ row.returnTime }}</td>
+                        <td data-label="car">{{ row.car }}</td>
                         <td data-label="Location">{{ row.location }}</td>
                         <td data-label="Status">
                             <div class="bage-wrap">
@@ -63,3 +65,4 @@
         </div>
     </div>
 </div>
+

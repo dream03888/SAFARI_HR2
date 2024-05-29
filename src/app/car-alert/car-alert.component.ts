@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./car-alert.component.scss']
 })
 export class CarAlertComponent {
-
+  
 }

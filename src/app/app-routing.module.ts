@@ -5,13 +5,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { PassFormComponent } from './pass-form/pass-form.component';
 import { CarFormComponent } from './car-form/car-form.component';
 import { PassListComponent } from './pass-list/pass-list.component';
+import { CarListComponent } from './car-list/car-list.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'profile',component:ProfileComponent},
   {path:'pass-form',component:PassFormComponent},
   {path:'car-form',component:CarFormComponent},
-  {path:'pass-list',component:PassListComponent}
+  {path:'pass-list',component:PassListComponent},
+  {path:'car-list',component:CarListComponent},
 ];
 
 @NgModule({

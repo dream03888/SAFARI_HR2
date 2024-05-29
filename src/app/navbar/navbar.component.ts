@@ -1,4 +1,5 @@
 import { Component, HostListener, ElementRef } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,13 @@ export class NavbarComponent {
   isAnimating: boolean = false;
   isPassAlertVisible: boolean = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.menuActive = false;
+      }
+    });
+  }
 
   toggleMenu() {
     this.menuActive = !this.menuActive;
@@ -19,7 +26,8 @@ export class NavbarComponent {
 
   @HostListener('document:click', ['$event'])
   clickOutside(event: Event) {
-    if (this.menuActive && !this.elementRef.nativeElement.querySelector('.hamberger').contains(event.target as Node) && 
+    if (this.menuActive && 
+        !this.elementRef.nativeElement.querySelector('.hamberger').contains(event.target as Node) && 
         !this.elementRef.nativeElement.querySelector('.menu').contains(event.target as Node)) {
       this.menuActive = false;
     }
