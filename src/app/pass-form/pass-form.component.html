@@ -25,13 +25,13 @@
                         <div class="location-form">
                             <p>Location</p>
                             <div class="location-input">
-                                <select id="options" name="options" [(ngModel)]="selectedOption">
+                                <select id="location" name="location" [(ngModel)]="selectedLocation">
                                     <option value="" disabled selected hidden>กรุณาเลือกสถานที่</option>
-                                    <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+                                    <option *ngFor="let location of locatoions" [value]="location.value">{{ location.label }}</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="other-form" *ngIf="selectedOption === '-1'">
+                        <div class="other-form" *ngIf="selectedLocation === '-1'">
                             <p>Other location</p>
                             <div class="other-input">
                                 <input type="text" id="other" name="other" placeholder="ระบุสถานที่">
@@ -51,8 +51,15 @@
                         </div>
                         <div class="passenger-form">
                             <div class="passenger-input">
-                                <input type="checkbox" id="passenger" name="passenger" value="passenger">
-                                <label for="checkbox">Passenger</label>
+                                <input type="checkbox" id="passenger" name="passenger" [(ngModel)]="isChecked">
+                                <label for="checkbox">Passenger (ผู้โดยสาร)</label>
+                            </div>
+                        </div>
+                        <div class="passenger-car-form" *ngIf="isChecked">
+                            <div class="passenger-car-input">
+                                <select id="passenger-car" name="passenger-car">
+                                    <option value="0" disabled selected hidden>กรุณาเลือกรถที่โดยสาร</option>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +16,8 @@ import { PassFormComponent } from './pass-form/pass-form.component';
 import { CarFormComponent } from './car-form/car-form.component';
 import { PassListComponent } from './pass-list/pass-list.component';
 import { CarListComponent } from './car-list/car-list.component';
-import { FormsModule } from '@angular/forms';
+// import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    // NgMultiSelectDropDownModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

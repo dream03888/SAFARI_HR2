@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./pass-form.component.scss']
 })
 export class PassFormComponent {
+  selectedLocation = '';
+  isChecked = false;
+  
   // Array of options
-  options = [
+  locatoions = [
     { value: '1', label: 'รพ.พระนั่งเกล้า : PNK' },
     { value: '2', label: 'รพ.อุดรธานี : UDH' },
     { value: '3', label: 'รพ.สุโขทัย : SKTH' },
@@ -18,7 +21,4 @@ export class PassFormComponent {
     { value: '9', label: 'รพ.พัทลุง : PTLO' },
     { value: '-1', label: 'อื่นๆ' },
   ];
-
-  // Property to hold the selected option value
-  selectedOption = '';
 }
