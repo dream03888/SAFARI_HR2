@@ -1,0 +1,88 @@
+<div class="edit-car-form">
+    <div class="container">
+        <div class="edit-car-form-box">
+            <div class="edit-car-form-warp">
+                <div class="head">
+                    <img src="/assets/car.png" alt="pass">
+                    <h1>Car Request Edit Form</h1>
+                </div>
+                <div class="form">
+                    <div class="form-wrap">
+                        <div class="car-select">
+                            <p>Choose car</p>
+                            <div class="car-input">
+                                <select id="car" name="car" [(ngModel)]="selectedCar">
+                                    <option value="" disabled selected hidden>กรุณาเลือกรถ</option>
+                                    <option *ngFor="let car of cars" [value]="car.value">{{ car.label }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="location-form">
+                            <p>Location</p>
+                            <div class="location-input">
+                                <select id="location" name="location" [(ngModel)]="selectedLocation">
+                                    <option value="" disabled selected hidden>กรุณาเลือกสถานที่</option>
+                                    <option *ngFor="let location of locatoions" [value]="location.value">{{ location.label }}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="passenger-select">
+                            <p>Passenger</p>
+                            <div class="passenger-input">
+                                <app-multi-select ></app-multi-select>
+                            </div>
+                        </div>
+                        
+                        <div class="purpose-form">
+                            <p>Purpose of use</p>
+                            <div class="purpose-input">
+                                <textarea id="purpose" name="purpose" placeholder="วัตถุประสงค์ในการขอใช้"></textarea>
+                            </div>
+                        </div>
+                        <div class="st-maileage-form">
+                            <p>Starting mileage number</p>
+                            <div class="st-maileage-input">
+                                <input id="st-maileage" name="st-maileage" type="number" placeholder="เลขไมล์ก่อนใช้">
+                            </div>
+                        </div>
+                        <div class="end-maileage-form">
+                            <p>Ending mileage number</p>
+                            <div class="end-maileage-input">
+                                <input id="end-maileage" name="end-maileage" type="number" placeholder="เลขไมล์หลังใช้">
+                            </div>
+                        </div>
+                        <div class="departure-form">
+                            <p>Departure date</p>
+                            <div class="departure-input">
+                                <input id="departure-date" name="departure-date" type="date">
+                                <input id="departure-time" name="departure-time" type="time">
+                            </div>
+                        </div>
+                        <div class="return-form">
+                            <p>Return date</p>
+                            <div class="return-input">
+                                <input id="return-date" name="return-date" type="date">
+                                <input id="return-time" name="return-time" type="time">
+                            </div>
+                        </div>
+                        <div class="easy-pass-form">
+                            <p>Easy pass remaining</p>
+                            <div class="easy-pass-input">
+                                <input id="easy-pass" name="easy-pass" type="easy-pass" placeholder="Easy-pass คงเหลือ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button type="submit" class="confirm-btn">
+                        <p>Confirm</p>
+                    </button>
+                    <button class="cancel-btn">
+                        <p>Cancel</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,8 +6,8 @@ $color5: #A9A9AC;
 
 .edit-pass-form {
     height: 100vh;
-    .pass-form-box{
-        .pass-form-warp {
+    .edit-pass-form-box{
+        .edit-pass-form-warp {
             margin-top: 90px;
     
             .head {
@@ -313,8 +313,8 @@ $color5: #A9A9AC;
 
 @media (min-width: 500px) {
     .edit-pass-form {
-        .pass-form-box{
-            .pass-form-warp {
+        .edit-pass-form-box{
+            .edit-pass-form-warp {
                 .form {
                     .form-wrap {
                         .departure-form {
@@ -369,8 +369,8 @@ $color5: #A9A9AC;
 // ---------------------------------------------------------------------------------------------------------
 @media (min-width: 800px) {
     .edit-pass-form {
-        .pass-form-box{
-            .pass-form-warp {
+        .edit-pass-form-box{
+            .edit-pass-form-warp {
                 .form {
                     .form-wrap {
                         .departure-form {
@@ -427,10 +427,10 @@ $color5: #A9A9AC;
 @media (min-width: 1024px) {
     .edit-pass-form {
         height: 100vh;
-        .pass-form-box {
+        .edit-pass-form-box {
             display: flex;
             justify-content: center;
-            .pass-form-warp {
+            .edit-pass-form-warp {
                 width: 50%;
 
                 .head {

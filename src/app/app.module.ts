@@ -8,7 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { ChangePassComponent } from './change-pass/change-pass.component';
+
 import { CarAlertComponent } from './car-alert/car-alert.component';
 import { PassAlertComponent } from './pass-alert/pass-alert.component';
 import { PassFormComponent } from './pass-form/pass-form.component';
@@ -19,6 +19,7 @@ import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { DeleteAlertComponent } from './delete-alert/delete-alert.component';
 import { EditPassComponent } from './edit-pass/edit-pass.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
+import { ChangePassComponent } from './change-pass/change-pass.component';
 
 
 
