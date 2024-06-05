@@ -4,7 +4,7 @@ $color3: #265F62;
 $color4: #d4e4e4;
 $color5: #A9A9AC;
 
-.pass-form {
+.edit-pass-form {
     height: 100vh;
     .pass-form-box{
         .pass-form-warp {
@@ -312,7 +312,7 @@ $color5: #A9A9AC;
 // ---------------------------------------------------------------------------------------------------------
 
 @media (min-width: 500px) {
-    .pass-form {
+    .edit-pass-form {
         .pass-form-box{
             .pass-form-warp {
                 .form {
@@ -368,7 +368,7 @@ $color5: #A9A9AC;
 
 // ---------------------------------------------------------------------------------------------------------
 @media (min-width: 800px) {
-    .pass-form {
+    .edit-pass-form {
         .pass-form-box{
             .pass-form-warp {
                 .form {
@@ -425,7 +425,7 @@ $color5: #A9A9AC;
 // ---------------------------------------------------------------------------------------------------------
 
 @media (min-width: 1024px) {
-    .pass-form {
+    .edit-pass-form {
         height: 100vh;
         .pass-form-box {
             display: flex;
