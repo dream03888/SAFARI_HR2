@@ -16,6 +16,7 @@ import { CarFormComponent } from './car-form/car-form.component';
 import { PassListComponent } from './pass-list/pass-list.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
+import { DeleteAlertComponent } from './delete-alert/delete-alert.component';
 
 
 
@@ -33,7 +34,8 @@ import { MultiSelectComponent } from './multi-select/multi-select.component';
     CarFormComponent,
     PassListComponent,
     CarListComponent,
-    MultiSelectComponent
+    MultiSelectComponent,
+    DeleteAlertComponent
   ],
   imports: [
     BrowserModule,

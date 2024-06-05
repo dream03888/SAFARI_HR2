@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="row-2">
                                     <a class="print-button" href=""><img src="assets/printing.png" alt="print"></a>
-                                    <a class="delete-button" href=""><img src="assets/recycle-bin.png" alt="delete"></a>
+                                    <a class="delete-button" (click)="onAppClick('delete', $event)"><img src="assets/recycle-bin.png" alt="delete"></a>
                                 </div>
                             </div>
                         </td>
@@ -66,3 +66,7 @@
     </div>
 </div>
 
+<div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
+    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}">
+    </app-delete-alert>
+</div>

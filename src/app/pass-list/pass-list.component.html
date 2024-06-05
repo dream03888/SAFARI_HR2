@@ -48,12 +48,12 @@
                         <td data-label="Choice">
                             <div class="Choice-wrap">
                                 <div class="row-1">
-                                    <a class="view-button" href=""><img src="assets/search.png" alt="view"></a>
-                                    <a class="edit-button" href=""><img src="assets/pen.png" alt="edit"></a>
+                                    <a class="view-button" ><img src="assets/search.png" alt="view"></a>
+                                    <a class="edit-button" ><img src="assets/pen.png" alt="edit"></a>
                                 </div>
                                 <div class="row-2">
-                                    <a class="print-button" href=""><img src="assets/printing.png" alt="print"></a>
-                                    <a class="delete-button" href=""><img src="assets/recycle-bin.png" alt="delete"></a>
+                                    <a class="print-button" ><img src="assets/printing.png" alt="print"></a>
+                                    <a class="delete-button" (click)="onAppClick('delete', $event)"><img src="assets/recycle-bin.png" alt="delete"></a>
                                 </div>
                             </div>
                         </td>
@@ -62,4 +62,9 @@
             </table>
         </div>
     </div>
+</div>
+
+<div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
+    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}">
+    </app-delete-alert>
 </div>

@@ -19,5 +19,23 @@ export class CarListComponent {
     status: '3',
     print: '',
     choice: ''
-  }));  
+  })); 
+  isDeleteAlertVisible: boolean = false;
+  isAnimating: boolean = false;
+
+  onAppClick(choice: string, event: MouseEvent): void {
+    if (choice === 'delete') {
+      this.isDeleteAlertVisible = true;
+      this.isAnimating = false;   
+    }
+    
+  }
+
+  closeDeleteAlert(): void {
+    this.isDeleteAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300); 
+  }
 }
