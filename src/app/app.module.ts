@@ -15,6 +15,7 @@ import { PassFormComponent } from './pass-form/pass-form.component';
 import { CarFormComponent } from './car-form/car-form.component';
 import { PassListComponent } from './pass-list/pass-list.component';
 import { CarListComponent } from './car-list/car-list.component';
+import { MultiSelectComponent } from './multi-select/multi-select.component';
 
 
 
@@ -31,7 +32,8 @@ import { CarListComponent } from './car-list/car-list.component';
     PassFormComponent,
     CarFormComponent,
     PassListComponent,
-    CarListComponent
+    CarListComponent,
+    MultiSelectComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+<div class="multi-select">
+    <div class="show-select" (click)="toggleSelectWrap()">
+        <div class="placeholder" *ngIf="selectedItems.length === 0">
+            <p>เลือกผู้โดยสาร</p>
+        </div>
+        <div class="display-data" *ngIf="selectedItems.length > 0">
+            <p *ngFor="let item of selectedItems">
+                {{ item }}
+                <button class="close" (click)="removeItem(item); $event.stopPropagation();">
+                    X
+                </button>
+            </p>
+        </div>
+        <h4>❮</h4>
+    </div>
+    <div class="select-wrap" *ngIf="isSelectWrapVisible" (click)="$event.stopPropagation()">
+        <div class="search" style="display: flex;">
+            <input placeholder="ค้นหา" [(ngModel)]="keyword" type="text" (ngModelChange)="filter()" />
+        </div>
+        <div class="select-item-box">
+            <div class="select-item" *ngFor="let item of items">
+                <label [for]="item.value" (click)="$event.stopPropagation()">
+                    <input type="checkbox" [id]="item.value" [name]="item.value" [value]="item.value"
+                        [checked]="selectedItems.includes(item.value)" (change)="toggleItem(item.value); $event.stopPropagation();" />
+                    {{ item.label }}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
