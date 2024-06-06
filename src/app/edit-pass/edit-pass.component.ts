@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-pass',
@@ -21,4 +22,10 @@ export class EditPassComponent {
     { value: '9', label: 'รพ.พัทลุง : PTLO' },
     { value: '-1', label: 'อื่นๆ' },
   ];
+
+  constructor(private location: Location) {}
+
+  goBack() {
+    this.location.back();
+  }
 }

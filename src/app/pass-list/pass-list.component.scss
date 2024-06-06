@@ -3,6 +3,9 @@ $color2: #36858A;
 $color3: #265F62;
 $color4: #d4e4e4;
 $color5: #A9A9AC;
+$color6: #33c5ea;
+$color7: #eac027;
+$color8: #1bb9aa;
 
 .head {
     margin-top: 100px;
@@ -89,7 +92,7 @@ $color5: #A9A9AC;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: #33c5ea;
+                background-color: $color6;
                 border-radius: 5px;
 
                 p {
@@ -105,7 +108,7 @@ $color5: #A9A9AC;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: #eac027;
+                background-color: $color7;
                 border-radius: 5px;
 
                 p {
@@ -137,7 +140,7 @@ $color5: #A9A9AC;
                     transform: scale(1.1);
                 }
                 .edit-button {
-                    background-color: #eac027;
+                    background-color: $color7;
                     border-radius: 5px;
                     margin: 2.5px;
                     transition: transform 0.3s ease;
@@ -176,7 +179,7 @@ $color5: #A9A9AC;
 
 
                 .print-button {
-                    background-color: #1bb9aa;
+                    background-color: $color8;
                     border-radius: 5px;
                     margin: 2.5px;
                     transition: transform 0.3s ease;

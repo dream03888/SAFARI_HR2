@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-car-form',
@@ -30,4 +31,10 @@ export class CarFormComponent {
     { value: '7', label: 'Toyota Yaris Cross 2024 (ข-0464)' },
     { value: '8', label: 'Toyota Hilux Revo 2024 (ก-5361)' },
   ];
+
+  constructor(private location: Location) {}
+
+  goBack() {
+    this.location.back();
+  }
 }

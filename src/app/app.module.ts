@@ -20,6 +20,10 @@ import { DeleteAlertComponent } from './delete-alert/delete-alert.component';
 import { EditPassComponent } from './edit-pass/edit-pass.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
+import { PassViewComponent } from './pass-view/pass-view.component';
+import { CarViewComponent } from './car-view/car-view.component';
+
+
 
 
 
@@ -40,7 +44,9 @@ import { ChangePassComponent } from './change-pass/change-pass.component';
     MultiSelectComponent,
     DeleteAlertComponent,
     EditPassComponent,
-    EditCarComponent
+    EditCarComponent,
+    PassViewComponent,
+    CarViewComponent,
   ],
   imports: [
     BrowserModule,

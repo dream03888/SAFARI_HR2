@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-pass-form',
@@ -9,6 +10,8 @@ export class PassFormComponent {
   selectedLocation = '';
   isChecked = false;
   
+  constructor(private location: Location) {}
+
   // Array of options
   locatoions = [
     { value: '1', label: 'รพ.พระนั่งเกล้า : PNK' },
@@ -21,4 +24,9 @@ export class PassFormComponent {
     { value: '9', label: 'รพ.พัทลุง : PTLO' },
     { value: '-1', label: 'อื่นๆ' },
   ];
+
+  goBack() {
+    this.location.back();
+  }
+
 }

@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="edit-car-form">
     <div class="container">
         <div class="edit-car-form-box">
@@ -78,7 +79,7 @@
                     <button type="submit" class="confirm-btn">
                         <p>Confirm</p>
                     </button>
-                    <button class="cancel-btn">
+                    <button (click)="goBack()" class="cancel-btn">
                         <p>Cancel</p>
                     </button>
                 </div>

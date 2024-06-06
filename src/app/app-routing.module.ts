@@ -8,6 +8,8 @@ import { PassListComponent } from './pass-list/pass-list.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { EditPassComponent } from './edit-pass/edit-pass.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
+import { PassViewComponent } from './pass-view/pass-view.component';
+import { CarViewComponent } from './car-view/car-view.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:'car-list',component:CarListComponent},
   {path:'edit-pass' ,component:EditPassComponent},
   {path:'edit-car' ,component:EditCarComponent},
+  {path:'pass-view' ,component:PassViewComponent},
+  {path:'car-view' ,component:CarViewComponent},
 ];
 
 @NgModule({

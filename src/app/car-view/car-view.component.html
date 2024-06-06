@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+<div class="car-view">
+    <div class="container">
+        <div class="car-view-box">
+            <div class="car-view-wrap">
+                <div class="head">
+                    <img src="/assets/portfolio.png" alt="pass">
+                    <h1>Car Request View</h1>
+                </div>
+                <table class="car-view-table">
+                    <colgroup>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Departure date</td>
+                            <td>03/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Departure time</td>
+                            <td>09:00</td>
+                        </tr>
+                        <tr>
+                            <td>Return date</td>
+                            <td>04/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Return time</td>
+                            <td>09:00</td>
+                        </tr>
+                        <tr>
+                            <td>Car</td>
+                            <td>Isuzu D-Max 2016 (1ฒฮ 9363)</td>
+                        </tr>
+                        <tr>
+                            <td>Location</td>
+                            <td>รพ. พระนั่งเกล้า PNK</td>
+                        </tr>
+                        <tr>
+                            <td>Purpose</td>
+                            <td>สำรวจหน้างาน</td>
+                        </tr>
+                        <tr>
+                            <td>Remark</td>
+                            <td>Lorem ipsum dolor sit amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Passenger</td>
+                            <td>Lorem ipsum dolor sit amet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-wrap">
+                    <button routerLink="/edit-pass" class="edit-btn">
+                        <p>Edit Information</p>
+                    </button>
+                    <button  class="delete-btn" (click)="onAppClick('delete', $event)">
+                        <p>Delete</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
+    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}">
+    </app-delete-alert>
+</div>
