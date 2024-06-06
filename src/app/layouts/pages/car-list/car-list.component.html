@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="car-list">
+    <div class="container">
+        <div class="head">
+            <img src="/assets/icon/car.svg" alt="pass">
+            <h1>Car Request List</h1>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Departure date</th>
+                        <th scope="col">Departure time</th>
+                        <th scope="col">Return date</th>
+                        <th scope="col">Return time</th>
+                        <th scope="col">Car</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Status</th>
+                        <!-- <th scope="col">Print</th> -->
+                        <th scope="col">Choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of tableData; let i = index">
+                        <td data-label="No.">{{ row.no }}</td>
+                        <td data-label="Departure date">{{ row.departureDate }}</td>
+                        <td data-label="Departure time">{{ row.departureTime }}</td>
+                        <td data-label="Return date">{{ row.returnDate }}</td>
+                        <td data-label="Return time">{{ row.returnTime }}</td>
+                        <td data-label="car">{{ row.car }}</td>
+                        <td data-label="Location">{{ row.location }}</td>
+                        <td data-label="Status">
+                            <div class="bage-wrap">
+                                <div class="bage-first-approve" *ngIf="row.status === '1'">
+                                    <p>First Approve</p>
+                                </div>
+                                <div class="bage-manager-approve" *ngIf="row.status === '2'">
+                                    <p>Manager Approve</p>
+                                </div>
+                                <div class="bage-unapprove" *ngIf="row.status === '3'">
+                                    <p>Unapprove</p>
+                                </div>
+                            </div>
+                        </td>
+                        <!-- <td data-label="Print">
+                        <div class="print-wrap">
+                            <a class="print-button" href=""><img src="assets/icon/printing.svg" alt="print"></a>
+                        </div>
+                    </td> -->
+                        <td data-label="Choice">
+                            <div class="Choice-wrap">
+                                <div class="row-1">
+                                    <a class="view-button" title="ดูข้อมูล" routerLink="/car-view"><img src="assets/icon/search.svg" alt="view"></a>
+                                    <a class="edit-button"  title="แก้ไขข้อมูล" routerLink="/edit-car" ><img src="assets/icon/pen.svg" alt="edit"></a>
+                                </div>
+                                <div class="row-2">
+                                    <a class="print-button"  title="ถ่ายข้อมูล"><img src="assets/icon/printing.svg" alt="print"></a>
+                                    <a class="delete-button" title="ลบข้อมูล" (click)="onAppClick('delete', $event)"><img src="assets/icon/recycle-bin.svg" alt="delete"></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
+    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}">
+    </app-delete-alert>
+</div>
