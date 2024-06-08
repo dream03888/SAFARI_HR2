@@ -278,7 +278,7 @@ $color8: #1bb9aa;
             display: block;
             font-size: 12px;
             text-align: right;
-            border-bottom: 1px $color5 dashed;
+            border-bottom: 1px $color5 solid;
 
             .print-wrap {
                 justify-content: end;
