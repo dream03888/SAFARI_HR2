@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./pass-list.component.scss']
 })
 export class PassListComponent {
-  tableData = Array.from({ length: 10 }, (_, index) => ({
+  tableData = Array.from({ length: 5 }, (_, index) => ({
     no: index + 1,
-    departureDate: '04/01/2016',
-    departureTime: '9:00',
-    returnDate: '03/01/2016',
-    returnTime: '9:00',
+    departureDate: '04/01/2016 09:00',
+    // departureTime: '9:00',
+    returnDate: '03/01/2016 09:00',
+    // returnTime: '9:00',
     location: 'xxxx',
     // status: '1',
     status: '2',

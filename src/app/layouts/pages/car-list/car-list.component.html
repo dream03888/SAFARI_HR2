@@ -10,10 +10,10 @@
                 <thead>
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Departure date</th>
-                        <th scope="col">Departure time</th>
-                        <th scope="col">Return date</th>
-                        <th scope="col">Return time</th>
+                        <th scope="col">Departure date/time</th>
+                        <!-- <th scope="col">Departure time</th> -->
+                        <th scope="col">Return date/time</th>
+                        <!-- <th scope="col">Return time</th> -->
                         <th scope="col">Car</th>
                         <th scope="col">Location</th>
                         <th scope="col">Status</th>
@@ -24,10 +24,10 @@
                 <tbody>
                     <tr *ngFor="let row of tableData; let i = index">
                         <td data-label="No.">{{ row.no }}</td>
-                        <td data-label="Departure date">{{ row.departureDate }}</td>
-                        <td data-label="Departure time">{{ row.departureTime }}</td>
-                        <td data-label="Return date">{{ row.returnDate }}</td>
-                        <td data-label="Return time">{{ row.returnTime }}</td>
+                        <td data-label="Departure date time">{{ row.departureDate }}</td>
+                        <!-- <td data-label="Departure time">{{ row.departureTime }}</td> -->
+                        <td data-label="Return date time">{{ row.returnDate }}</td>
+                        <!-- <td data-label="Return time">{{ row.returnTime }}</td> -->
                         <td data-label="car">{{ row.car }}</td>
                         <td data-label="Location">{{ row.location }}</td>
                         <td data-label="Status">

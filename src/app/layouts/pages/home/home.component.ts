@@ -27,6 +27,30 @@ export class HomeComponent {
       img: "assets/icon/customer-support.svg", 
       name: 'Service',
       path: ""
+    },{
+      img:  "assets/icon/database.svg",
+      name: "NAS",
+      path: ""
+    },{
+      img:  "assets/icon/database.svg",
+      name: "NAS",
+      path: ""
+    },{
+      img:  "assets/icon/database.svg",
+      name: "NAS",
+      path: ""
+    },{
+      img:  "assets/icon/database.svg",
+      name: "NAS",
+      path: ""
+    },{
+      img:  "assets/icon/database.svg",
+      name: "NAS",
+      path: ""
+    },{
+      img:  "assets/icon/database.svg",
+      name: "NAS",
+      path: ""
     }
   ];
 
@@ -52,6 +76,37 @@ export class HomeComponent {
       name: 'Github',
       path: ""
     },
+    { 
+      img: "assets/icon/github.svg", 
+      name: 'Github',
+      path: ""
+    },
+    { 
+      img: "assets/icon/github.svg", 
+      name: 'Github',
+      path: ""
+    },
+    { 
+      img: "assets/icon/github.svg", 
+      name: 'Github',
+      path: ""
+    },
+    { 
+      img: "assets/icon/github.svg", 
+      name: 'Github',
+      path: ""
+    },
+    { 
+      img: "assets/icon/github.svg", 
+      name: 'Github',
+      path: ""
+    },
+    { 
+      img: "assets/icon/github.svg", 
+      name: 'Github',
+      path: ""
+    },
+    
   ];
 
   onAppClick(app: any, event: MouseEvent): void {

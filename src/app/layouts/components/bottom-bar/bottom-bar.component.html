@@ -1,0 +1,45 @@
+
+<div *ngIf="isSelectAppVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
+    <div class="shortcut-menu" [ngClass]="{'animate-alert-in' : isSelectAppVisible, 'animate-alert-out' : isAnimating}" (click)="$event.stopPropagation()">
+        <div class="select-menu">
+            <div class="head">
+                <img src="assets/icon/car.svg" alt="">
+                <h1>Select quik app</h1>
+            </div>
+            <div class="app-container">
+                <div class="app-item" *ngFor="let app of appsSelect" (click)="toggleAppSelection(app)" [class.selected]="isSelected(app)">
+                    <a>
+                        <div class="status">
+                            <div class="diss" [ngClass]="{'hide': !isSelected(app)}">
+                                <p>-</p>
+                            </div>
+                            <div class="add" [ngClass]="{'hide': isSelected(app)}">
+                                <p>+</p>
+                            </div>
+                        </div>
+                        <div class="app-icon">
+                            <img [src]="app.img" [alt]="app.name">
+                        </div>
+                    </a>
+                    <p>{{ app.name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-bar">
+    <div class="container">
+        <div class="bar-item-wrap">
+            <div class="display-item" *ngFor="let app of appShow" @itemAnimation>
+                <a>
+                    <img [src]="app.img" [alt]="app.name">
+                    <p>{{ app.name }}</p>
+                </a>
+            </div>
+            <div class="add-app" (click)="toggleAlert()">
+                <button>+</button>
+            </div>
+        </div>
+    </div>
+</div>

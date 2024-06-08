@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./car-list.component.scss']
 })
 export class CarListComponent {
-  tableData = Array.from({ length: 10 }, (_, index) => ({
+  tableData = Array.from({ length: 5 }, (_, index) => ({
     no: index + 1,
-    departureDate: '04/01/2016',
-    departureTime: '9:00',
-    returnDate: '03/01/2016',
-    returnTime: '9:00',
+    departureDate: '03/01/2016 09:00',
+    // departureTime: '9:00',
+    returnDate: '03/01/2016 09:00',
+    // returnTime: '9:00',
     car: 'Toyota Hilux Revo 2022 (3ขภ 9363)',
     location: 'xxxx',
     // status: '1',
