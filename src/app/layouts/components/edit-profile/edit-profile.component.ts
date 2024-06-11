@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-edit-profile',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent {
+closeEditProfile() {
+throw new Error('Method not implemented.');
+}
+  @Output() cancel = new EventEmitter<void>();
 
+  onCancel() {
+    this.cancel.emit();
+  }
 }

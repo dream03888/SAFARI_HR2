@@ -4,7 +4,7 @@ $color3: #10A37F;
 $color4: #ff4545;
 
 .shortcut-menu {
-    width: 340px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@ $color4: #ff4545;
             margin-bottom: 20px;
 
             .app-item {
-                width: 25%;
+                width: 20%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -250,7 +250,6 @@ $color4: #ff4545;
     align-items: center;
 }
 
-//----------------------------------------------------------------------------------------------------------------------------
 
 @media (min-width: 1024px) {
 .bottom-bar {

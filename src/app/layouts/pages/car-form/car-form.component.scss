@@ -48,6 +48,7 @@ $color5: #A9A9AC;
                             border-radius: 5px;
                             font-size: 12px;
                             padding: 0 5px;
+                            color: black;
                         }
 
                         select:focus {
@@ -75,6 +76,7 @@ $color5: #A9A9AC;
                             border-radius: 5px;
                             font-size: 12px;
                             padding: 0 5px;
+                            color: black;
                         }
 
                         select:focus {
@@ -182,6 +184,9 @@ $color5: #A9A9AC;
                     }
 
                     .departure-input {
+                        display: grid;
+                        // grid-template-columns: 1fr 1fr;
+                        // gap: 10px;
                         display: flex;
                         justify-content: space-between;
 
@@ -192,6 +197,10 @@ $color5: #A9A9AC;
                             border-radius: 5px;
                             font-size: 12px;
                             padding: 0 5px;
+                            color: black;
+                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
+                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
+                            appearance: none;      /* คุณสมบัติมาตรฐาน */
                         }
 
                         input[type="time"] {
@@ -201,6 +210,10 @@ $color5: #A9A9AC;
                             border-radius: 5px;
                             font-size: 12px;
                             padding: 0 5px;
+                            color: black;
+                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
+                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
+                            appearance: none;         /* คุณสมบัติมาตรฐาน */
                         }
 
                         input[type="date"]:focus,
@@ -232,6 +245,11 @@ $color5: #A9A9AC;
                             border-radius: 5px;
                             font-size: 12px;
                             padding: 0 5px;
+                            padding: 0 5px;
+                            color: black;
+                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
+                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
+                            appearance: none;         /* คุณสมบัติมาตรฐาน */
                         }
 
                         input[type="time"] {
@@ -241,6 +259,11 @@ $color5: #A9A9AC;
                             border-radius: 5px;
                             font-size: 12px;
                             padding: 0 5px;
+                            padding: 0 5px;
+                            color: black;
+                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
+                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
+                            appearance: none;         /* คุณสมบัติมาตรฐาน */
                         }
 
                         input[type="date"]:focus,

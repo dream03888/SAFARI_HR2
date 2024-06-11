@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-change-password',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./change-pass.component.scss']
 })
 export class ChangePassComponent {
+  @Output() cancel = new EventEmitter<void>();
 
+  onCancel() {
+    this.cancel.emit();
+  }
 }

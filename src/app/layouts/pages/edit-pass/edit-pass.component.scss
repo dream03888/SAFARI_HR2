@@ -52,6 +52,10 @@ $color5: #A9A9AC;
                                 border-radius: 5px;
                                 font-size: 12px;
                                 padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none; 
+                                -moz-appearance: none;    
+                                appearance: none;   
                             }
     
                             input[type="time"] {
@@ -61,6 +65,10 @@ $color5: #A9A9AC;
                                 border-radius: 5px;
                                 font-size: 12px;
                                 padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none; 
+                                -moz-appearance: none;    
+                                appearance: none;   
                             }
     
                             input[type="date"]:focus,
@@ -92,6 +100,10 @@ $color5: #A9A9AC;
                                 border-radius: 5px;
                                 font-size: 12px;
                                 padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none; 
+                                -moz-appearance: none;    
+                                appearance: none;   
                             }
     
                             input[type="time"] {
@@ -101,6 +113,10 @@ $color5: #A9A9AC;
                                 border-radius: 5px;
                                 font-size: 12px;
                                 padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none; 
+                                -moz-appearance: none;    
+                                appearance: none;   
                             }
     
                             input[type="date"]:focus,
@@ -130,6 +146,7 @@ $color5: #A9A9AC;
                                 border-radius: 5px;
                                 font-size: 12px;
                                 padding: 0 5px;
+                                color: black;
                             }
     
                             select:focus {

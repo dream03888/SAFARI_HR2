@@ -7,7 +7,7 @@
             </div>
             <div class="form">
                 <div class="form-item">
-                    <label for="first-name">New password</label>
+                    <label for="new-pass">New password</label>
                     <input type="password" id="new-pass" name="new-pass" placeholder="Enter new password">
                 </div>
                 <div class="form-item">
@@ -17,7 +17,7 @@
             </div>
             <div class="btn-wrap">
                 <div class="confirm-btn"><p>Confirm</p></div>
-                <div class="cancel-btn"><p>Cancel</p></div>
+                <div class="cancel-btn" (click)="onCancel()"><p>Cancel</p></div>
             </div>
         </div>
     </div>

@@ -1,13 +1,14 @@
-
 <div *ngIf="isSelectAppVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
-    <div class="shortcut-menu" [ngClass]="{'animate-alert-in' : isSelectAppVisible, 'animate-alert-out' : isAnimating}" (click)="$event.stopPropagation()">
+    <div class="shortcut-menu" [ngClass]="{'animate-alert-in' : isSelectAppVisible, 'animate-alert-out' : isAnimating}"
+        (click)="$event.stopPropagation()">
         <div class="select-menu">
             <div class="head">
                 <img src="assets/icon/car.svg" alt="">
                 <h1>Select quik app</h1>
             </div>
             <div class="app-container">
-                <div class="app-item" *ngFor="let app of appsSelect" (click)="toggleAppSelection(app)" [class.selected]="isSelected(app)">
+                <div class="app-item" *ngFor="let app of appsSelect" (click)="toggleAppSelection(app)"
+                    [class.selected]="isSelected(app)">
                     <a>
                         <div class="status">
                             <div class="diss" [ngClass]="{'hide': !isSelected(app)}">
@@ -32,8 +33,22 @@
     <div class="container">
         <div class="bar-item-wrap">
             <div class="display-item" *ngFor="let app of appShow" @itemAnimation>
-                <a>
-                    <img [src]="app.img" [alt]="app.name">
+                <a *ngIf="app.type === 'routing'" [routerLink]="app.path">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                    <p>{{ app.name }}</p>
+                </a>
+                <a *ngIf="app.type === 'alert'" (click)="onAppClick(app, $event)">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                    <p>{{ app.name }}</p>
+                </a>
+                <a *ngIf="app.type === 'link'" [href]="app.path" target="_blank">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
                     <p>{{ app.name }}</p>
                 </a>
             </div>
@@ -42,4 +57,14 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="isPassAlertVisible || isAnimating" class="backdrop" (click)="closePassAlert()">
+    <app-pass-alert
+        [ngClass]="{'animate-alert-in': isPassAlertVisible, 'animate-alert-out': isAnimating}"></app-pass-alert>
+</div>
+
+<div *ngIf="isCarAlertVisible || isAnimating" class="backdrop" (click)="closeCarAlert()">
+    <app-car-alert
+        [ngClass]="{'animate-alert-in': isCarAlertVisible, 'animate-alert-out': isAnimating}"></app-car-alert>
 </div>

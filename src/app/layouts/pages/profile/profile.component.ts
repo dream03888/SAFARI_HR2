@@ -41,14 +41,12 @@ export class ProfileComponent {
     this.isAnimating_2 = false;
   }
 
-
   closeEditProfile() {
     this.isEditProfileVisible = false;
     this.isAnimating_1 = true;
     setTimeout(() => {
       this.isAnimating_1 = false;
     },300); 
-    
   }
 
   closeChangePass() {
@@ -57,6 +55,6 @@ export class ProfileComponent {
     setTimeout(() => {
       this.isAnimating_2 = false;
     },300); 
-    
   }
+  
 }

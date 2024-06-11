@@ -20,18 +20,22 @@
     <div class="app-wrap">
         <h2>APP IN</h2>
         <div class="app-container">
-            <div class="app-item" *ngFor="let app of appIn" (click)="onAppClick(app, $event)">
-                <a [routerLink]="app.path"
-                    *ngIf="app.name !== 'Car Request' && app.name !== 'Employee Pass' ; else RequestLink">
+            <div class="app-item" *ngFor="let app of appIn">
+                <a [routerLink]="app.path" *ngIf="app.type == 'routing'">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>
                 </a>
-                <ng-template #RequestLink>
+                <a *ngIf="app.type == 'alert'" (click)="onAppClick(app, $event)">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>
-                </ng-template>
+                </a>
+                <a [href]="app.path" *ngIf="app.type == 'link'">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </a>
                 <p>{{ app.name }}</p>
             </div>
         </div>
@@ -39,7 +43,17 @@
         <h2>APP OUT</h2>
         <div class="app-container">
             <div class="app-item" *ngFor="let app of appOut">
-                <a [routerLink]="app.path">
+                <a [routerLink]="app.path" *ngIf="app.type == 'routing'">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </a>
+                <a *ngIf="app.type == 'alert'">
+                    <div class="app-icon">
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </a>
+                <a [href]="app.path" *ngIf="app.type == 'link'">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>

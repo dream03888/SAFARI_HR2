@@ -1,4 +1,3 @@
-
 <div class="profile">
     <div class="container">
         <div class="profile-wrap">
@@ -34,12 +33,14 @@
 
         <!-- alert -->
         <div *ngIf="isEditProfileVisible || isAnimating_1" class="alert-backdrop" (click)="closeEditProfile()">
-            <app-edit-profile [ngClass]="{'animate-alert-in': isEditProfileVisible, 'animate-alert-out': isAnimating_1}"
-                ></app-edit-profile>
+            <app-edit-profile 
+                [ngClass]="{'animate-alert-in': isEditProfileVisible, 'animate-alert-out': isAnimating_1}"
+                (click)="$event.stopPropagation()" (cancel)="closeEditProfile()"></app-edit-profile>
         </div>
         <div *ngIf="isChangePassVisible || isAnimating_2" class="alert-backdrop" (click)="closeChangePass()">
-            <app-change-password [ngClass]="{'animate-alert-in': isChangePassVisible, 'animate-alert-out': isAnimating_2}"
-                ></app-change-password>
+            <app-change-password
+                [ngClass]="{'animate-alert-in': isChangePassVisible, 'animate-alert-out': isAnimating_2}"
+                (click)="$event.stopPropagation()" (cancel)="closeChangePass()"></app-change-password>
         </div>
 
     </div>
