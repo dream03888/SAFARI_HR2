@@ -67,6 +67,7 @@
 </div>
 
 <div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
-    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}">
+    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}"
+    (click)="$event.stopPropagation()" (cancel)="closeDeleteAlert()">
     </app-delete-alert>
 </div>

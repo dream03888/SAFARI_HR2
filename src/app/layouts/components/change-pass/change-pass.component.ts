@@ -7,7 +7,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ChangePassComponent {
   @Output() cancel = new EventEmitter<void>();
-  isMatchAlertVisible: boolean = false;
+  isWarningAlertVisible: boolean = false;
+  isSuccessAlertVisible: boolean = false;
   isAnimating: boolean = false;
   alertMessage :string = ''
 
@@ -26,23 +27,34 @@ export class ChangePassComponent {
 
     if (newPassword !== '' && confirmPassword !== '') {
       if (newPassword !== confirmPassword) {
-        this.alertMessage = 'Passwords do not match';
-        this.isMatchAlertVisible = true;
+        // this.alertMessage = 'Passwords do not match';
+        this.alertMessage = 'รหัสผ่านไม่ตรงกัน';
+        this.isWarningAlertVisible = true;
         this.isAnimating = false;
-        return;
       } else {
-        console.log('สำเร็จ');
+        // this.alertMessage = 'Saved successfully';
+        this.alertMessage = 'บันทึกสำเร็จ';
+        this.isSuccessAlertVisible = true;
+        this.isAnimating = false;
       }
     } else {
-      console.log('กรุณาใส่ password');
-      this.alertMessage = 'Enter both passwords';
-      this.isMatchAlertVisible = true;
+      // this.alertMessage = 'Enter both passwords';
+      this.alertMessage = 'กรุณาใส่รหัสผ่านทั้งสองช่อง';
+      this.isWarningAlertVisible = true;
       this.isAnimating = false;
     }
   }
 
-  closeMatchAlert(): void {
-    this.isMatchAlertVisible = false;
+  closeWarningAlert(): void {
+    this.isWarningAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300);
+  }
+
+  closeSuccessAlert(): void {
+    this.isSuccessAlertVisible = false;
     this.isAnimating = true;
     setTimeout(() => {
       this.isAnimating = false;

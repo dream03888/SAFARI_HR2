@@ -2,7 +2,7 @@
     <div class="container">
         <div class="delete-alert-wrap">
             <div class="head">
-                <img src="assets/icon/alert-sign.svg" alt="delete">
+                <ng-lottie [options]="options"></ng-lottie>
                 <h1>Are you sure?</h1>
             </div>
             <div class="delete-alert-btn">
@@ -12,7 +12,7 @@
                 </div>
                 <!-- </a> -->
                 <!-- <a routerLink="/car-form"> -->
-                    <div class="cancel-btn">
+                    <div class="cancel-btn" (click)="onCancel()">
                         <p>Cancel</p>
                     </div>
                 <!-- </a> -->

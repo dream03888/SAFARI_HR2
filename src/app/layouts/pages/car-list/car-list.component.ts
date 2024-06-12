@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./car-list.component.scss']
 })
 export class CarListComponent {
+  isDeleteAlertVisible: boolean = false;
+  isAnimating: boolean = false;
+
   tableData = Array.from({ length: 5 }, (_, index) => ({
     no: index + 1,
     departureDate: '03/01/2016 09:00',
@@ -21,15 +24,11 @@ export class CarListComponent {
     choice: ''
   })); 
   
-  isDeleteAlertVisible: boolean = false;
-  isAnimating: boolean = false;
-
   onAppClick(choice: string, event: MouseEvent): void {
     if (choice === 'delete') {
       this.isDeleteAlertVisible = true;
       this.isAnimating = false;   
     }
-    
   }
 
   closeDeleteAlert(): void {

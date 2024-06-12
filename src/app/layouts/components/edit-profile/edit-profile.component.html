@@ -24,9 +24,19 @@
                 </div>
             </div>
             <div class="btn-wrap">
-                <button type="submit" class="confirm-btn"><p>Confirm</p></button>
+                <button type="submit" class="confirm-btn" (click)="onAppClick()"><p>Confirm</p></button>
                 <button class="cancel-btn" (click)="onCancel()"><p>Cancel</p></button>
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
+    <app-warning-alert [ngClass]="{'animate-alert-in' : isWarningAlertVisible, 'animate-alert-out' : isAnimating}"
+        [message]="alertMessage"></app-warning-alert>
+</div>
+
+<div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
+    <app-success-alert [ngClass]="{'animate-alert-in' : isSuccessAlertVisible, 'animate-alert-out' : isAnimating}"
+        [message]="alertMessage"></app-success-alert>
 </div>

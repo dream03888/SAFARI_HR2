@@ -4,12 +4,12 @@ $color3: #265F62;
 $color4: #d4e4e4;
 $color5: #ff4545;
 
-.match-alert{
+.warning-alert{
     background-color: $color2;
     width: 300px;
     height: 300px;
     border-radius:5px ;
-    .match-alert-wrap{
+    .warning-alert-wrap{
         padding-top: 40px;
         .head{
             display: flex;
@@ -27,7 +27,7 @@ $color5: #ff4545;
                 margin-top: 16px;
             }
         }
-        .match-alert-btn{
+        .warning-alert-btn{
             display: flex;
             justify-content: center;
             align-items: center;

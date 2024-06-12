@@ -27,8 +27,12 @@
     </div>
 </div>
 
-<div *ngIf="isMatchAlertVisible || isAnimating" class="backdrop" (click)="closeMatchAlert()">
-    <app-match-alert [ngClass]="{'animate-alert-in' : isMatchAlertVisible, 'animate-alert-out' : isAnimating}"
-        [message]="alertMessage"></app-match-alert>
+<div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
+    <app-warning-alert [ngClass]="{'animate-alert-in' : isWarningAlertVisible, 'animate-alert-out' : isAnimating}"
+        [message]="alertMessage"></app-warning-alert>
 </div>
 
+<div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
+    <app-success-alert [ngClass]="{'animate-alert-in' : isSuccessAlertVisible, 'animate-alert-out' : isAnimating}"
+        [message]="alertMessage"></app-success-alert>
+</div>
