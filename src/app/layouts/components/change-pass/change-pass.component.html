@@ -16,9 +16,13 @@
                 </div>
             </div>
             <div class="btn-wrap">
-                <div class="confirm-btn"><p>Confirm</p></div>
+                <div class="confirm-btn" (click)="onAppClick()"><p>Confirm</p></div>
                 <div class="cancel-btn" (click)="onCancel()"><p>Cancel</p></div>
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="isMatchAlertVisible || isAnimating" class="backdrop" (click)="closeMatchAlert()">
+    <app-match-alert [ngClass]="{'animate-alert-in' : isMatchAlertVisible, 'animate-alert-out' : isAnimating}"></app-match-alert>
 </div>

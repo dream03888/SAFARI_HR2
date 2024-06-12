@@ -4,114 +4,161 @@ $color3: #265F62;
 $color4: #d4e4e4;
 
 .change-pass {
-    background-color: $color2;
+    background-color: #36858A;
     width: 300px;
     border-radius: 5px;
+    z-index: 1;
+}
 
-    .change-pass-wrap {
-        padding-top: 20px;
+.change-pass-wrap {
+    padding-top: 20px;
+}
 
-        .head {
-            display: flex;
-            margin-bottom: 20px;
+.head {
+    display: flex;
+    margin-bottom: 20px;
+}
 
-            img {
-                width: 21px;
-                height: 21px;
-                filter: invert(1) brightness(2);
-            }
+.head img {
+    width: 21px;
+    height: 21px;
+    filter: invert(1) brightness(2);
+}
 
-            h1 {
-                font-size: 18px;
-                font-weight: bold;
-                color: white;
-                margin-left: 5px;
-            }
-        }
+.head h1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-left: 5px;
+}
 
-        .form{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-item {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-item label {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.form-item input {
+    height: 20px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    padding: 0 5px;
+}
+
+.form-item input:focus {
+    outline: 2px solid #265F61;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     
-            .form-item{
-                margin: 8px 0;
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                label{
-                    color: white;
-                    font-size: 12px;
-                    font-weight: bold;
-                    margin-bottom: 3px;
-                }
-                input{
-                    height: 20px;
-                    border-radius: 5px;
-                    border: 0px;
-                    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-                    padding: 0 5px;
-                    &:focus {
-                        outline:2px solid $color1;
-                        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-                    }
-                    &::placeholder {
-                        opacity: 0.8; 
-                    }
-                }
-            }
-        }
-        
-        .btn-wrap{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding-bottom: 30px;
-            .confirm-btn{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 120px;
-                height: 32px;
-                background-color: $color3;
-                border-radius: 5px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
 
-                p {
-                    color: white;
-                    font-size: 12px;
-                    font-weight: bold;
-                }
-            }
-            .confirm-btn:hover {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                cursor: pointer;
-            }
+.form-item input::placeholder {
+    opacity: 0.8;
+}
 
-            .cancel-btn{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 120px;
-                height: 32px;
-                background-color: $color4;
-                border-radius: 5px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+.btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
 
-                p {
-                    color: $color1;
-                    font-size: 12px;
-                    font-weight: bold;
-                }
-            }
-            .cancel-btn:hover {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                cursor: pointer;
-            }
-        }
+.confirm-btn, .cancel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.confirm-btn p, .cancel-btn p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.confirm-btn:hover, .cancel-btn:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background-color: #265F62;
+}
+
+.confirm-btn p {
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #d4e4e4;
+}
+
+.cancel-btn p {
+    color: #265F61;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.animate-alert-in {
+    animation: zoomIn 0.3s ease-out forwards;
+}
+
+.animate-alert-out {
+    animation: zoomOut 0.3s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
     }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.app-match-alert {
+    z-index: 3;
 }

@@ -20,6 +20,7 @@ export class CarListComponent {
     print: '',
     choice: ''
   })); 
+  
   isDeleteAlertVisible: boolean = false;
   isAnimating: boolean = false;
 
