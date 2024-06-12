@@ -7,13 +7,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ChangePassComponent {
   @Output() cancel = new EventEmitter<void>();
+  isMatchAlertVisible: boolean = false;
+  isAnimating: boolean = false;
+  alertMessage :string = ''
+
 
   onCancel() {
     this.cancel.emit();
   }
-
-  isMatchAlertVisible: boolean = false;
-  isAnimating: boolean = false;
 
   onAppClick(): void {
     const newPassword = (
@@ -25,6 +26,7 @@ export class ChangePassComponent {
 
     if (newPassword !== '' && confirmPassword !== '') {
       if (newPassword !== confirmPassword) {
+        this.alertMessage = 'Passwords do not match';
         this.isMatchAlertVisible = true;
         this.isAnimating = false;
         return;
@@ -33,6 +35,9 @@ export class ChangePassComponent {
       }
     } else {
       console.log('กรุณาใส่ password');
+      this.alertMessage = 'Enter both passwords';
+      this.isMatchAlertVisible = true;
+      this.isAnimating = false;
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-match-alert',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./match-alert.component.scss']
 })
 export class MatchAlertComponent {
+@Input() message: string = '';
 
 }

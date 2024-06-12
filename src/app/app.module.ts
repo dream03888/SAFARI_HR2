@@ -25,6 +25,7 @@ import { PassListComponent } from './layouts/pages/pass-list/pass-list.component
 import { PassViewComponent } from './layouts/pages/pass-view/pass-view.component';
 import { BottomBarComponent } from './layouts/components/bottom-bar/bottom-bar.component';
 import { MatchAlertComponent } from './layouts/alerts/match-alert/match-alert.component';
+import { BlankAlertComponent } from './layouts/alerts/blank-alert/blank-alert.component';
 
 
 
@@ -51,6 +52,7 @@ import { MatchAlertComponent } from './layouts/alerts/match-alert/match-alert.co
     CarViewComponent,
     BottomBarComponent,
     MatchAlertComponent,
+    BlankAlertComponent,
   ],
   imports: [
     BrowserModule,
