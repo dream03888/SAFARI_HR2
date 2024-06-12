@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AnimationOptions } from 'ngx-lottie';
+
 
 @Component({
   selector: 'app-profile',
@@ -56,5 +58,6 @@ export class ProfileComponent {
       this.isAnimating_2 = false;
     },300); 
   }
+  
   
 }

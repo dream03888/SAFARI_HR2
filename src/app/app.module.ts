@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { LayoutsComponent } from './layouts/layouts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
 import { NavbarComponent } from './layouts/components/navbar/navbar.component';
 import { HomeComponent } from './layouts/pages/home/home.component';
@@ -25,8 +27,10 @@ import { PassListComponent } from './layouts/pages/pass-list/pass-list.component
 import { PassViewComponent } from './layouts/pages/pass-view/pass-view.component';
 import { BottomBarComponent } from './layouts/components/bottom-bar/bottom-bar.component';
 import { MatchAlertComponent } from './layouts/alerts/match-alert/match-alert.component';
-import { BlankAlertComponent } from './layouts/alerts/blank-alert/blank-alert.component';
 
+export function playerFactory() {
+  return player;
+}
 
 
 @NgModule({
@@ -52,13 +56,13 @@ import { BlankAlertComponent } from './layouts/alerts/blank-alert/blank-alert.co
     CarViewComponent,
     BottomBarComponent,
     MatchAlertComponent,
-    BlankAlertComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    LottieModule.forRoot({ player: playerFactory })
   ],
   providers: [],
   bootstrap: [AppComponent],
