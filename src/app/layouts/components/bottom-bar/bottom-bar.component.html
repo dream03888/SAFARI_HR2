@@ -1,5 +1,5 @@
-<div *ngIf="isSelectAppVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
-    <div class="shortcut-menu" [ngClass]="{'animate-alert-in' : isSelectAppVisible, 'animate-alert-out' : isAnimating}"
+<div *ngIf="isSelectAppVisible || isAnimatingSelect" class="backdrop" (click)="closeDeleteAlert()">
+    <div class="shortcut-menu" [ngClass]="{'animate-alert-in' : isSelectAppVisible, 'animate-alert-out' : isAnimatingSelect}"
         (click)="$event.stopPropagation()">
         <div class="select-menu">
             <div class="head">
@@ -45,7 +45,7 @@
                     </div>
                     <p>{{ app.name }}</p>
                 </a>
-                <a *ngIf="app.type === 'link'" [href]="app.path" target="_blank">
+                <a *ngIf="app.type === 'link'" [href]="app.path">
                     <div class="app-icon">
                         <img [src]="app.img" [alt]="app.name">
                     </div>

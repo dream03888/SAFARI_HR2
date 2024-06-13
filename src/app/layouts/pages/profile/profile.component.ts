@@ -10,8 +10,8 @@ import { AnimationOptions } from 'ngx-lottie';
 export class ProfileComponent {
   isEditProfileVisible: boolean = false;
   isChangePassVisible: boolean = false;
-  isAnimating_1: boolean = false;
-  isAnimating_2: boolean = false;
+  isAnimatingEdit: boolean = false;
+  isAnimatingChange: boolean = false;
   users = [
     { 
       title:  "Name:",
@@ -35,29 +35,27 @@ export class ProfileComponent {
 
   showEditProfile() {
     this.isEditProfileVisible = true;
-    this.isAnimating_1 = false;
+    this.isAnimatingEdit = false;
   }
 
   showChangePass() {
     this.isChangePassVisible = true;
-    this.isAnimating_2 = false;
+    this.isAnimatingChange = false;
   }
 
   closeEditProfile() {
     this.isEditProfileVisible = false;
-    this.isAnimating_1 = true;
+    this.isAnimatingEdit = true;
     setTimeout(() => {
-      this.isAnimating_1 = false;
+      this.isAnimatingEdit = false;
     },300); 
   }
 
   closeChangePass() {
     this.isChangePassVisible = false;
-    this.isAnimating_2 = true;
+    this.isAnimatingChange = true;
     setTimeout(() => {
-      this.isAnimating_2 = false;
+      this.isAnimatingChange = false;
     },300); 
   }
-  
-  
 }

@@ -32,14 +32,14 @@ export class EditProfileComponent {
 
     if (firstName !== '' && lastName !== '' && phone !== '' && email !== '') {
         this.alertMessage = 'Saved successfully';
-        this.alertMessage = 'บันทึกสำเร็จ';
+        // this.alertMessage = 'บันทึกสำเร็จ';
         this.isSuccessAlertVisible = true;
         this.isAnimating = false;
         console.log('บันทึก');
         
     } else {
-      this.alertMessage = 'Enter both passwords';
-      this.alertMessage = 'กรุณาใส่ข้อมูลให้ครบ';
+      this.alertMessage = 'Enter all information';
+      // this.alertMessage = 'กรุณาใส่ข้อมูลให้ครบ';
       this.isWarningAlertVisible = true;
       this.isAnimating = false;
       console.log('dadasdas');

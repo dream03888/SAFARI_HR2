@@ -30,6 +30,7 @@ export class BottomBarComponent implements OnInit {
   isCarAlertVisible: boolean = false;
   isPassAlertVisible: boolean = false;
   isAnimating: boolean = false;
+  isAnimatingSelect: boolean = false;
 
   appsSelect: App[] = [
     { 
@@ -142,9 +143,9 @@ export class BottomBarComponent implements OnInit {
 
   closeDeleteAlert(): void {
     this.isSelectAppVisible = false;
-    this.isAnimating = true;
+    this.isAnimatingSelect = true;
     setTimeout(() => {
-      this.isAnimating = false;
+      this.isAnimatingSelect = false;
     }, 300);
   }
 

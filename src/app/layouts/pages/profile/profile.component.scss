@@ -239,64 +239,70 @@ $color4: #d4e4e4;
 
 @media (min-width: 1024px) {
     .profile {
-        .profile-wrap {
-            .profile-body {
-                height: 500px;
-                margin-top: 24px;
+            .profile-wrap {
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                .profile-body-wrap{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-around;
-                    align-items: center;
-                    .profile-pic {
-                        img {
-                            width: auto;
-                            height: 350px;
-                        }
-                    }
-                    .info {
-                        .info-item {
+                .profile-box{
+                    width: 70%;
+                    .profile-body {
+                        height: 500px;
+                        margin-top: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .profile-body-wrap{
+                            width: 100%;
                             display: flex;
-                            justify-content: flex-start;
-                            margin: 20px;
-                            color: white;
-                            h1 {
-                                font-size: 18px;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            align-items: center;
+                            .profile-pic {
+                                img {
+                                    width: auto;
+                                    height: 300px;
+                                }
                             }
-                            p {
-                                font-size: 18px;
+                            .info {
+                                .info-item {
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    margin: 20px;
+                                    color: white;
+                                    h1 {
+                                        font-size: 14px;
+                                    }
+                                    p {
+                                        font-size: 14px;
+                                    }
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            .btn-wrap {
-                margin-top: 100px;
-                display: flex;
-                justify-content: space-between;
-                .edit-btn {
-                    height: 55px;
-                    width: 48%;
-                    p {
-                        color: white;
-                        font-size: 18px;
+    
+                .btn-wrap {
+                    margin-top: 100px;
+                    display: flex;
+                    justify-content: space-between;
+                    .edit-btn {
+                        height: 55px;
+                        width: 48%;
+                        p {
+                            color: white;
+                            font-size: 14px;
+                        }
                     }
-                }
-                .change-btn {
-                    margin-top: 0px;
-                    height: 55px;
-                    width: 48%;
-                    p {
-                        color: $color1;
-                        font-size: 18px;
+                    .change-btn {
+                        margin-top: 0px;
+                        height: 55px;
+                        width: 48%;
+                        p {
+                            color: $color1;
+                            font-size: 14px;
+                        }
                     }
                 }
             }
         }
     }
-}

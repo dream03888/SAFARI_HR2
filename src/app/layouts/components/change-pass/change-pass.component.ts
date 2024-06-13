@@ -27,19 +27,19 @@ export class ChangePassComponent {
 
     if (newPassword !== '' && confirmPassword !== '') {
       if (newPassword !== confirmPassword) {
-        // this.alertMessage = 'Passwords do not match';
-        this.alertMessage = 'รหัสผ่านไม่ตรงกัน';
+        this.alertMessage = 'Passwords do not match';
+        // this.alertMessage = 'รหัสผ่านไม่ตรงกัน';
         this.isWarningAlertVisible = true;
         this.isAnimating = false;
       } else {
-        // this.alertMessage = 'Saved successfully';
-        this.alertMessage = 'บันทึกสำเร็จ';
+        this.alertMessage = 'Saved successfully';
+        // this.alertMessage = 'บันทึกสำเร็จ';
         this.isSuccessAlertVisible = true;
         this.isAnimating = false;
       }
     } else {
-      // this.alertMessage = 'Enter both passwords';
-      this.alertMessage = 'กรุณาใส่รหัสผ่านทั้งสองช่อง';
+      this.alertMessage = 'Enter both passwords';
+      // this.alertMessage = 'กรุณาใส่รหัสผ่านทั้งสองช่อง';
       this.isWarningAlertVisible = true;
       this.isAnimating = false;
     }
