@@ -29,10 +29,11 @@
 
 <div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
     <app-warning-alert [ngClass]="{'animate-alert-in' : isWarningAlertVisible, 'animate-alert-out' : isAnimating}"
-        [message]="alertMessage"></app-warning-alert>
+        [message]="alertMessage" (click)="$event.stopPropagation()" (cancel)="closeWarningAlert()"></app-warning-alert>
 </div>
 
 <div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
-    <app-success-alert [ngClass]="{'animate-alert-in' : isSuccessAlertVisible, 'animate-alert-out' : isAnimating}"
-        [message]="alertMessage"></app-success-alert>
+    <app-success-alert class="app-success-alert" [ngClass]="{'animate-alert-in' : isSuccessAlertVisible, 'animate-alert-out' : isAnimating}"
+        [message]="alertMessage" (click)="$event.stopPropagation()" (cancel)="closeSuccessAlert()"></app-success-alert>
 </div>
+

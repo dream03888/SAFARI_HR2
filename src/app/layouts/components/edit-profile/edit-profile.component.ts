@@ -60,6 +60,7 @@ export class EditProfileComponent {
     this.isAnimating = true;
     setTimeout(() => {
       this.isAnimating = false;
+      this.onCancel();
     }, 300);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
@@ -8,9 +8,14 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class SuccessAlertComponent {
   @Input() message: string = '';
+  @Output() cancel = new EventEmitter<void>(); 
 
   options: AnimationOptions = {
     path: 'assets/icon/success.json',
     loop: false,
   };
+
+  onCancel(): void {
+    this.cancel.emit(); 
+  }
 }

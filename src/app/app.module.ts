@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { PassViewComponent } from './layouts/pages/pass-view/pass-view.component
 import { BottomBarComponent } from './layouts/components/bottom-bar/bottom-bar.component';
 import { WarningAlertComponent } from './layouts/alerts/warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './layouts/alerts/success-alert/success-alert.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export function playerFactory() {
   return player;
@@ -64,7 +65,13 @@ export function playerFactory() {
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

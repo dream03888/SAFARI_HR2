@@ -10,8 +10,7 @@ export class ChangePassComponent {
   isWarningAlertVisible: boolean = false;
   isSuccessAlertVisible: boolean = false;
   isAnimating: boolean = false;
-  alertMessage :string = ''
-
+  alertMessage: string = '';
 
   onCancel() {
     this.cancel.emit();
@@ -28,18 +27,15 @@ export class ChangePassComponent {
     if (newPassword !== '' && confirmPassword !== '') {
       if (newPassword !== confirmPassword) {
         this.alertMessage = 'Passwords do not match';
-        // this.alertMessage = 'รหัสผ่านไม่ตรงกัน';
         this.isWarningAlertVisible = true;
         this.isAnimating = false;
       } else {
         this.alertMessage = 'Saved successfully';
-        // this.alertMessage = 'บันทึกสำเร็จ';
         this.isSuccessAlertVisible = true;
         this.isAnimating = false;
       }
     } else {
       this.alertMessage = 'Enter both passwords';
-      // this.alertMessage = 'กรุณาใส่รหัสผ่านทั้งสองช่อง';
       this.isWarningAlertVisible = true;
       this.isAnimating = false;
     }
@@ -58,6 +54,7 @@ export class ChangePassComponent {
     this.isAnimating = true;
     setTimeout(() => {
       this.isAnimating = false;
+      this.onCancel();
     }, 300);
   }
 }

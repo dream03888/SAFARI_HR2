@@ -5,10 +5,10 @@
                 <ng-lottie [options]="options"></ng-lottie>
                 <h1>{{ message }}</h1>
             </div>
-            <div class="success-alert-btn">
+            <div  class="success-alert-btn">
                 <!-- <a routerLink="/car-form"> -->
-                    <div class="ok-btn">
-                        <p>OK</p>
+                    <div (click)="onCancel()" class="ok-btn">
+                        <p >OK</p>
                     </div>
                 <!-- </a> -->
             </div>
