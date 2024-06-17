@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AnimationOptions } from 'ngx-lottie';
 
 
 @Component({
@@ -14,21 +13,21 @@ export class ProfileComponent {
   isAnimatingChange: boolean = false;
   users = [
     { 
-      title:  "Name:",
+      title:  'Name:',
       info: "Julia Roberts",
     },{ 
-      title: "ID:", 
+      title: 'ID:', 
       info: 'DMS.12345',
     },{ 
-      title: "Position:", 
+      title: 'Position:', 
       info: 'Marketing',
     },
     { 
-      title: "Phone:", 
+      title: 'Phone:', 
       info: '081-234567',
     },
     { 
-      title: "E-mail:", 
+      title: 'E-mail:', 
       info: 'Julia@dms-isolutions.com',
     },
   ];

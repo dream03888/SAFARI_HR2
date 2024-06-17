@@ -5,6 +5,7 @@ $color4: #d4e4e4;
 
 .profile {
     padding-bottom: 150px;
+
     .profile-wrap {
         margin-top: 90px;
 
@@ -27,17 +28,19 @@ $color4: #d4e4e4;
         }
 
         .profile-body {
-            height: 280px;
+            height: auto;
             background-color: $color2;
             border-radius: 5px;
             margin-top: 24px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-            .profile-body-wrap{
-                padding-top: 20px;
+            .profile-body-wrap {
+                padding-top: 12px;
+                padding-bottom: 12px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
                 .profile-pic {
 
                     img {
@@ -52,7 +55,7 @@ $color4: #d4e4e4;
                     .info-item {
                         display: flex;
                         justify-content: center;
-                        margin: 10px;
+                        margin: 18px;
                         color: white;
 
                         h1 {
@@ -64,6 +67,46 @@ $color4: #d4e4e4;
                         p {
                             font-size: 12px;
                         }
+                    }
+                }
+            }
+        }
+
+        .leave-status {
+            margin-top: 18px;
+
+            .leave-status-box {
+                .leave-status-wrap {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .leave-item {
+                        background-color: $color2;
+                        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                        width: 30%;
+                        border-radius: 5px;
+                        text-align: center;
+                        padding: 16px 0;
+                        img {
+                            width: 36px;
+                            filter: invert(1) brightness(2);
+                        }
+                        h1{
+                            margin-top: 5px;
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: white;
+                        }
+                        p{
+                            color: white;
+                            font-size: 12px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    .leave-item:hover{
+                        cursor: pointer;
+                        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                     }
                 }
             }
@@ -177,28 +220,33 @@ $color4: #d4e4e4;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                .profile-body-wrap{
+
+                .profile-body-wrap {
                     width: 460px;
                     padding-top: 10px;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
+
                     .profile-pic {
                         img {
                             width: auto;
                             height: 175px;
                         }
                     }
+
                     .info {
                         .info-item {
                             display: flex;
                             justify-content: flex-start;
                             margin: 12px;
                             color: white;
+
                             h1 {
                                 font-size: 14px;
                             }
+
                             p {
                                 font-size: 14px;
                             }
@@ -211,9 +259,11 @@ $color4: #d4e4e4;
                 margin-top: 50px;
                 display: flex;
                 justify-content: space-between;
+
                 .edit-btn {
                     height: 45px;
                     width: 48%;
+
                     p {
                         color: white;
                         font-size: 14px;
@@ -239,70 +289,119 @@ $color4: #d4e4e4;
 
 @media (min-width: 1024px) {
     .profile {
-            .profile-wrap {
-                display: flex;
-                justify-content: center;
-                .profile-box{
-                    width: 70%;
-                    .profile-body {
-                        height: 500px;
-                        margin-top: 24px;
+        .profile-wrap {
+            display: flex;
+            justify-content: center;
+
+            .profile-box {
+                width: 70%;
+
+                .profile-body {
+                    height: 400px;
+                    margin-top: 24px;
+
+
+                    .profile-body-wrap {
+                        width: 100%;
                         display: flex;
+                        flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        .profile-body-wrap{
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-around;
-                            align-items: center;
-                            .profile-pic {
-                                img {
-                                    width: auto;
-                                    height: 300px;
-                                }
+
+                        .profile-pic {
+                            img {
+                                width: auto;
+                                height: 150px;
                             }
-                            .info {
-                                .info-item {
-                                    display: flex;
-                                    justify-content: flex-start;
-                                    margin: 20px;
-                                    color: white;
-                                    h1 {
-                                        font-size: 14px;
-                                    }
-                                    p {
-                                        font-size: 14px;
-                                    }
+                        }
+
+                        .info {
+                            .info-item {
+                                display: flex;
+                                justify-content: center;
+                                margin: 20px;
+                                color: white;
+
+                                h1 {
+                                    font-size: 14px;
+                                }
+
+                                p {
+                                    font-size: 14px;
                                 }
                             }
                         }
                     }
                 }
+            }
 
+            .leave-status {
+                margin-top: 30px;
     
-                .btn-wrap {
-                    margin-top: 100px;
-                    display: flex;
-                    justify-content: space-between;
-                    .edit-btn {
-                        height: 55px;
-                        width: 48%;
-                        p {
-                            color: white;
-                            font-size: 14px;
+                .leave-status-box {
+                    .leave-status-wrap {
+                        display: flex;
+                        justify-content: space-between;
+    
+                        .leave-item {
+                            background-color: $color2;
+                            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                            width: 30%;
+                            border-radius: 5px;
+                            text-align: center;
+                            padding: 16px 0;
+                            img {
+                                width: 36px;
+                                filter: invert(1) brightness(2);
+                            }
+                            h1{
+                                margin-top: 5px;
+                                font-size: 12px;
+                                font-weight: bold;
+                                color: white;
+                            }
+                            p{
+                                color: white;
+                                font-size: 12px;
+                                margin-top: 5px;
+                            }
+                        }
+    
+                        .leave-item:hover{
+                            cursor: pointer;
+                            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                         }
                     }
-                    .change-btn {
-                        margin-top: 0px;
-                        height: 55px;
-                        width: 48%;
-                        p {
-                            color: $color1;
-                            font-size: 14px;
-                        }
+                }
+            }
+
+
+            .btn-wrap {
+                margin-top: 50px;
+                display: flex;
+                justify-content: space-between;
+
+                .edit-btn {
+                    height: 55px;
+                    width: 48%;
+
+                    p {
+                        color: white;
+                        font-size: 12px;
+                    }
+                }
+
+                .change-btn {
+                    margin-top: 0px;
+                    height: 55px;
+                    width: 48%;
+
+                    p {
+                        color: $color1;
+                        font-size: 12px;
                     }
                 }
             }
         }
     }
+}
