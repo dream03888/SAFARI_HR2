@@ -29,6 +29,9 @@ import { BottomBarComponent } from './layouts/components/bottom-bar/bottom-bar.c
 import { WarningAlertComponent } from './layouts/alerts/warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './layouts/alerts/success-alert/success-alert.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SickLeaveDataComponent } from './layouts/pages/sick-leave-data/sick-leave-data.component';
+import { PersonalLeaveDataComponent } from './layouts/pages/personal-leave-data/personal-leave-data.component';
+import { VacationLeaveDataComponent } from './layouts/pages/vacation-leave-data/vacation-leave-data.component';
 
 export function playerFactory() {
   return player;
@@ -59,6 +62,9 @@ export function playerFactory() {
     BottomBarComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
+    SickLeaveDataComponent,
+    PersonalLeaveDataComponent,
+    VacationLeaveDataComponent,
   ],
   imports: [
     BrowserModule,

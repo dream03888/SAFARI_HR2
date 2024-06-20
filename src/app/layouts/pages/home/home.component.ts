@@ -32,6 +32,12 @@ export class HomeComponent {
       name: 'Service',
       path: "http://app.dms-isolutions.com:9600/helpdesk"
     },
+    { 
+      type: "routing", 
+      img: "assets/icon/leave.svg", 
+      name: 'Leave',
+      path: ""
+    },
   ];
 
   appOut = [
