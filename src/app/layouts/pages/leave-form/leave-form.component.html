@@ -1,0 +1,96 @@
+<div class="leave-form">
+    <div class="container">
+        <div class="leave-form-box">
+            <div class="leave-form-wrap">
+                <div class="head">
+                    <img src="/assets/icon/leave.svg" style="width: 32px; height: 32px;" alt="leave">
+                    <h1>Leave request form</h1>
+                </div>
+
+                <div class="leave-type">
+                    <p>Leave type</p>
+                    <div class="leave-type-input">
+                        <select id="leave-type" name="leave-type">
+                            <option value="" disabled selected hidden>ประเภทการลา</option>
+                            <option>ลาป่วย</option>
+                            <option>ลากิจ</option>
+                            <option>ลาพักร้อน</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="leave-period">
+                    <p>Leave period</p>
+                    <div class="leave-period-input">
+                        <select id="leave-period" name="leave-period" (change)="onLeavePeriodChange($event)">
+                            <!-- <option value="" disabled selected hidden>ประเภทระยะเวลาการลา</option> -->
+                            <option value="day">วัน</option>
+                            <option value="hour">ชั่วโมง</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div *ngIf="isDayPeriodVisible" class="day-period">
+                    <div class="leave-start">
+                        <p>Leave start</p>
+                        <div class="leave-start-input">
+                            <input id="leave-start" name="leave-start" type="date">
+                        </div>
+                    </div>
+
+                    <div class="leave-end">
+                        <p>Leave end</p>
+                        <div class="leave-end-input">
+                            <input id="leave-end" name="leave-end" type="date">
+                        </div>
+                    </div>
+
+                    <div class="leave-reason">
+                        <p>Leave reason</p>
+                        <div class="leave-reason-input">
+                            <input id="leave-reason" name="leave-reason" type="text" placeholder="เหตุผลในการลา">
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="isHourPeriodVisible" class="hour-period">
+                    <div class="leave-start">
+                        <p>Date leave</p>
+                        <div class="leave-start-input">
+                            <input id="leave-start" name="leave-start" type="date">
+                        </div>
+                    </div>
+
+                    <div class="time-start">
+                        <p>Time start</p>
+                        <div class="time-start-input">
+                            <input id="time-start" name="time-start" type="time">
+                        </div>
+                    </div>
+
+                    <div class="time-end">
+                        <p>Time end</p>
+                        <div class="time-end-input">
+                            <input id="time-end" name="time-end" type="time">
+                        </div>
+                    </div>
+
+                    <div class="leave-reason">
+                        <p>Leave reason</p>
+                        <div class="leave-reason-input">
+                            <input id="leave-reason" name="leave-reason" type="text" placeholder="เหตุผลในการลา">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button type="submit" class="confirm-btn">
+                        <p>Confirm</p>
+                    </button>
+                    <button (click)="goBack()" class="cancel-btn">
+                        <p>Cancel</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

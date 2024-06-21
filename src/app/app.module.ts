@@ -32,6 +32,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SickLeaveDataComponent } from './layouts/pages/sick-leave-data/sick-leave-data.component';
 import { PersonalLeaveDataComponent } from './layouts/pages/personal-leave-data/personal-leave-data.component';
 import { VacationLeaveDataComponent } from './layouts/pages/vacation-leave-data/vacation-leave-data.component';
+import { LeaveFormComponent } from './layouts/pages/leave-form/leave-form.component';
 
 export function playerFactory() {
   return player;
@@ -65,6 +66,7 @@ export function playerFactory() {
     SickLeaveDataComponent,
     PersonalLeaveDataComponent,
     VacationLeaveDataComponent,
+    LeaveFormComponent,
   ],
   imports: [
     BrowserModule,

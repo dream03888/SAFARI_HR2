@@ -1,0 +1,511 @@
+$color1: #265F61;
+$color2: #36858A;
+$color3: #265F62;
+$color4: #d4e4e4;
+$color5: #A9A9AC;
+
+.leave-form {
+    height: 100vh;
+
+    .leave-form-box {
+        .leave-form-wrap {
+            margin-top: 90px;
+
+            .head {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 12px;
+                    filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
+                }
+
+                h1 {
+                    margin-top: 12px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $color1;
+                }
+            }
+
+            .leave-type {
+                margin-top: 20px;
+
+                p {
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: $color1;
+                    margin-bottom: 3px;
+                }
+
+                .leave-type-input {
+                    select {
+                        width: 100%;
+                        height: 30px;
+                        border: 1px solid $color1 ;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        padding: 0 5px;
+                        color: black;
+                    }
+
+                    select:focus {
+                        background-color: $color4;
+                        outline: none;
+                    }
+                }
+            }
+
+            .leave-period {
+                margin-top: 16px;
+
+                p {
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: $color1;
+                    margin-bottom: 3px;
+                }
+
+                .leave-period-input {
+                    select {
+                        width: 100%;
+                        height: 30px;
+                        border: 1px solid $color1 ;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        padding: 0 5px;
+                        color: black;
+                    }
+
+                    select:focus {
+                        background-color: $color4;
+                        outline: none;
+                    }
+                }
+            }
+
+            .day-period {
+                .leave-start {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .leave-start-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+
+                        input:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+                }
+
+                .leave-end {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .leave-end-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+
+                        input:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+                }
+
+                .leave-reason {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .leave-reason-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+
+                        input:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .hour-period {
+                .leave-start {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .leave-start-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+
+                        input:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+                }
+
+                .time-start {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .time-start-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+                    }
+
+                    input:focus {
+                        background-color: $color4;
+                        outline: none;
+                    }
+                }
+
+                .time-end {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .time-end-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+                    }
+
+                    input:focus {
+                        background-color: $color4;
+                        outline: none;
+                    }
+                }
+
+                .leave-reason {
+                    margin-top: 16px;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: $color1;
+                        margin-bottom: 3px;
+                    }
+
+                    .leave-reason-input {
+                        display: flex;
+
+                        input {
+                            width: 100%;
+                            height: 30px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            padding: 0 5px;
+                        }
+
+                        input:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+            .btn-wrap {
+                margin-top: 40px;
+                padding-bottom: 100px;
+    
+                .confirm-btn {
+                    width: 100%;
+                    background-color: $color1;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+    
+                .confirm-btn:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
+    
+                .cancel-btn {
+                    margin-top: 16px;
+                    width: 100%;
+                    color: $color1;
+                    background-color: $color4;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+    
+                .cancel-btn:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .leave-form {
+        .leave-form-box {
+            .leave-form-wrap {
+                .btn-wrap {
+                    margin-top: 40px;
+                    padding-bottom: 100px;
+                    margin: 30px 0;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .confirm-btn {
+                        width: 49%;
+    
+                    }
+    
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .leave-form {
+        .leave-form-box {
+            display: flex;
+            justify-content: center;
+            .leave-form-wrap {
+                width: 50%;
+                .head {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 12px;
+                        filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
+                    }
+                    h1 {
+                        margin-top: 12px;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: $color1;
+                    }
+                }
+                .leave-type {
+                    margin-top: 50px;
+                    .leave-type-input {
+                        select {
+                            width: 100%;
+                            height: 40px;
+                        }
+                    }
+                }
+                .leave-period {
+                    margin-top: 30px;
+                    .leave-period-input {
+                        select {
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid $color1 ;
+                        }
+                    }
+                }
+                .day-period {
+                    .leave-start {
+                        margin-top: 30px;
+                        .leave-start-input {
+                            input {
+                                width: 100%;
+                                height: 40px;
+                            }
+                        }
+                    }
+                    .leave-end {
+                        margin-top: 30px;
+                        .leave-end-input {
+                            input {
+                                width: 100%;
+                                height: 40px;
+                            }
+                        }
+                    }
+                    .leave-reason {
+                        margin-top: 30px;
+                        .leave-reason-input {
+                            input {
+                                width: 100%;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+    
+                .hour-period {
+                    .leave-start {
+                        margin-top: 30px;
+    
+                        .leave-start-input {
+                            input {
+                                width: 100%;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    .time-start {
+                        margin-top: 30px;
+                        .time-start-input {
+                            display: flex;
+                            input {
+                                width: 100%;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    .time-end {
+                        margin-top: 30px;
+                        .time-end-input {
+                            input {
+                                width: 100%;
+                                height: 40px;
+                            }
+                        }
+                    }
+    
+                    .leave-reason {
+                        margin-top: 30px;
+
+                        .leave-reason-input {
+    
+                            input {
+                                width: 100%;
+                                height: 40px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+                }
+                .btn-wrap {
+                    margin: 100px 0;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .confirm-btn {
+                        width: 49%;
+                    }
+    
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
+                }
+            }
+        }
+    }
+}

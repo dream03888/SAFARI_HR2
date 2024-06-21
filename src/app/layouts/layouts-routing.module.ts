@@ -14,6 +14,7 @@ import { PassViewComponent } from './pages/pass-view/pass-view.component';
 import { SickLeaveDataComponent } from './pages/sick-leave-data/sick-leave-data.component';
 import { PersonalLeaveDataComponent } from './pages/personal-leave-data/personal-leave-data.component';
 import { VacationLeaveDataComponent } from './pages/vacation-leave-data/vacation-leave-data.component';
+import { LeaveFormComponent } from './pages/leave-form/leave-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'pass-view', component: PassViewComponent, },
   { path: 'sick-leave-data', component: SickLeaveDataComponent, },
   { path: 'personal-leave-data', component: PersonalLeaveDataComponent },
-  { path: 'vacation-leave-data', component: VacationLeaveDataComponent } 
+  { path: 'vacation-leave-data', component: VacationLeaveDataComponent },
+  { path: 'leave-form', component: LeaveFormComponent}
 ];
 
 @NgModule({

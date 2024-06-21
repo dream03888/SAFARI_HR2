@@ -36,7 +36,7 @@ export class HomeComponent {
       type: "routing", 
       img: "assets/icon/leave.svg", 
       name: 'Leave',
-      path: ""
+      path: "/leave-form"
     },
   ];
 
