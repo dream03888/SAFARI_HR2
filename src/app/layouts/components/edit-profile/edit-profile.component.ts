@@ -35,15 +35,11 @@ export class EditProfileComponent {
         // this.alertMessage = 'บันทึกสำเร็จ';
         this.isSuccessAlertVisible = true;
         this.isAnimating = false;
-        console.log('บันทึก');
-        
     } else {
       this.alertMessage = 'Enter all information';
       // this.alertMessage = 'กรุณาใส่ข้อมูลให้ครบ';
       this.isWarningAlertVisible = true;
       this.isAnimating = false;
-      console.log('dadasdas');
-      
     }
   }
 
