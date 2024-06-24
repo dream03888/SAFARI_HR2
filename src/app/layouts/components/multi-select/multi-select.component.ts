@@ -156,7 +156,6 @@ export class MultiSelectComponent {
     ) {
       this.isSelectWrapVisible = false;
     }
-    console.log('outside');
     
   }
 

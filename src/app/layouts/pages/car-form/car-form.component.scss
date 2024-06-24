@@ -6,772 +6,288 @@ $color5: #A9A9AC;
 
 .car-form {
     height: 100vh;
-    .car-form-warp {
-        margin-top: 90px;
 
-        .head {
-            display: flex;
-            align-items: center;
+    .car-form-box {
+        .car-form-wrap {
+            margin-top: 90px;
 
-            img {
-                width: 30px;
-                height: 30px;
-                margin-right: 12px;
-                filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
-            }
+            .head {
+                display: flex;
+                align-items: center;
 
-            h1 {
-                margin-top: 12px;
-                font-size: 18px;
-                font-weight: bold;
-                color: $color1;
-            }
-        }
-
-        .form {
-            .form-wrap {
-                margin-top: 20px;
-
-                .car-select {
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .car-input {
-                        select {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                            color: black;
-                        }
-
-                        select:focus {
-                            background-color: $color4;
-                            outline: none;
-                        }
-                    }
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 12px;
+                    filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
                 }
 
-                .location-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .location-input {
-                        select {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                            color: black;
-                        }
-
-                        select:focus {
-                            background-color: $color4;
-                            outline: none;
-                        }
-                    }
-                }
-
-                .purpose-form {
-                    margin-top: 16px;
-
-                    P {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .purpose-input {
-                        display: flex;
-
-                        textarea {
-                            width: 100%;
-                            height: 90px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 5px;
-                        }
-                    }
-
-                    textarea:focus {
-                        background-color: $color4;
-                        outline: none;
-                    }
-                }
-
-                .st-maileage-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .st-maileage-input {
-                        display: flex;
-
-                        input {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-                    }
-
-                    input:focus {
-                        background-color: $color4;
-                        outline: none;
-                    }
-                }
-
-                .end-maileage-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .end-maileage-input {
-                        display: flex;
-
-                        input {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-                    }
-
-                    input:focus {
-                        background-color: $color4;
-                        outline: none;
-                    }
-                }
-
-                .departure-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .departure-input {
-                        display: grid;
-                        // grid-template-columns: 1fr 1fr;
-                        // gap: 10px;
-                        display: flex;
-                        justify-content: space-between;
-
-                        input[type="date"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                            color: black;
-                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
-                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
-                            appearance: none;      /* คุณสมบัติมาตรฐาน */
-                        }
-
-                        input[type="time"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                            color: black;
-                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
-                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
-                            appearance: none;         /* คุณสมบัติมาตรฐาน */
-                        }
-
-                        input[type="date"]:focus,
-                        input[type="time"]:focus {
-                            outline: none;
-                            background-color: $color4;
-                        }
-                    }
-                }
-
-                .return-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .return-input {
-                        display: flex;
-                        justify-content: space-between;
-
-                        input[type="date"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                            padding: 0 5px;
-                            color: black;
-                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
-                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
-                            appearance: none;         /* คุณสมบัติมาตรฐาน */
-                        }
-
-                        input[type="time"] {
-                            width: 45%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                            padding: 0 5px;
-                            color: black;
-                            -webkit-appearance: none; /* สำหรับ WebKit เบราว์เซอร์ */
-                            -moz-appearance: none;    /* สำหรับ Mozilla เบราว์เซอร์ */
-                            appearance: none;         /* คุณสมบัติมาตรฐาน */
-                        }
-
-                        input[type="date"]:focus,
-                        input[type="time"]:focus {
-                            outline: none;
-                            background-color: $color4;
-                        }
-                    }
-                }
-
-                .easy-pass-form {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-
-                    .easy-pass-input {
-                        display: flex;
-
-                        input {
-                            width: 100%;
-                            height: 30px;
-                            border: 1px solid $color1 ;
-                            border-radius: 5px;
-                            font-size: 12px;
-                            padding: 0 5px;
-                        }
-                    }
-
-                    input:focus {
-                        background-color: $color4;
-                        outline: none;
-                    }
-                }
-
-                .passenger-select {
-                    margin-top: 16px;
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                        color: $color1;
-                        margin-bottom: 3px;
-                    }
-                }
-            }
-        }
-
-        .btn-wrap {
-            margin-top:25px ;
-            padding-bottom: 100px;
-
-            .confirm-btn {
-                width: 100%;
-                background-color: $color1;
-                color: white;
-                font-weight: bold;
-                border-radius: 5px;
-                border: 0px;
-                height: 41px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-
-                p {
-                    font-size: 12px;
+                h1 {
+                    margin-top: 12px;
+                    font-size: 18px;
                     font-weight: bold;
+                    color: $color1;
                 }
             }
 
-            .confirm-btn:hover {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                cursor: pointer;
-            }
-
-            .cancel-btn {
-                margin-top: 16px;
-                width: 100%;
-                color: $color1;
-                background-color: $color4;
-                border-radius: 5px;
-                border: 0px;
-                height: 41px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-
-                p {
-                    font-size: 12px;
-                    font-weight: bold;
-                }
-            }
-
-            .cancel-btn:hover {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-// ------------------------------------------------------------------------------------------
-
-@media (min-width: 600px) {
-    .car-form {
-        .car-form-warp {
             .form {
                 .form-wrap {
-                    .departure-form {
-                        .departure-input {
-                            display: flex;
-                            justify-content: space-between;
+                    margin-top: 20px;
 
-                            input[type="date"] {
-                                width: 47%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 47%;
-                                height: 30px;
-                            }
-                        }
-                    }
-
-                    .return-form {
+                    .form-item {
                         margin-top: 16px;
 
-                        .return-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 47%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 47%;
-                                height: 30px;
-                            }
+                        label {
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: $color1;
+                            margin-bottom: 3px;
                         }
-                    }
-                }
-            }
 
-            .btn-wrap {
-                margin: 30px 0;
-                display: flex;
-                justify-content: space-between;
-
-                .confirm-btn {
-                    width: 49%;
-                }
-
-                .cancel-btn {
-                    margin-top: 0px;
-                    width: 49%;
-                }
-            }
-        }
-    }
-}
-
-// ------------------------------------------------------------------------------------------
-
-@media (min-width: 800px) {
-    .car-form {
-        .car-form-warp {
-            .form {
-                .form-wrap {
-                    .departure-form {
-                        .departure-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 48%;
+                        .location-input,
+                        .car-input {
+                            select {
+                                width: 100%;
                                 height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-                        }
-                    }
-
-                    .return-form {
-                        margin-top: 16px;
-
-                        .return-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .btn-wrap {
-                margin: 30px 0;
-                display: flex;
-                justify-content: space-between;
-
-                .confirm-btn {
-                    width: 49%;
-                }
-
-                .cancel-btn {
-                    margin-top: 0px;
-                    width: 49%;
-                }
-            }
-        }
-    }
-}
-
-// ------------------------------------------------------------------------------------------
-
-@media (min-width: 1024px) {
-    .car-form {
-        height: 100vh;
-
-        .car-form-box {
-            display: flex;
-            justify-content: center;
-
-            .car-form-warp {
-                margin-top: 90px;
-                width: 50%;
-
-                .form {
-                    .form-wrap {
-                        margin-top: 50px;
-
-                        .car-select {
-                            p {
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
                                 font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
+                                padding: 0 5px;
+                                color: black;
                             }
 
-                            .car-input {
-                                select {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                select:focus {
-                                    background-color: $color4;
-                                    outline: none;
-                                }
+                            select:focus {
+                                outline: none;
+                                background-color: $color4;
                             }
                         }
 
-                        .location-form {
-                            margin-top: 30px;
+                        .purpose-input {
+                            display: flex;
 
-                            p {
+                            textarea {
+                                width: 100%;
+                                height: 90px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
                                 font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .location-input {
-                                select {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                select:focus {
-                                    background-color: $color4;
-                                    outline: none;
-                                }
-                            }
-                        }
-
-                        .purpose-form {
-                            margin-top: 30px;
-
-                            P {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .purpose-input {
-                                display: flex;
-
-                                textarea {
-                                    width: 100%;
-                                    height: 90px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 5px;
-                                }
+                                padding: 5px;
                             }
 
                             textarea:focus {
-                                background-color: $color4;
                                 outline: none;
-                            }
-                        }
-
-                        .st-maileage-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .st-maileage-input {
-                                display: flex;
-
-                                input {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-                            }
-
-                            input:focus {
                                 background-color: $color4;
-                                outline: none;
                             }
                         }
 
-                        .end-maileage-form {
-                            margin-top: 30px;
+                        .easy-pass-input,
+                        .end-maileage-input,
+                        .st-maileage-input {
+                            display: flex;
 
-                            p {
+                            input {
+                                width: 100%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
                                 font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .end-maileage-input {
-                                display: flex;
-
-                                input {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-                            }
-
-                            input:focus {
-                                background-color: $color4;
-                                outline: none;
+                                padding: 0 5px;
                             }
                         }
 
-                        .departure-form {
-                            margin-top: 30px;
+                        .return-input,
+                        .departure-input {
+                            display: flex;
+                            justify-content: space-between;
 
-                            p {
+                            input {
+                                width: 45%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
                                 font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .departure-input {
-                                display: flex;
-                                justify-content: space-between;
-
-                                input[type="date"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="time"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="date"]:focus,
-                                input[type="time"]:focus {
-                                    outline: none;
-                                    background-color: $color4;
-                                }
+                                padding: 0 5px;
+                                padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
                             }
                         }
 
-                        .return-form {
-                            margin-top: 16px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .return-input {
-                                display: flex;
-                                justify-content: space-between;
-
-                                input[type="date"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="time"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="date"]:focus,
-                                input[type="time"]:focus {
-                                    outline: none;
-                                    background-color: $color4;
-                                }
-                            }
-                        }
-
-                        .easy-pass-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .easy-pass-input {
-                                display: flex;
-
-                                input {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-                            }
-
-                            input:focus {
-                                background-color: $color4;
-                                outline: none;
-                            }
-                        }
-
-                        .passenger-select {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
+                        input:focus {
+                            outline: none;
+                            background-color: $color4;
                         }
                     }
                 }
 
+            }
+
+            .btn-wrap {
+                margin-top: 40px;
+                padding-bottom: 100px;
+
+                .confirm-btn {
+                    width: 100%;
+                    background-color: $color1;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+
+                .confirm-btn:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
+
+                .cancel-btn {
+                    margin-top: 16px;
+                    width: 100%;
+                    color: $color1;
+                    background-color: $color4;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+
+                .cancel-btn:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+
+@media (min-width: 500px) {
+    .car-form {
+        .car-form-box {
+            .car-form-wrap {
+                .form {
+                    .form-wrap {
+                        .form-item {
+    
+                            .return-input,
+                            .departure-input {
+                                display: flex;
+                                justify-content: space-between;
+                                input {
+                                    width: 47%;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+    
+                }
+    
+                .btn-wrap {
+                    margin: 30px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    .confirm-btn {
+                        width: 49%;
+                    }
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+
+@media (min-width: 800px) {
+    .car-form {
+        .car-form-box {
+            .car-form-wrap {
+                .form {
+                    .form-wrap {
+                        .form-item {
+                            .return-input,
+                            .departure-input {
+                                display: flex;
+                                justify-content: space-between;
+                                input {
+                                    width: 48%;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+
+@media (min-width: 1024px) {
+    .car-form {
+        .car-form-box {
+            display: flex;
+            justify-content: center;
+            .car-form-wrap {
+                width: 50%;
+                .form {
+                    .form-wrap {
+                        margin-top: 30px;
+                        .form-item {
+                            margin-top: 30px;
+                            .location-input,
+                            .car-input {
+                                select {
+                                    height: 40px;
+                                }
+                            }
+
+                            .easy-pass-input,
+                            .end-maileage-input,
+                            .st-maileage-input {
+                                input{
+                                    height: 40px;
+                                }
+                            }
+    
+                            .return-input,
+                            .departure-input {
+                                display: flex;
+                                justify-content: space-between;
+                                input {
+                                    width: 47%;
+                                    height: 40px;
+                                }
+                            }
+                            input:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+                        }
+                    }
+                }
                 .btn-wrap {
                     margin: 80px 0;
                     display: flex;
@@ -788,4 +304,3 @@ $color5: #A9A9AC;
         }
     }
 }
-
