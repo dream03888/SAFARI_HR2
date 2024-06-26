@@ -4,23 +4,24 @@ $color3: #265F62;
 $color4: #d4e4e4;
 $color5: #A9A9AC;
 
-.edit-car-form {
+.car-form {
     height: 100vh;
-    .edit-car-form-box{
-        .edit-car-form-warp {
+
+    .car-form-box {
+        .car-form-wrap {
             margin-top: 90px;
-    
+
             .head {
                 display: flex;
                 align-items: center;
-    
+
                 img {
                     width: 30px;
                     height: 30px;
                     margin-right: 12px;
                     filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
                 }
-    
+
                 h1 {
                     margin-top: 12px;
                     font-size: 18px;
@@ -28,19 +29,22 @@ $color5: #A9A9AC;
                     color: $color1;
                 }
             }
-    
+
             .form {
                 .form-wrap {
                     margin-top: 20px;
-    
-                    .car-select {
-                        p {
+
+                    .form-item {
+                        margin-top: 16px;
+
+                        label {
                             font-size: 12px;
                             font-weight: bold;
                             color: $color1;
                             margin-bottom: 3px;
                         }
-    
+
+                        .location-input,
                         .car-input {
                             select {
                                 width: 100%;
@@ -51,55 +55,16 @@ $color5: #A9A9AC;
                                 padding: 0 5px;
                                 color: black;
                             }
-    
+
                             select:focus {
-                                background-color: $color4;
                                 outline: none;
-                            }
-                        }
-                    }
-    
-                    .location-form {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
-                        .location-input {
-                            select {
-                                width: 100%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
-                                color: black;
-                            }
-    
-                            select:focus {
                                 background-color: $color4;
-                                outline: none;
                             }
                         }
-                    }
-    
-                    .purpose-form {
-                        margin-top: 16px;
-    
-                        P {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
+
                         .purpose-input {
                             display: flex;
-    
+
                             textarea {
                                 width: 100%;
                                 height: 90px;
@@ -108,27 +73,19 @@ $color5: #A9A9AC;
                                 font-size: 12px;
                                 padding: 5px;
                             }
+
+                            textarea:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
                         }
-    
-                        textarea:focus {
-                            background-color: $color4;
-                            outline: none;
-                        }
-                    }
-    
-                    .st-maileage-form {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
+
+                        .other-input,
+                        .easy-pass-input,
+                        .end-maileage-input,
                         .st-maileage-input {
                             display: flex;
-    
+
                             input {
                                 width: 100%;
                                 height: 30px;
@@ -138,184 +95,40 @@ $color5: #A9A9AC;
                                 padding: 0 5px;
                             }
                         }
-    
-                        input:focus {
-                            background-color: $color4;
-                            outline: none;
-                        }
-                    }
-    
-                    .end-maileage-form {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
-                        .end-maileage-input {
-                            display: flex;
-    
-                            input {
-                                width: 100%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
-                            }
-                        }
-    
-                        input:focus {
-                            background-color: $color4;
-                            outline: none;
-                        }
-                    }
-    
-                    .departure-form {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
+
+                        .return-input,
                         .departure-input {
                             display: flex;
                             justify-content: space-between;
-    
-                            input[type="date"] {
-                                width: 45%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
-                                color: black;
-                                -webkit-appearance: none; 
-                                -moz-appearance: none;    
-                                appearance: none;   
-                            }
-    
-                            input[type="time"] {
-                                width: 45%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
-                                color: black;
-                                -webkit-appearance: none; 
-                                -moz-appearance: none;    
-                                appearance: none;   
-                            }
-    
-                            input[type="date"]:focus,
-                            input[type="time"]:focus {
-                                outline: none;
-                                background-color: $color4;
-                            }
-                        }
-                    }
-    
-                    .return-form {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
-                        .return-input {
-                            display: flex;
-                            justify-content: space-between;
-    
-                            input[type="date"] {
-                                width: 45%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
-                                color: black;
-                                -webkit-appearance: none; 
-                                -moz-appearance: none;    
-                                appearance: none;   
-                            }
-    
-                            input[type="time"] {
-                                width: 45%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
-                                color: black;
-                                -webkit-appearance: none; 
-                                -moz-appearance: none;    
-                                appearance: none;   
-                            }
-    
-                            input[type="date"]:focus,
-                            input[type="time"]:focus {
-                                outline: none;
-                                background-color: $color4;
-                            }
-                        }
-                    }
-    
-                    .easy-pass-form {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
-                        }
-    
-                        .easy-pass-input {
-                            display: flex;
-    
+
                             input {
-                                width: 100%;
+                                width: 45%;
                                 height: 30px;
                                 border: 1px solid $color1 ;
                                 border-radius: 5px;
                                 font-size: 12px;
                                 padding: 0 5px;
+                                padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
                             }
                         }
-    
+
                         input:focus {
-                            background-color: $color4;
                             outline: none;
-                        }
-                    }
-    
-                    .passenger-select {
-                        margin-top: 16px;
-    
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                            color: $color1;
-                            margin-bottom: 3px;
+                            background-color: $color4;
                         }
                     }
                 }
+
             }
-    
+
             .btn-wrap {
-                margin-top:25px ;
+                margin-top: 40px;
                 padding-bottom: 100px;
-    
+
                 .confirm-btn {
                     width: 100%;
                     background-color: $color1;
@@ -326,18 +139,18 @@ $color5: #A9A9AC;
                     height: 41px;
                     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
                     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    
+
                     p {
                         font-size: 12px;
                         font-weight: bold;
                     }
                 }
-    
+
                 .confirm-btn:hover {
                     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                     cursor: pointer;
                 }
-    
+
                 .cancel-btn {
                     margin-top: 16px;
                     width: 100%;
@@ -348,13 +161,13 @@ $color5: #A9A9AC;
                     height: 41px;
                     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
                     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    
+
                     p {
                         font-size: 12px;
                         font-weight: bold;
                     }
                 }
-    
+
                 .cancel-btn:hover {
                     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                     cursor: pointer;
@@ -364,123 +177,88 @@ $color5: #A9A9AC;
     }
 }
 
-// ------------------------------------------------------------------------------------------
+.required {
+    color: red;
+}
 
-@media (min-width: 600px) {
-    .edit-car-form {
-        height: 100vh;
-        .edit-car-form-box{
-            .edit-car-form-warp {
-                margin-top: 90px;
-        
-                .head {
-                    display: flex;
-                    align-items: center;
-        
-                    img {
-                        width: 30px;
-                        height: 30px;
-                        margin-right: 12px;
-                        filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
-                    }
-        
-                    h1 {
-                        margin-top: 12px;
-                        font-size: 18px;
-                        font-weight: bold;
-                        color: $color1;
-                    }
-                }
-        
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.animate-alert-in {
+    animation: zoomIn 0.3s ease-out forwards;
+}
+
+.animate-alert-out {
+    animation: zoomOut 0.3s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+@media (min-width: 500px) {
+    .car-form {
+        .car-form-box {
+            .car-form-wrap {
                 .form {
                     .form-wrap {
-                        .departure-form {
+                        .form-item {
+    
+                            .return-input,
                             .departure-input {
                                 display: flex;
                                 justify-content: space-between;
-    
-                                input[type="date"] {
-                                    width: 47%;
-                                    height: 30px;
-                                }
-    
-                                input[type="time"] {
-                                    width: 47%;
-                                    height: 30px;
-                                }
-                            }
-                        }
-    
-                        .return-form {
-                            margin-top: 16px;
-    
-                            .return-input {
-                                display: flex;
-                                justify-content: space-between;
-    
-                                input[type="date"] {
-                                    width: 47%;
-                                    height: 30px;
-                                }
-    
-                                input[type="time"] {
+                                input {
                                     width: 47%;
                                     height: 30px;
                                 }
                             }
                         }
                     }
+    
                 }
-        
+    
                 .btn-wrap {
-                    margin-top:25px ;
-                    padding-bottom: 100px;
                     margin: 30px 0;
                     display: flex;
                     justify-content: space-between;
-        
                     .confirm-btn {
                         width: 49%;
-                        background-color: $color1;
-                        color: white;
-                        font-weight: bold;
-                        border-radius: 5px;
-                        border: 0px;
-                        height: 41px;
-                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-        
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                        }
                     }
-        
-                    .confirm-btn:hover {
-                        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                        cursor: pointer;
-                    }
-        
                     .cancel-btn {
                         margin-top: 0px;
                         width: 49%;
-                        color: $color1;
-                        background-color: $color4;
-                        border-radius: 5px;
-                        border: 0px;
-                        height: 41px;
-                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-        
-                        p {
-                            font-size: 12px;
-                            font-weight: bold;
-                        }
-                    }
-        
-                    .cancel-btn:hover {
-                        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                        cursor: pointer;
                     }
                 }
             }
@@ -488,347 +266,77 @@ $color5: #A9A9AC;
     }
 }
 
-// ------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
 
 @media (min-width: 800px) {
-    .edit-car-form {
-        .edit-car-form-warp {
-            .form {
-                .form-wrap {
-                    .departure-form {
-                        .departure-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-                        }
-                    }
-
-                    .return-form {
-                        margin-top: 16px;
-
-                        .return-input {
-                            display: flex;
-                            justify-content: space-between;
-
-                            input[type="date"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-
-                            input[type="time"] {
-                                width: 48%;
-                                height: 30px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .btn-wrap {
-                margin: 30px 0;
-                display: flex;
-                justify-content: space-between;
-
-                .confirm-btn {
-                    width: 49%;
-                }
-
-                .cancel-btn {
-                    margin-top: 0px;
-                    width: 49%;
-                }
-            }
-        }
-    }
-}
-
-// ------------------------------------------------------------------------------------------
-
-@media (min-width: 1024px) {
-    .edit-car-form {
-        height: 100vh;
-
-        .edit-car-form-box {
-            display: flex;
-            justify-content: center;
-
-            .edit-car-form-warp {
-                margin-top: 90px;
-                width: 50%;
-
+    .car-form {
+        .car-form-box {
+            .car-form-wrap {
                 .form {
                     .form-wrap {
-                        margin-top: 50px;
-
-                        .car-select {
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .car-input {
-                                select {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                select:focus {
-                                    background-color: $color4;
-                                    outline: none;
-                                }
-                            }
-                        }
-
-                        .location-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .location-input {
-                                select {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                select:focus {
-                                    background-color: $color4;
-                                    outline: none;
-                                }
-                            }
-                        }
-
-                        .purpose-form {
-                            margin-top: 30px;
-
-                            P {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .purpose-input {
-                                display: flex;
-
-                                textarea {
-                                    width: 100%;
-                                    height: 90px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 5px;
-                                }
-                            }
-
-                            textarea:focus {
-                                background-color: $color4;
-                                outline: none;
-                            }
-                        }
-
-                        .st-maileage-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .st-maileage-input {
-                                display: flex;
-
-                                input {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-                            }
-
-                            input:focus {
-                                background-color: $color4;
-                                outline: none;
-                            }
-                        }
-
-                        .end-maileage-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .end-maileage-input {
-                                display: flex;
-
-                                input {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-                            }
-
-                            input:focus {
-                                background-color: $color4;
-                                outline: none;
-                            }
-                        }
-
-                        .departure-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
+                        .form-item {
+                            .return-input,
                             .departure-input {
                                 display: flex;
                                 justify-content: space-between;
-
-                                input[type="date"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="time"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="date"]:focus,
-                                input[type="time"]:focus {
-                                    outline: none;
-                                    background-color: $color4;
-                                }
-                            }
-                        }
-
-                        .return-form {
-                            margin-top: 16px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .return-input {
-                                display: flex;
-                                justify-content: space-between;
-
-                                input[type="date"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="time"] {
-                                    width: 47%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
-                                }
-
-                                input[type="date"]:focus,
-                                input[type="time"]:focus {
-                                    outline: none;
-                                    background-color: $color4;
-                                }
-                            }
-                        }
-
-                        .easy-pass-form {
-                            margin-top: 30px;
-
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
-                            }
-
-                            .easy-pass-input {
-                                display: flex;
-
                                 input {
-                                    width: 100%;
-                                    height: 40px;
-                                    border: 1px solid $color1 ;
-                                    border-radius: 5px;
-                                    font-size: 12px;
-                                    padding: 0 5px;
+                                    width: 48%;
+                                    height: 30px;
                                 }
-                            }
-
-                            input:focus {
-                                background-color: $color4;
-                                outline: none;
-                            }
-                        }
-
-                        .passenger-select {
-                            margin-top: 30px;
-                            p {
-                                font-size: 12px;
-                                font-weight: bold;
-                                color: $color1;
-                                margin-bottom: 3px;
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+}
 
+//--------------------------------------------------------------------------------------------------------------------
+
+@media (min-width: 1024px) {
+    .car-form {
+        .car-form-box {
+            display: flex;
+            justify-content: center;
+            .car-form-wrap {
+                width: 50%;
+                .form {
+                    .form-wrap {
+                        margin-top: 30px;
+                        .form-item {
+                            margin-top: 30px;
+                            .location-input,
+                            .car-input {
+                                select {
+                                    height: 40px;
+                                }
+                            }
+                            .other-input,
+                            .easy-pass-input,
+                            .end-maileage-input,
+                            .st-maileage-input {
+                                input{
+                                    height: 40px;
+                                }
+                            }
+    
+                            .return-input,
+                            .departure-input {
+                                display: flex;
+                                justify-content: space-between;
+                                input {
+                                    width: 47%;
+                                    height: 40px;
+                                }
+                            }
+                            input:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+                        }
+                    }
+                }
                 .btn-wrap {
                     margin: 80px 0;
                     display: flex;
@@ -845,4 +353,3 @@ $color5: #A9A9AC;
         }
     }
 }
-

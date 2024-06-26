@@ -9,6 +9,29 @@ import { Location } from '@angular/common';
 export class CarFormComponent {
   selectedLocation = '';
   selectedCar = '';
+  selectedItems: string[] = [];
+  isWarningAlertVisible: boolean = false;
+  isSuccessAlertVisible: boolean = false;
+  isAnimating: boolean = false;
+  alertMessage: string = '';
+  purpose: string = '';
+  other: string = '';
+  startMaileage: string = '';
+  endMaileage: string = '';
+  departureDate: string = '';
+  departureTime: string = '';
+  returnDate: string = '';
+  returnTime: string = '';
+  easyPass: string = '';
+
+  handleSelectedItemsChange(selectedItems: string[]) {
+    this.selectedItems = selectedItems;
+  }
+
+  constructor(private location: Location) {}
+  goBack() {
+    this.location.back();
+  }
 
   locatoions = [
     { value: '1', label: 'รพ.พระนั่งเกล้า : PNK' },
@@ -32,9 +55,82 @@ export class CarFormComponent {
     { value: '8', label: 'Toyota Hilux Revo 2024 (ก-5361)' },
   ];
 
-  constructor(private location: Location) {}
+  onAppClick(): void {
+    // const car = (document.getElementById('car') as HTMLInputElement).value;
+    // const location = (document.getElementById('location') as HTMLInputElement).value;
+    // const other = this.selectedLocation === '-1' ? (document.getElementById('other') as HTMLInputElement).value : '';
+    // const purpose = (document.getElementById('purpose') as HTMLInputElement).value;
+    // const startMaileage = (document.getElementById('st-maileage') as HTMLInputElement).value;
+    // const endMaileage = (document.getElementById('end-maileage') as HTMLInputElement).value;
+    // const departureDate = (document.getElementById('departure-date') as HTMLInputElement).value;
+    // const departureTime = (document.getElementById('departure-time') as HTMLInputElement).value;
+    // const returnDate = (document.getElementById('return-date') as HTMLInputElement).value;
+    // const returnTime = (document.getElementById('return-time') as HTMLInputElement).value;
+    // const easyPass = (document.getElementById('easy-pass') as HTMLInputElement).value;
 
-  goBack() {
-    this.location.back();
+    if(
+      this.selectedCar !== '' &&
+      this.purpose !== '' &&
+      this.departureDate !== '' &&
+      this.departureTime !== '' &&
+      this.returnDate !== '' &&
+      this.returnTime !== ''
+    ){
+      if(this.selectedLocation !== '' ){
+        if(this.selectedLocation == '-1'){
+          if (this.other !== ''){
+            this.alertMessage = 'Saved successfully';
+            this.isSuccessAlertVisible = true;
+            this.isAnimating = false;
+          }else{
+            this.alertMessage = 'Enter all information';
+            this.isWarningAlertVisible = true;
+            this.isAnimating = false;
+          }
+        }else {
+          this.alertMessage = 'Saved successfully';
+          this.isSuccessAlertVisible = true;
+          this.isAnimating = false;
+        }
+      }else{
+        this.alertMessage = 'Enter all information';
+        this.isWarningAlertVisible = true;
+        this.isAnimating = false;
+      }
+    }else{
+      this.alertMessage = 'Enter all information';
+      this.isWarningAlertVisible = true;
+      this.isAnimating = false;
+    }
+    
+
+    // console.log('car:',car);
+    // console.log('location:',location);
+    // console.log('other:',other);
+    // console.log('st:',startMaileage);
+    // console.log('end:',endMaileage);
+    // console.log('departureDate:',departureDate);
+    // console.log('departureTime:',departureTime);
+    // console.log('returnDate:',returnDate);
+    // console.log('returnTime:',returnTime);
+    // console.log('easyPass',easyPass)
+    
+    console.log('Passenger updated:', this.selectedItems);
+  }
+
+  closeWarningAlert(): void {
+    this.isWarningAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300);
+  }
+
+  closeSuccessAlert(): void {
+    this.isSuccessAlertVisible = false;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 300);
   }
 }

@@ -8,22 +8,22 @@
                 </div>
 
                 <div class="leave-type">
-                    <p>Leave type</p>
+                    <p>Leave type <span class="required" *ngIf="!leaveType">*</span></p>
                     <div class="leave-type-input">
-                        <select id="leave-type" name="leave-type">
+                        <select id="leave-type" name="leave-type" [(ngModel)]="leaveType">
                             <option value="" disabled selected hidden>ประเภทการลา</option>
-                            <option>ลาป่วย</option>
-                            <option>ลากิจ</option>
-                            <option>ลาพักร้อน</option>
+                            <option value="sick">ลาป่วย</option>
+                            <option value="posonal">ลากิจ</option>
+                            <option value="vacation">ลาพักร้อน</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="leave-period">
-                    <p>Leave period</p>
+                    <p>Leave period <span class="required" *ngIf="!leavePeriod">*</span></p>
                     <div class="leave-period-input">
-                        <select id="leave-period" name="leave-period" (change)="onLeavePeriodChange($event)">
-                            <!-- <option value="" disabled selected hidden>ประเภทระยะเวลาการลา</option> -->
+                        <select id="leave-period" name="leave-period" [(ngModel)]="leavePeriod" (change)="onLeavePeriodChange($event)">
+                            <option value="" disabled selected hidden>ประเภทระยะเวลาการลา</option>
                             <option value="day">วัน</option>
                             <option value="hour">ชั่วโมง</option>
                         </select>
@@ -32,58 +32,58 @@
 
                 <div *ngIf="isDayPeriodVisible" class="day-period">
                     <div class="leave-start">
-                        <p>Leave start</p>
+                        <p>Leave start <span class="required" *ngIf="!leaveStart">*</span></p>
                         <div class="leave-start-input">
-                            <input id="leave-start" name="leave-start" type="date">
+                            <input id="leave-start" name="leave-start" type="date" [(ngModel)]="leaveStart">
                         </div>
                     </div>
 
                     <div class="leave-end">
-                        <p>Leave end</p>
+                        <p>Leave end <span class="required" *ngIf="!leaveEnd">*</span></p>
                         <div class="leave-end-input">
-                            <input id="leave-end" name="leave-end" type="date">
+                            <input id="leave-end" name="leave-end" type="date" [(ngModel)]="leaveEnd">
                         </div>
                     </div>
 
                     <div class="leave-reason">
-                        <p>Leave reason</p>
+                        <p>Leave reason <span class="required" *ngIf="!leaveReason">*</span></p>
                         <div class="leave-reason-input">
-                            <input id="leave-reason" name="leave-reason" type="text" placeholder="เหตุผลในการลา">
+                            <input id="leave-reason" name="leave-reason" type="text" placeholder="เหตุผลในการลา" [(ngModel)]="leaveReason">
                         </div>
                     </div>
                 </div>
 
                 <div *ngIf="isHourPeriodVisible" class="hour-period">
                     <div class="leave-start">
-                        <p>Date leave</p>
+                        <p>Date leave <span class="required" *ngIf="!dateLeave">*</span></p>
                         <div class="leave-start-input">
-                            <input id="leave-start" name="leave-start" type="date">
+                            <input id="leave-start" name="leave-start" type="date" [(ngModel)]="dateLeave">
                         </div>
                     </div>
 
                     <div class="time-start">
-                        <p>Time start</p>
+                        <p>Time start <span class="required" *ngIf="!timeStart">*</span></p>
                         <div class="time-start-input">
-                            <input id="time-start" name="time-start" type="time">
+                            <input id="time-start" name="time-start" type="time" [(ngModel)]="timeStart">
                         </div>
                     </div>
 
                     <div class="time-end">
-                        <p>Time end</p>
+                        <p>Time end <span class="required" *ngIf="!timeEnd">*</span></p>
                         <div class="time-end-input">
-                            <input id="time-end" name="time-end" type="time">
+                            <input id="time-end" name="time-end" type="time" [(ngModel)]="timeEnd">
                         </div>
                     </div>
 
                     <div class="leave-reason">
-                        <p>Leave reason</p>
+                        <p>Leave reason <span class="required" *ngIf="!leaveReason">*</span></p>
                         <div class="leave-reason-input">
-                            <input id="leave-reason" name="leave-reason" type="text" placeholder="เหตุผลในการลา">
+                            <input id="leave-reason" name="leave-reason" type="text" placeholder="เหตุผลในการลา" [(ngModel)]="leaveReason">
                         </div>
                     </div>
                 </div>
                 <div class="btn-wrap">
-                    <button type="submit" class="confirm-btn">
+                    <button (click)="onAppClick()" type="submit" class="confirm-btn">
                         <p>Confirm</p>
                     </button>
                     <button (click)="goBack()" class="cancel-btn">
@@ -93,4 +93,14 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
+    <app-warning-alert [ngClass]="{'animate-alert-in': isWarningAlertVisible, 'animate-alert-out': isAnimating}"
+        [message]="alertMessage" (cancel)="closeWarningAlert()"></app-warning-alert>
+</div>
+
+<div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
+    <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
+        [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
 </div>

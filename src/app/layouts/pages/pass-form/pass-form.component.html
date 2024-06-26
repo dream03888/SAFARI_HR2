@@ -1,4 +1,3 @@
-
 <div class="pass-form">
     <div class="container">
         <div class="pass-form-box">
@@ -10,38 +9,39 @@
                 <div class="form">
                     <div class="form-wrap">
                         <div class="form-item">
-                            <label>Departure date/time</label>
+                            <label>Departure date/time <span class="required" *ngIf="!departureDate || !departureTime">*</span></label>
                             <div class="departure-input">
-                                <input id="departure-date" name="departure-date" type="date">
-                                <input id="departure-time" name="departure-time" type="time">
+                                <input id="departure-date" name="departuredate" type="date" [(ngModel)]="departureDate">
+                                <input id="departure-time" name="departuretime" type="time" [(ngModel)]="departureTime">
                             </div>
-                        </div>
+                        </div>                        
                         <div class="form-item">
-                            <label>Return date/time</label>
+                            <label>Return date/time <span class="required" *ngIf="!returnDate || !returnTime">*</span></label>
                             <div class="return-input">
-                                <input id="return-date" name="return-date" type="date">
-                                <input id="return-time" name="return-time" type="time">
+                                <input id="return-date" type="date" [(ngModel)]="returnDate">
+                                <input id="return-time" name="returntime" type="time" [(ngModel)]="returnTime">
                             </div>
                         </div>
                         <div class="form-item">
-                            <label for="location">Location</label>
+                            <label for="location">Location <span class="required" *ngIf="!selectedLocation">*</span></label>
                             <div class="location-input">
-                                <select id="location" name="location" [(ngModel)]="selectedLocation">
+                                <select id="location" name="selectedLocation" [(ngModel)]="selectedLocation">
                                     <option value="" disabled selected hidden>กรุณาเลือกสถานที่</option>
-                                    <option *ngFor="let location of locatoions" [value]="location.value">{{ location.label }}</option>
+                                    <option *ngFor="let location of locations" [value]="location.value">{{ location.label }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-item" *ngIf="selectedLocation === '-1'">
-                            <label for="other">Other location</label>
+                            <label for="other">Other location <span class="required" *ngIf="!other">*</span></label>
                             <div class="other-input">
-                                <input type="text" id="other" name="other" placeholder="ระบุสถานที่">
+                                <input type="text" id="other" name="other" placeholder="ระบุสถานที่"
+                                    [(ngModel)]="other">
                             </div>
                         </div>
                         <div class="form-item">
-                            <label for="purpose">Purpose of departure</label>
+                            <label for="purpose">Purpose of departure <span class="required" *ngIf="!purpose">*</span></label>
                             <div class="purpose-input">
-                                <input type="text" id="purpose" name="purpose" placeholder="วัตถุประสงค์ในการเดินทาง">
+                                <input type="text" id="purpose" name="purpose" placeholder="วัตถุประสงค์ในการเดินทาง" [(ngModel)]="purpose">
                             </div>
                         </div>
                         <div class="form-item">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-item">
                             <div class="passenger-input">
-                                <input type="checkbox" id="passenger" name="passenger" [(ngModel)]="isChecked">
+                                <input type="checkbox" id="passenger" name="isChecked" [(ngModel)]="isChecked">
                                 <label for="passenger">Passenger (ผู้โดยสาร)</label>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="btn-wrap">
-                    <button type="submit" class="confirm-btn">
+                    <button (click)="onAppClick()" type="submit" class="confirm-btn">
                         <p>Confirm</p>
                     </button>
                     <button (click)="goBack()" class="cancel-btn">
@@ -76,4 +76,14 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
+    <app-warning-alert [ngClass]="{'animate-alert-in': isWarningAlertVisible, 'animate-alert-out': isAnimating}"
+        [message]="alertMessage" (cancel)="closeWarningAlert()"></app-warning-alert>
+</div>
+
+<div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
+    <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
+        [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
 </div>

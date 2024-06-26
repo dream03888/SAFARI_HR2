@@ -1,16 +1,15 @@
-
-<div class="edit-car-form">
+<div class="car-form">
     <div class="container">
-        <div class="edit-car-form-box">
-            <div class="edit-car-form-warp">
+        <div class="car-form-box">
+            <div class="car-form-wrap">
                 <div class="head">
                     <img src="/assets/icon/car.svg" alt="pass">
                     <h1>Car Request Edit Form</h1>
                 </div>
                 <div class="form">
                     <div class="form-wrap">
-                        <div class="car-select">
-                            <p>Choose car</p>
+                        <div class="form-item">
+                            <label for="car">Choose car <span class="required" *ngIf="!selectedCar">*</span></label>
                             <div class="car-input">
                                 <select id="car" name="car" [(ngModel)]="selectedCar">
                                     <option value="" disabled selected hidden>กรุณาเลือกรถ</option>
@@ -18,8 +17,22 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="location-form">
-                            <p>Location</p>
+                        <div class="form-item">
+                            <label>Departure date/time <span class="required" *ngIf="!departureDate || !departureTime">*</span></label>
+                            <div class="departure-input">
+                                <input id="departure-date" name="departure-date" type="date" [(ngModel)]="departureDate">
+                                <input id="departure-time" name="departure-time" type="time" [(ngModel)]="departureTime">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Return date/time <span class="required" *ngIf="!returnDate || !returnTime">*</span></label>
+                            <div class="return-input">
+                                <input id="return-date" name="return-date" type="date" [(ngModel)]="returnDate">
+                                <input id="return-time" name="return-time" type="time" [(ngModel)]="returnTime">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for="location">Location <span class="required" *ngIf="!selectedLocation">*</span></label>
                             <div class="location-input">
                                 <select id="location" name="location" [(ngModel)]="selectedLocation">
                                     <option value="" disabled selected hidden>กรุณาเลือกสถานที่</option>
@@ -27,56 +40,47 @@
                                 </select>
                             </div>
                         </div>
-
-                        <div class="passenger-select">
-                            <p>Passenger</p>
+                        <div class="form-item" *ngIf="selectedLocation === '-1'">
+                            <label for="other">Other location <span class="required" *ngIf="!other">*</span></label>
+                            <div class="other-input">
+                                <input type="text" id="other" name="other" placeholder="ระบุสถานที่" [(ngModel)]="other">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Passenger</label>
                             <div class="passenger-input">
-                                <app-multi-select ></app-multi-select>
+                                <app-multi-select (selectedItemsChange)="handleSelectedItemsChange($event)"></app-multi-select>
                             </div>
                         </div>
                         
-                        <div class="purpose-form">
-                            <p>Purpose of use</p>
+                        <div class="form-item">
+                            <label for="purpose">Purpose of use <span class="required" *ngIf="!purpose">*</span></label>
                             <div class="purpose-input">
-                                <textarea id="purpose" name="purpose" placeholder="วัตถุประสงค์ในการขอใช้"></textarea>
+                                <textarea id="purpose" [(ngModel)]="purpose" placeholder="วัตถุประสงค์ในการขอใช้"></textarea>
                             </div>
                         </div>
-                        <div class="st-maileage-form">
-                            <p>Starting mileage number</p>
+                        <div class="form-item">
+                            <label for="st-maileage">Starting mileage number</label>
                             <div class="st-maileage-input">
-                                <input id="st-maileage" name="st-maileage" type="number" placeholder="เลขไมล์ก่อนใช้">
+                                <input id="st-maileage" name="st-maileage" type="number" [(ngModel)]="startMaileage" placeholder="เลขไมล์ก่อนใช้">
                             </div>
                         </div>
-                        <div class="end-maileage-form">
-                            <p>Ending mileage number</p>
+                        <div class="form-item">
+                            <label for="end-maileage">Ending mileage number</label>
                             <div class="end-maileage-input">
-                                <input id="end-maileage" name="end-maileage" type="number" placeholder="เลขไมล์หลังใช้">
+                                <input id="end-maileage" name="end-maileage" type="number" [(ngModel)]="endMaileage" placeholder="เลขไมล์หลังใช้">
                             </div>
                         </div>
-                        <div class="departure-form">
-                            <p>Departure date</p>
-                            <div class="departure-input">
-                                <input id="departure-date" name="departure-date" type="date">
-                                <input id="departure-time" name="departure-time" type="time">
-                            </div>
-                        </div>
-                        <div class="return-form">
-                            <p>Return date</p>
-                            <div class="return-input">
-                                <input id="return-date" name="return-date" type="date">
-                                <input id="return-time" name="return-time" type="time">
-                            </div>
-                        </div>
-                        <div class="easy-pass-form">
-                            <p>Easy pass remaining</p>
+                        <div class="form-item">
+                            <label for="easy-pass">Easy pass remaining</label>
                             <div class="easy-pass-input">
-                                <input id="easy-pass" name="easy-pass" type="easy-pass" placeholder="Easy-pass คงเหลือ">
+                                <input id="easy-pass" name="easy-pass" type="easy-pass" [(ngModel)]="easyPass" placeholder="Easy-pass คงเหลือ">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="btn-wrap">
-                    <button type="submit" class="confirm-btn">
+                    <button (click)="onAppClick()" type="submit" class="confirm-btn">
                         <p>Confirm</p>
                     </button>
                     <button (click)="goBack()" class="cancel-btn">
@@ -86,4 +90,14 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
+    <app-warning-alert [ngClass]="{'animate-alert-in': isWarningAlertVisible, 'animate-alert-out': isAnimating}"
+        [message]="alertMessage" (cancel)="closeWarningAlert()"></app-warning-alert>
+</div>
+
+<div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
+    <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
+        [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
 </div>

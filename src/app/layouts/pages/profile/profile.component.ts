@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -32,6 +31,8 @@ export class ProfileComponent {
     },
   ];
 
+  profilePicUrl: string = 'assets/avatar-profile/avatar.jpg';
+
   showEditProfile() {
     this.isEditProfileVisible = true;
     this.isAnimatingEdit = false;
@@ -56,5 +57,17 @@ export class ProfileComponent {
     setTimeout(() => {
       this.isAnimatingChange = false;
     },300); 
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.profilePicUrl = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
   }
 }
