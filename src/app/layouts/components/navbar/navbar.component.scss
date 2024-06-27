@@ -111,17 +111,6 @@ nav {
         display: flex;
         align-items: center;
         width: 100%;
-    }
-
-    a:hover {
-        background-color: $color1;
-        border-radius: 6px;
-    }
-
-    .menu-item {
-        display: flex;
-        flex-direction: column;
-        padding: 16px;
 
         img {
             margin-left: 20px;
@@ -130,6 +119,22 @@ nav {
             width: 20px;
             filter: invert(1) brightness(2);
         }
+    }
+
+    a:hover {
+        background-color: white;
+        border-radius: 6px;
+        color: $color1;
+        
+        img{
+            filter: invert(27%) sepia(35%) saturate(800%) hue-rotate(143deg) brightness(95%) contrast(90%);
+        }
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
     }
 
     .logout-icon {
