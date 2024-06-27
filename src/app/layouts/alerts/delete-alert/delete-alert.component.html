@@ -6,16 +6,12 @@
                 <h1>Are you sure?</h1>
             </div>
             <div class="delete-alert-btn">
-                <!-- <a routerLink="/car-list"> -->
-                <div class="confirm-btn">
+                <div class="confirm-btn" (click)="onConfirm()">
                     <p>Yes, Delete it!</p>
                 </div>
-                <!-- </a> -->
-                <!-- <a routerLink="/car-form"> -->
-                    <div class="cancel-btn" (click)="onCancel()">
-                        <p>Cancel</p>
-                    </div>
-                <!-- </a> -->
+                <div class="cancel-btn" (click)="onCancel()">
+                    <p>Cancel</p>
+                </div>
             </div>
         </div>
     </div>

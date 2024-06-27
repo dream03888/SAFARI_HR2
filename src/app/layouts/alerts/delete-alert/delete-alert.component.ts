@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
@@ -8,9 +8,14 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class DeleteAlertComponent {
   @Output() cancel = new EventEmitter<void>();
+  @Output() confirm = new EventEmitter<void>();
 
   onCancel() {
     this.cancel.emit();    
+  }
+
+  onConfirm() {
+    this.confirm.emit();
   }
 
   options: AnimationOptions = {

@@ -1,4 +1,3 @@
-
 <div class="pass-list">
     <div class="container">
         <div class="head">
@@ -39,16 +38,21 @@
                         <td data-label="Choice">
                             <div class="Choice-wrap">
                                 <div class="row-1">
-                                    <a routerLink="/pass-view" class="view-button" title="ดูข้อมูล"><img src="assets/icon/search.svg" alt="view"></a>
-                                    <a routerLink="/edit-pass" title="แก้ไขข้อมูล" class="edit-button" ><img src="assets/icon/pen.svg" alt="edit"></a>
+                                    <a routerLink="/pass-view" class="view-button" title="ดูข้อมูล"><img
+                                            src="assets/icon/search.svg" alt="view"></a>
+                                    <a routerLink="/edit-pass" title="แก้ไขข้อมูล" class="edit-button"><img
+                                            src="assets/icon/pen.svg" alt="edit"></a>
                                 </div>
                                 <div class="row-2">
-                                    <a class="print-button" title="ถ่ายข้อมูล"><img src="assets/icon/printing.svg" alt="print"></a>
-                                    <a class="delete-button" title="ลบข้อมูล" (click)="onAppClick('delete', $event)"><img src="assets/icon/recycle-bin.svg" alt="delete"></a>
+                                    <a class="print-button" title="ถ่ายข้อมูล"><img src="assets/icon/printing.svg"
+                                            alt="print"></a>
+                                    <a class="delete-button" title="ลบข้อมูล" (click)="onAppClick('delete', row)"><img
+                                            src="assets/icon/recycle-bin.svg" alt="delete"></a>
                                 </div>
                             </div>
                         </td>
                     </tr>
+
                 </tbody>
             </table>
         </div>
@@ -57,6 +61,6 @@
 
 <div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
     <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}"
-    (click)="$event.stopPropagation()" (cancel)="closeDeleteAlert()">
+        (click)="$event.stopPropagation()" (cancel)="closeDeleteAlert()" (confirm)="deleteRow()">
     </app-delete-alert>
 </div>
