@@ -8,7 +8,7 @@ $color5: #A9A9AC;
     height: 100vh;
 
     .pass-form-box {
-        .pass-form-warp {
+        .pass-form-wrap {
             margin-top: 90px;
 
             .head {
@@ -228,7 +228,7 @@ $color5: #A9A9AC;
 @media (min-width: 500px) {
     .pass-form {
         .pass-form-box {
-            .pass-form-warp {
+            .pass-form-wrap {
                 .form {
                     .form-wrap {
                         .form-item {
@@ -268,7 +268,7 @@ $color5: #A9A9AC;
 @media (min-width: 800px) {
     .pass-form {
         .pass-form-box {
-            .pass-form-warp {
+            .pass-form-wrap {
                 .form {
                     .form-wrap {
                         .form-item {
@@ -298,7 +298,7 @@ $color5: #A9A9AC;
             display: flex;
             justify-content: center;
 
-            .pass-form-warp {
+            .pass-form-wrap {
                 width: 50%;
 
                 .form {
