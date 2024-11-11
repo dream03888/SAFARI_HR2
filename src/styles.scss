@@ -5,13 +5,18 @@ $color3: #265F62;
 $color4: #d4e4e4;
 $color5: #A9A9AC;
 
+// html,
+// body {
+//   font-family: 'Prompt', 'FontAwesome';
+// }
+
 * {
     // font-family: "Roboto", sans-serif;
     // font-weight: 100;
     // font-style: normal;
 
-    font-family: "Prompt", sans-serif;
-    font-weight: 400;
+    font-family: 'Prompt', 'FontAwesome';
+    font-weight: 100;
     font-style: normal;
 
 }
@@ -22,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // font-family: 'Prompt', 'FontAwesome';
 }
 
 .container {
@@ -56,3 +62,5 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

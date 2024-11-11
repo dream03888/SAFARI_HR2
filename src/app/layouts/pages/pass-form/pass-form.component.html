@@ -72,6 +72,7 @@
                     <button (click)="goBack()" class="cancel-btn">
                         <p>Cancel</p>
                     </button>
+                    <button class="btn btn-primary" (click)="openModal()">Test Bootstrap Button</button>
                 </div>
             </div>
         </div>
@@ -87,3 +88,6 @@
     <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
         [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
 </div>
+
+
+

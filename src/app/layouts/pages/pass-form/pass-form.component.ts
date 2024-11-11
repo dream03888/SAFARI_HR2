@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LocationModalComponent } from './location-modal/location-modal.component';
 
 @Component({
   selector: 'app-pass-form',
@@ -22,7 +24,9 @@ export class PassFormComponent {
   other: string ='';
   
   
-  constructor(private location: Location) {}
+  constructor(private location: Location,
+    private modalSrv: NgbModal
+  ) {}
   goBack() {
     this.location.back();
   }
@@ -93,6 +97,10 @@ export class PassFormComponent {
     setTimeout(() => {
       this.isAnimating = false;
     }, 300);
+  }
+
+  openModal(){
+    const modalRef = this.modalSrv.open(LocationModalComponent, { size: 'xl' })
   }
 
 }

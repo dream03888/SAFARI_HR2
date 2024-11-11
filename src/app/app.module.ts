@@ -33,6 +33,8 @@ import { SickLeaveDataComponent } from './layouts/pages/sick-leave-data/sick-lea
 import { PersonalLeaveDataComponent } from './layouts/pages/personal-leave-data/personal-leave-data.component';
 import { VacationLeaveDataComponent } from './layouts/pages/vacation-leave-data/vacation-leave-data.component';
 import { LeaveFormComponent } from './layouts/pages/leave-form/leave-form.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function playerFactory() {
   return player;
@@ -79,9 +81,10 @@ export function playerFactory() {
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    NgbModule
   ],
-  providers: [],
+  providers: [{provide:APP_BASE_HREF, useValue:'/passport/v2'}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
