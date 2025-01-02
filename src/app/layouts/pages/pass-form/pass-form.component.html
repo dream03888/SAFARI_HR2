@@ -9,20 +9,107 @@
                 <div class="form">
                     <div class="form-wrap">
                         <div class="form-item">
-                            <label>Departure date/time <span class="required" *ngIf="!departureDate || !departureTime">*</span></label>
+                            <label>Departure date/time <span class="required"
+                                    *ngIf="!epfForm.epf_go_date || !epfForm.epf_go_time || epfForm.epf_go_date>epfForm.epf_back_date || ((epfForm.epf_go_date===epfForm.epf_back_date) && (epfForm.epf_go_time>epfForm.epf_back_time))">*</span></label>
                             <div class="departure-input">
-                                <input id="departure-date" name="departuredate" type="date" [(ngModel)]="departureDate">
-                                <input id="departure-time" name="departuretime" type="time" [(ngModel)]="departureTime">
-                            </div>
-                        </div>                        
-                        <div class="form-item">
-                            <label>Return date/time <span class="required" *ngIf="!returnDate || !returnTime">*</span></label>
-                            <div class="return-input">
-                                <input id="return-date" type="date" [(ngModel)]="returnDate">
-                                <input id="return-time" name="returntime" type="time" [(ngModel)]="returnTime">
+                                <input id="departure-date" name="departuredate" type="date" [(ngModel)]="epfForm.epf_go_date">
+                                <input id="departure-time" name="departuretime" type="time" [(ngModel)]="epfForm.epf_go_time">
                             </div>
                         </div>
                         <div class="form-item">
+                            <!-- <label>Return date/time <span class="required"
+                                    *ngIf="!returnDate || !returnTime">*</span></label> -->
+                            <label>Return date/time</label>
+                            <div class="return-input">
+                                <input id="return-date" type="date" [(ngModel)]="epfForm.epf_back_date">
+                                <input id="return-time" name="returntime" type="time" [(ngModel)]="epfForm.epf_back_time">
+                            </div>
+                        </div>
+
+                        <div class="sub-head" >
+                            <hr class="hr-1">
+                            <div class="expenses-head">
+                                <!-- <label>Locations <span class="required" *ngIf="">*</span></label> -->
+                                <label>Locations</label>
+                                <button (click)="addLocation()" >Add New Location</button>
+                            </div>
+                            <hr class="hr-1">
+                        </div>
+                                <div *ngFor="let item of epfLo; let i = index" class="form-item" >
+                                    <div class="d-flex justify-content-end">
+                                        <div class="manage">
+                                            <button (click)="removeLocation(i)"><i class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                        <!-- <div class="addLo">
+                                            <button (click)="addLocation()" >Add New Location</button>
+                                        </div> -->
+                                    </div>
+                                    <div class="form-item">
+                                        <label>Location <span class="required" *ngIf="!item.site_id">*</span></label>
+                                        <div class="topic-input">
+                                            <div class="topic">
+                                                <select  [(ngModel)]="item.site_id" name="topic-{{i}}" id="topic-{{i}}">
+                                                    <option value=null disabled>กรุณาเลือกสถานที่</option>
+                                                    <option *ngFor="let item of siteData" [value]="item.site_id">{{ item.site_name }}</option>
+                                                    <option value= 0>อื่นๆ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item"  *ngIf="item.site_id == 0">
+                                        <label for="purpose" >Specify the location <span class="required" *ngIf="!item.remark">*</span></label>
+                                        <div class="place-input">
+                                            <div class="place" >
+                                                <textarea type="text" [(ngModel)]="item.remark" id="place-{{i}}" name="place-{{i}}" placeholder="ระบุสถานที่"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="purpose">Purpose of departure <span class="required" *ngIf="!item.work_des">*</span></label>
+                                        <div class="purpose-input">
+                                            <div class="purpose">
+                                                <textarea type="text" [(ngModel)]="item.work_des" id="purpose-{{i}}"
+                                                    name="purpose-{{i}}" placeholder="วัตถุประสงค์ในการเดินทาง"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Dep-date-time">
+                                        <div class="form-item">
+                                            <!-- *ngIf="!item.go_date || !item.go_time || !item.go_date>!item.leave_date || ((!item.go_date===!item.leave_date) && (!item.go_time>!item.leave_time))" -->
+                                            <label>Go date/time <span class="required"
+                                                    *ngIf="!item.go_date || !item.go_time || !item.go_date>!item.leave_date || ((!item.go_date===!item.leave_date) && (!item.go_time>!item.leave_time))">*</span></label>
+                                            <div class="departure-input">
+                                                <input id="departure-date" name="departuredate" type="date"
+                                                    [(ngModel)]="item.go_date">
+                                                <input id="departure-time" name="departuretime" type="time"
+                                                    [(ngModel)]="item.go_time">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Return-date-time">
+                                        <div class="form-item">
+                                            <!-- <label>Return date/time <span class="required"
+                                                    *ngIf="!returnDate || !returnTime">*</span></label> -->
+                                            <label>Leave date/time </label>
+                                            <div class="return-input">
+                                                <input id="return-date" type="date" [(ngModel)]="item.leave_date">
+                                                <input id="return-time" name="returntime" type="time" [(ngModel)]="item.leave_time">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-item">
+                                        <label for="purpose">Specify the location</label>
+                                        <div class="place-input">
+                                            <div class="place">
+                                                <textarea id="place-{{i}}" name="place-{{i}}"
+                                                    placeholder="ระบุสถานที่"></textarea>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <hr class="hr-1">
+                                </div>
+                   
+                        <!-- <div class="form-item">
                             <label for="location">Location <span class="required" *ngIf="!selectedLocation">*</span></label>
                             <div class="location-input">
                                 <select id="location" name="selectedLocation" [(ngModel)]="selectedLocation">
@@ -30,6 +117,7 @@
                                     <option *ngFor="let location of locations" [value]="location.value">{{ location.label }}</option>
                                 </select>
                             </div>
+
                         </div>
                         <div class="form-item" *ngIf="selectedLocation === '-1'">
                             <label for="other">Other location <span class="required" *ngIf="!other">*</span></label>
@@ -43,27 +131,57 @@
                             <div class="purpose-input">
                                 <input type="text" id="purpose" name="purpose" placeholder="วัตถุประสงค์ในการเดินทาง" [(ngModel)]="purpose">
                             </div>
-                        </div>
-                        <div class="form-item">
+                        </div> -->
+                        <!-- <div class="form-item">
                             <label for="remark">Remark</label>
                             <div class="remark-input">
                                 <textarea id="remark" name="remark" placeholder="หมายเหตุ"></textarea>
                             </div>
-                        </div>
-                        <div class="form-item">
-                            <div class="passenger-input">
-                                <input type="checkbox" id="passenger" name="isChecked" [(ngModel)]="isChecked">
-                                <label for="passenger">Passenger (ผู้โดยสาร)</label>
+                        </div> -->
+                        
+                            <div class="form-item">
+                                <div class="passenger-input">
+                                    <input class="form-check-input" type="checkbox" id="passenger" name="isChecked" (change)="onCheckVehicle()" [(ngModel)]="isChecked">
+                                    <label for="passenger">Vehicle Request Form (ฟอร์มขอใช้รถ)</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-item" *ngIf="isChecked">
-                            <div class="passenger-car-input">
-                                <select id="passenger-car" name="passenger-car">
-                                    <option value="0" disabled selected hidden>กรุณาเลือกรถที่โดยสาร</option>
-                                </select>
+                            <div class="form-item" *ngIf="isChecked">
+                                <div class="form-item">
+                                    <label for="car">Choose car <span class="required" *ngIf="!formData.car_id">*</span></label>
+                                    <div class="car-input">
+                                        <select id="car" name="car" [(ngModel)]="formData.car_id">
+                                            <option value="null" disabled >กรุณาเลือกรถ</option>
+                                            <option *ngFor="let car of cars" [value]="car.car_id">{{ car.car_brand }}  {{car.car_model}} {{car.car_year}} {{car.car_plate}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>Passenger</label>
+                                    <div class="passenger-option">
+                                        <app-multi-select (selectedItemsChange)="handleSelectedItemsChange($event)"></app-multi-select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label for="st-maileage">Starting mileage number <span class="required" *ngIf="!formData.start_maileage">*</span></label>
+                                    <div class="st-maileage-input">
+                                        <input id="st-maileage" name="st-maileage" type="number" [(ngModel)]="formData.start_maileage" placeholder="เลขไมล์ก่อนใช้">
+                                    </div>
+                                </div>
+                                <!-- formData.start_maileage -->
+                                <div class="form-item">
+                                    <label for="end-maileage">Ending mileage number</label>
+                                    <div class="end-maileage-input">
+                                        <input id="end-maileage" name="end-maileage" type="number" [(ngModel)]="formData.end_maileage" placeholder="เลขไมล์หลังใช้">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label for="easy-pass">Easy pass remaining</label>
+                                    <div class="easy-pass-input">
+                                        <input id="easy-pass" name="easy-pass" type="number"  [(ngModel)]="formData.ezpass_cash" placeholder="Easy-pass คงเหลือ">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="btn-wrap">
                     <button (click)="onAppClick()" type="submit" class="confirm-btn">
@@ -72,7 +190,6 @@
                     <button (click)="goBack()" class="cancel-btn">
                         <p>Cancel</p>
                     </button>
-                    <button class="btn btn-primary" (click)="openModal()">Test Bootstrap Button</button>
                 </div>
             </div>
         </div>
@@ -88,6 +205,3 @@
     <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
         [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
 </div>
-
-
-

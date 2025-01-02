@@ -1,5 +1,7 @@
 import { Component, HostListener, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { WorkModalComponent } from '../work-modal/work-modal.component';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +14,9 @@ export class NavbarComponent {
   isAnimating: boolean = false;
   isPassAlertVisible: boolean = false;
 
-  constructor(private elementRef: ElementRef, private router: Router) {
+  constructor(private elementRef: ElementRef, 
+    private router: Router,
+    private modalSrv: NgbModal) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.menuActive = false;
@@ -58,4 +62,11 @@ export class NavbarComponent {
       this.isAnimating = false;
     }, 300); 
   }
+
+  workTime(){
+    const modalRef = this.modalSrv.open(WorkModalComponent)
+    // modalRef.componentInstance.itemData = data
+    console.log("hi")
+  }
+
 }

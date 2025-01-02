@@ -8,7 +8,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">No.</th>
+                        <th scope="col" style="width: 8%;">No.</th>
                         <th scope="col">Departure date/time</th>
                         <th scope="col">Return date/time</th>
                         <th scope="col">Location</th>
@@ -17,30 +17,52 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let row of tableData; let i = index">
-                        <td data-label="No.">{{ row.no }}</td>
-                        <td data-label="Departure date/time">{{ row.departureDate }}</td>
-                        <td data-label="Return date/time">{{ row.returnDate }}</td>
-                        <td data-label="Location">{{ row.location }}</td>
+                    <tr *ngFor="let row of this.passList; let i = index">
+                        <td data-label="No.">{{ i+1 }}</td>
+                        <td data-label="Departure date/time">
+                            <div>
+                                {{row.epf_go_date | date: "dd-MM-yyyy"}}
+                            </div>
+                            <div>
+                                 {{row.epf_go_time}}
+                            </div>
+                        </td>
+                        <td data-label="Return date/time">
+                            <div *ngIf="row.epf_back_date == null || row.epf_back_time == null">
+                                -
+                            </div>
+                            <div>
+                                {{ row.epf_back_date | date: "dd-MM-yyyy"}}
+                            </div>
+                            <div>
+                                {{row.epf_back_time}}
+                            </div>
+                        </td>
+                        <td data-label="Location"> 
+                            <div *ngFor="let data of this.passList[i].site_name;  index as i">
+                                {{i+1}}.
+                                {{data.site_name}}
+                            </div>
+                        </td>
                         <td data-label="Status">
                             <div class="bage-wrap">
-                                <div class="bage-first-approve" *ngIf="row.status === '1'">
-                                    <p>First Approve</p>
+                                <div class="bage-unapprove" *ngIf="row.epf_state_id === 1">
+                                    <p>{{row.state_name}}</p>
                                 </div>
-                                <div class="bage-manager-approve" *ngIf="row.status === '2'">
-                                    <p>Manager Approve</p>
+                                <div class="bage-first-approve" *ngIf="row.epf_state_id === 2">
+                                    <p>{{row.state_name}}</p>
                                 </div>
-                                <div class="bage-unapprove" *ngIf="row.status === '3'">
-                                    <p>Unapprove</p>
+                                <div class="bage-manager-approve" *ngIf="row.epf_state_id === 3">
+                                    <p>{{row.state_name}}</p>
                                 </div>
                             </div>
                         </td>
                         <td data-label="Options">
                             <div class="Choice-wrap">
                                 <div class="row-1">
-                                    <a routerLink="/pass-view" class="view-button" title="ดูข้อมูล"><img
+                                    <a (click)="onClickView(row.epf_id)" class="view-button" title="ดูข้อมูล"><img
                                             src="assets/icon/search.svg" alt="view"></a>
-                                    <a routerLink="/edit-pass" title="แก้ไขข้อมูล" class="edit-button"><img
+                                    <a (click)="onClickEdit(row.epf_id)" title="แก้ไขข้อมูล" class="edit-button"><img
                                             src="assets/icon/pen.svg" alt="edit"></a>
                                 </div>
                                 <div class="row-2">

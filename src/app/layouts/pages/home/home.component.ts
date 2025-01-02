@@ -96,4 +96,14 @@ export class HomeComponent {
       this.isAnimating = false;
     }, 300); 
   }
+  
+  enterWork(){
+    console.log("enter")
+  }
+
+  leaveWork(){
+    console.log("leave")
+  }
+
+
 }

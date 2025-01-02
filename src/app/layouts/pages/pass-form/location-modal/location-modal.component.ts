@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-location-modal',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./location-modal.component.scss']
 })
 export class LocationModalComponent {
-
+  
 }

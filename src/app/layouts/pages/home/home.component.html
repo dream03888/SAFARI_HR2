@@ -19,7 +19,7 @@
 
     <div class="app-wrap">
         <h2>APP IN</h2>
-        <div class="app-container">
+        <div class="app-container justify-content-center">
             <div class="app-item" *ngFor="let app of appIn">
                 <a [routerLink]="app.path" *ngIf="app.type == 'routing'">
                     <div class="app-icon">
@@ -41,7 +41,7 @@
         </div>
         <hr class="hr-1" style="margin: 30px 0 0 0;">
         <h2>APP OUT</h2>
-        <div class="app-container">
+        <div class="app-container justify-content-center">
             <div class="app-item" *ngFor="let app of appOut">
                 <a [routerLink]="app.path" *ngIf="app.type == 'routing'">
                     <div class="app-icon">

@@ -1,4 +1,6 @@
-import { Component, ElementRef, Renderer2, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Renderer2, Output, EventEmitter, ComponentFactoryResolver } from '@angular/core';
+import { AllCars, passenger } from 'src/app/Shared/interface/pass-form';
+import { PassFormService } from 'src/app/Shared/service/pass-form.service';
 
 @Component({
   selector: 'app-multi-select',
@@ -10,83 +12,53 @@ export class MultiSelectComponent {
 
   isSelectWrapVisible: boolean = false;
   selectedItems: string[] = [];
+  selectname: string[] = [];
+
   keyword: string = '';
+  passenger: passenger[] = []
+  _passenger: passenger[] = []
+  cars: AllCars[] = [{} as AllCars]
+  // formData!: AllCars
 
-  items: { value: string; label: string }[] = [
-    { value: 'Prakraykarn Wongkuenkaew', label: 'Prakraykarn Wongkuenkaew' },
-    { value: 'Phakkhawat Teksuwan', label: 'Phakkhawat Teksuwan' },
-    { value: 'Khanut Duongkaew', label: 'Khanut Duongkaew' },
-    { value: 'Saksikorn Thoumpudsa', label: 'Saksikorn Thoumpudsa' },
-    { value: 'Peerawit Suktorn', label: 'Peerawit Suktorn' },
-    { value: 'Phanuwat N.', label: 'Phanuwat N.' },
-    { value: 'Comson Choochomklin', label: 'Comson Choochomklin' },
-    { value: 'Dumrongrit Yensai', label: 'Dumrongrit Yensai' },
-    { value: 'Pornnuwat Kaewrat', label: 'Pornnuwat Kaewrat' },
-    { value: 'Adisak Wongsing', label: 'Adisak Wongsing' },
-    { value: 'Waiyavit Nonviangkae', label: 'Waiyavit Nonviangkae' },
-    { value: 'Sujittra Nukmai', label: 'Sujittra Nukmai' },
-    { value: 'Kittiya Mahachai', label: 'Kittiya Mahachai' },
-    { value: 'Theeranai Ratsirikon', label: 'Theeranai Ratsirikon' },
-    { value: 'Thanaphum Kawijai', label: 'Thanaphum Kawijai' },
-    { value: 'Surachest Klompong', label: 'Surachest Klompong' },
-    { value: 'Piyatat Nopchao', label: 'Piyatat Nopchao' },
-    { value: 'Nuntawut Chuchomklin', label: 'Nuntawut Chuchomklin' },
-    { value: 'Teerapong Chan-on', label: 'Teerapong Chan-on' },
-    { value: 'Peerawit SaeLim', label: 'Peerawit SaeLim' },
-    { value: 'Pricha Detma', label: 'Pricha Detma' },
-    { value: 'Panipak Phansoda', label: 'Panipak Phansoda' },
-    { value: 'Supattra Taweekote', label: 'Supattra Taweekote' },
-    { value: 'Pakkapon Wongyai', label: 'Pakkapon Wongyai' },
-    { value: 'Sahachat Tanomgen', label: 'Sahachat Tanomgen' },
-    { value: 'Wong Sye Shin', label: 'Wong Sye Shin' },
-    { value: 'Admin Naja', label: 'Admin Naja' },
-    { value: 'Wimon Sriamprai', label: 'Wimon Sriamprai' },
-    { value: 'Siriyaporn Klangla', label: 'Siriyaporn Klangla' },
-    { value: 'Supakin Sriboonvong', label: 'Supakin Sriboonvong' },
-    { value: 'Amnat Thongpasert', label: 'Amnat Thongpasert' },
-    { value: 'Kamonphan', label: 'Kamonphan' },
-    { value: 'Chanachai Viangsamut', label: 'Chanachai Viangsamut' },
-    { value: 'Atchareeya Krutsangwal', label: 'Atchareeya Krutsangwal' },
-    { value: 'Starkrit Nilapatsookwised', label: 'Starkrit Nilapatsookwised' },
-    { value: 'Sutalinee Saiklin', label: 'Sutalinee Saiklin' },
-    { value: 'Mintapong Sareeh', label: 'Mintapong Sareeh' },
-    { value: 'Natthakid Nambut', label: 'Natthakid Nambut' },
-    { value: 'Worawat Kanchan', label: 'Worawat Kanchan' },
-    { value: 'Teerapon Singda', label: 'Teerapon Singda' },
-    { value: 'Tadtai Ribruamsap', label: 'Tadtai Ribruamsap' },
-    { value: 'Sittiphorn Yamsri', label: 'Sittiphorn Yamsri' },
-    { value: 'Suchat Sankasern', label: 'Suchat Sankasern' },
-    { value: 'Patcharida Ngoenngam', label: 'Patcharida Ngoenngam' },
-    { value: 'Chinnawat Pana', label: 'Chinnawat Pana' },
-    { value: 'Papawadee Paungdokma', label: 'Papawadee Paungdokma' },
-    { value: 'Vutthipong Banthupa', label: 'Vutthipong Banthupa' },
-    { value: 'Panjapon Sriwanish', label: 'Panjapon Sriwanish' },
-    { value: 'Withun Siraphatsa', label: 'Withun Siraphatsa' },
-    { value: 'Pipat Klomkluam', label: 'Pipat Klomkluam' },
-    { value: 'Udomchai Chaiyo', label: 'Udomchai Chaiyo' },
-    { value: 'Kamonporn Pothisen', label: 'Kamonporn Pothisen' },
-    { value: 'Sirikhwan Kinchun', label: 'Sirikhwan Kinchun' },
-    { value: 'Noppadon Khantipong', label: 'Noppadon Khantipong' },
-    { value: 'Isaraporn Namchan', label: 'Isaraporn Namchan' },
-    { value: 'Sujin Thawarn', label: 'Sujin Thawarn' },
-    { value: 'Pongsathorn Thanommit', label: 'Pongsathorn Thanommit' },
-    { value: 'Phasin Maiseekhiao', label: 'Phasin Maiseekhiao' },
-    { value: 'Panyakorn Rojanapan', label: 'Panyakorn Rojanapan' },
-    { value: 'Rachata Chuenchom', label: 'Rachata Chuenchom' },
-    { value: 'Ajalaya Kaenkaeo', label: 'Ajalaya Kaenkaeo' }
+  constructor(private elementRef: ElementRef, 
+    private renderer: Renderer2,
+    private pfSrv: PassFormService
+  ) {
+      this.renderer.listen('document', 'click', (event: Event) => this.onClickOutside(event));
+      this.onDataPassenger()
+  }
+
+  async ngOnInit() {
+    await this.emitDataPassenger();
+    if (this.passenger) {
+      Object.assign(this._passenger, this.passenger)
+    }
+  }
+
+  async emitDataPassenger() {
+    return await this.pfSrv.emitDataPassenger();
+  }
+
+  async onDataPassenger() {
+    const item = await this.pfSrv.onDataPassenger();
+    item.subscribe((data) => {
+      if (data.status == 200) {
+        console.log(data.msg)
+        this.passenger = data.msg
+        this._passenger = data.msg
     
-  ];
-
-  _items: { value: string; label: string }[] = this.items;
-
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    this.renderer.listen('document', 'click', (event: Event) => this.onClickOutside(event));
+          console.log("onDataPassenger",  this.passenger)
+      }else{
+        console.log("error")
+      }
+    })
   }
 
   toggleSelectWrap() {
     this.isSelectWrapVisible = !this.isSelectWrapVisible;    
   }
 
+  //check ว่า click โดน select มั้ย ถ้าโดนจะเป็น dropdown
   onClickOutside(event: Event) {
     if (
       !this.elementRef.nativeElement.contains(event.target) &&
@@ -98,38 +70,66 @@ export class MultiSelectComponent {
     
   }
 
-  toggleItem(itemValue: string) {
-    const index = this.selectedItems.indexOf(itemValue);
-    if (index === -1) {
-      this.selectedItems.push(itemValue);
+  // toggleItem(itemValue: passenger) {
+
+  //   const index = this.selectedItems.indexOf(itemValue.fullname);
+  //   const id = this.selectname.indexOf(itemValue.user_id);
+
+  //   if (index === -1) {
+  //     this.selectedItems.push(itemValue.fullname);
+  //     this.selectname.push(itemValue.user_id)
+  //   } else {
+  //     this.selectedItems.splice(index, 1);
+  //     this.selectname.splice(id, 1);
+  //   }
+  //   this.selectedItemsChange.emit(this.selectname); // Emit the updated selectedItems array
+
+  //   console.log(this.selectedItems)
+  // }
+
+  toggleItem(itemValue: passenger) {
+
+    const index = this.selectedItems.indexOf(itemValue.fullname);
+    const id = this.selectname.indexOf(itemValue.user_id);
+    console.log("id", id)
+
+    if (index === -1 && id === -1) {
+      this.selectedItems.push(itemValue.fullname);
+      this.selectname.push(itemValue.user_id)
     } else {
       this.selectedItems.splice(index, 1);
+      this.selectname.splice(id, 1);
     }
-    this.selectedItemsChange.emit(this.selectedItems); // Emit the updated selectedItems array
+    this.selectedItemsChange.emit(this.selectname); // Emit the updated selectedItems array
+    console.log("this.selectname", this.selectname)
   }
 
   removeItem(itemValue: string) {
     const index = this.selectedItems.indexOf(itemValue);
-    if (index !== -1) {
+    const id = this.selectname.indexOf(itemValue);
+    if (index !== -1 || id !== -1) {
       this.selectedItems.splice(index, 1);
-      this.selectedItemsChange.emit(this.selectedItems); // Emit the updated selectedItems array
+      this.selectname.splice(id, 1);
+      // this.selectedItemsChange.emit(this.selectedItems); // Emit the updated selectedItems array
+      this.selectedItemsChange.emit(this.selectname); // Emit the updated selectedItems array
     }
+   
   }
 
   filter() {
     if (this.keyword != '') {
-      Object.assign(this.items, this._items);
-      this.items = this.items.filter((item) => {
-        if (item.value !== null) {
+      Object.assign(this.passenger, this._passenger);
+      this.passenger = this.passenger.filter((data) => {
+        if (data.user_fname !== null) {
           return (
-            item.value.toLowerCase().indexOf(this.keyword.toLowerCase()) !== -1
+            data.user_fname.toLowerCase().indexOf(this.keyword.toLowerCase()) !== -1
           );
         }
         return false;
       });
     }
     else {
-      this.items = this._items;
+      this.passenger = this._passenger;
     }
   }
 }

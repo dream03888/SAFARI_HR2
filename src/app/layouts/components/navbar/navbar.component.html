@@ -7,10 +7,14 @@
                 <div class="bar"></div>
             </div>
             <div class="logo">
-                <a routerLink="/home"><img src="assets/logo/dms-icon.webp" alt="logo"></a>
+                <a routerLink="/home"><img src="assets/logo/dms-icon-light.svg" alt="logo"></a>
             </div>
-            <div class="home">
-                <a routerLink="/home"><img src="assets/icon/home.svg" alt="home"></a>
+            <!-- <div class="work" >
+                <a (click)="workTime()"><img src="assets/icon/clock.svg" alt="work"></a>
+            </div> -->
+            <div class="home-wrap" >
+                <a class="work" (click)="workTime()"><img src="assets/icon/user-clock.svg" alt="work"></a>
+                <a class="home" routerLink="/home"><img src="assets/icon/home.svg" alt="home"></a>
             </div>
         </div>
         <div class="overlay" [class.active]="menuActive"></div>

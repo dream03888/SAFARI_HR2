@@ -1,7 +1,7 @@
 <div class="multi-select">
     <div class="show-select" (click)="toggleSelectWrap()">
-        <div class="placeholder" *ngIf="selectedItems.length === 0">
-            <p>เลือกผู้โดยสาร</p>
+        <div class="placeholder-form" *ngIf="selectedItems.length === 0">
+            <span>เลือกผู้โดยสาร</span>
         </div>
         <div class="display-data" *ngIf="selectedItems.length > 0">
             <p *ngFor="let item of selectedItems">
@@ -15,15 +15,22 @@
     </div>
     <div class="select-wrap" *ngIf="isSelectWrapVisible" (click)="$event.stopPropagation()">
         <div class="search" style="display: flex;">
-            <input placeholder="ค้นหา" [(ngModel)]="keyword" type="text" (ngModelChange)="filter()" />
+            <input placeholder="ค้นหา" [(ngModel)]="keyword" type="text" (ngModelChange)="filter()"/>
         </div>
         <div class="select-item-box">
-            <div class="select-item" *ngFor="let item of items">
-                <label [for]="item.value" (click)="$event.stopPropagation()">
-                    <input type="checkbox" [id]="item.value" [name]="item.value" [value]="item.value"
-                        [checked]="selectedItems.includes(item.value)" (change)="toggleItem(item.value); $event.stopPropagation();" />
-                    {{ item.label }}
-                </label>
+            <div class="select-item" *ngFor="let item of this.passenger">
+              <label>
+                <input
+                  type="checkbox"
+                  [id]="item.user_id"
+                  [name]="item.user_fname"
+                  [value]="item.user_id"
+                  [checked]="selectedItems.includes(item.fullname)"
+                  (change)="toggleItem(item)"
+                  
+                 />
+                  {{ item.user_fname }}  {{item.user_lname}}
+              </label>
             </div>
         </div>
     </div>

@@ -4,11 +4,92 @@ $color3: #265F62;
 $color4: #d4e4e4;
 $color5: #A9A9AC;
 
-.pass-form {
+.edit-pass {
     height: 100vh;
 
-    .pass-form-box {
-        .pass-form-wrap {
+    .circle {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        // background-color: #00796b;
+        background-image: linear-gradient(to right, #085078 0%, #85D8CE 100%);
+        border: none;
+        color: #FFFFFF;
+        box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4);
+    
+        &:hover {
+            padding: 0;
+            background-color: #FFFFFF;
+            border: 3px solid #085078;
+            background-image: linear-gradient(to right, #85D8CE 0%, #085078 100%);
+            // color: #00796B;
+            border-radius: 50px;
+        }
+    
+        @media only screen and (max-width: 767px) {
+            width: 45px;
+            height: 45px;
+        }
+    
+        @media only screen and (max-width: 600px) {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .icon-cart {
+        border: none;
+        font-size: 15pt;
+        color: white;
+        position: fixed;
+        top: 82px;
+        right: 7%;
+        cursor: pointer;
+    
+        transition: all .2s ease-in-out;
+       
+    
+        @media only screen and (max-width: 1200px) {
+            right: 5%;
+        }
+    
+        @media only screen and (max-width: 1070px) {
+            right: 5%;
+        }
+    
+        @media only screen and (max-width: 863px) {
+            right: 5%;
+    
+        }
+    
+        @media only screen and (max-width: 475px) {
+            right: 5%;
+    
+        }
+    }
+
+    .btn {
+        border-radius: 40px;
+        background-color: #6A9C89;
+        margin-left: 8px;
+    
+        &:hover {
+            border-radius: 40px;
+            background-color: #c9e6db;
+            margin-left: 8px;
+        }
+    
+        &:active {
+            border-radius: 40px;
+            background-color: #487463;
+            margin-left: 8px;
+            border-color: #487463;
+        }
+    }
+    
+
+    .edit-pass-box {
+        .edit-pass-wrap {
             margin-top: 90px;
 
             .head {
@@ -34,27 +115,133 @@ $color5: #A9A9AC;
                 .form-wrap {
                     margin-top: 20px;
 
+                    .sub-head {
+                        margin-top: 40px;
+                        // background-color: #b0ceda;
+
+                        h1 {
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: $color1;
+                        }
+
+                        .expenses-head {
+                            display: flex;
+                            justify-content: space-between;
+                            // padding-top: 10px;
+                            // padding-right: 5px;
+
+                            label {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: $color1;
+                                margin-bottom: 3px;
+                                margin-top: 9px;
+                            }
+
+                            button {
+                                width: 130px;
+                                height: 38px;
+                                background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                                border: none;
+                                color: white;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                                background-size: 200% auto;
+
+                                p {
+                                    font-size: 12px;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            button:hover {
+                                background-position: right center;
+                                background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
                     .form-item {
                         margin-top: 16px;
 
+                        .expenses-head {
+                            display: flex;
+                            justify-content: space-between;
+                           
+
+                            button {
+                                width: 130px;
+                                height: 38px;
+                                background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                                border: none;
+                                color: white;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                                background-size: 200% auto;
+
+                                p {
+                                    font-size: 12px;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            button:hover {
+                                background-position: right center;
+                                background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                                cursor: pointer;
+                            }
+                        }
+
                         label {
-                            font-size: 12px;
+                            font-size: 14px;
                             font-weight: bold;
                             color: $color1;
                             margin-bottom: 3px;
                         }
 
-                        .departure-input,
+                        .departure-input{
+                            display: flex;
+                            justify-content: space-between;
+                            input {
+                                width: 45%;
+                                height: 30px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 0 5px;
+                                padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+                                background-color: #dfdfdf;
+
+                            }
+                        }
+
                         .return-input {
                             display: flex;
                             justify-content: space-between;
+                            margin-bottom: 25px;    
 
                             input {
                                 width: 45%;
                                 height: 30px;
                                 border: 1px solid $color1 ;
                                 border-radius: 5px;
-                                font-size: 12px;
+                                font-size: 14px;
                                 padding: 0 5px;
                                 padding: 0 5px;
                                 color: black;
@@ -64,14 +251,33 @@ $color5: #A9A9AC;
                             }
                         }
 
-                        .passenger-car-input,
-                        .location-input {
-                            select {
-                                width: 100%;
+                        .go-input{
+                            display: flex;
+                            justify-content: space-between;
+                            input {
+                                width: 45%;
                                 height: 30px;
                                 border: 1px solid $color1 ;
                                 border-radius: 5px;
-                                font-size: 12px;
+                                font-size: 14px;
+                                padding: 0 5px;
+                                padding: 0 5px;
+                                color: black;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+
+                            }
+                        }
+
+
+                        .location-input {
+                            select {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
                                 padding: 0 5px;
                                 color: black;
                             }
@@ -79,20 +285,6 @@ $color5: #A9A9AC;
                             select:focus {
                                 background-color: $color4;
                                 outline: none;
-                            }
-                        }
-
-                        .purpose-input,
-                        .other-input {
-                            display: flex;
-
-                            input {
-                                width: 100%;
-                                height: 30px;
-                                border: 1px solid $color1 ;
-                                border-radius: 5px;
-                                font-size: 12px;
-                                padding: 0 5px;
                             }
                         }
 
@@ -104,7 +296,7 @@ $color5: #A9A9AC;
                                 height: 90px;
                                 border: 1px solid $color1 ;
                                 border-radius: 5px;
-                                font-size: 12px;
+                                font-size: 14px;
                                 padding: 5px;
                             }
 
@@ -118,8 +310,298 @@ $color5: #A9A9AC;
                             outline: none;
                             background-color: $color4;
                         }
+
+
+                        .passenger-input{
+                            label{
+                                margin-left: 8px;
+                            }
+
+                            input{
+                                border-color: #265F61;
+                            }
+
+                            input:checked{
+                                background-color: $color5;
+                            }
+
+                            input:disabled{
+                                background-color: $color5;
+                            }
+                        }
+
+                        .car-input{
+                            option{
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                                background-color: #dfdfdf;
+                            }
+                        }
+
+                        .passenger-option{
+                            option{
+                                width: 100%;
+                                height: auto;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                                background-color: #dfdfdf;
+                                overflow-wrap: break-word; /* บังคับให้ตัดคำเมื่อยาวเกิน */
+                                word-break: break-word; /* ตัดคำถ้าข้อความยาว */
+                                white-space: normal; /* ให้ข้อความแสดงหลายบรรทัด */
+                            }
+                        }
+
+                        .st-maileage-input{
+                            input{
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                                background-color: #dfdfdf;
+                            }
+                        }
+
+                        .end-maileage-input{
+                            input{
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                            }
+                        }
+
+                        .easy-pass-input{
+                            input{
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                            }
+                        }
+
+                    }
+
+                    .topic-input {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 14px;
+                        // margin-top: 40px;
+
+
+                        .topic {
+                            display: flex;
+                            width: 100%;
+
+                            input {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                                color: black;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+                                background-color: #dfdfdf;
+                            }
+
+                            select {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                padding: 0 5px;
+
+                                option{
+                                    width: auto;
+                                }
+                                
+                            }
+
+                            select:focus {
+                                background-color: $color4;
+                                outline: none;
+                            }
+                        }
+
+                        .topic-etc {
+                            display: flex;
+                            width: 100%;
+
+                            input {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                font-size: 14px;
+                                padding: 5px;
+                                color: black;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+                                background-color: #dfdfdf;
+                            }
+                        }
+                        
+                    }
+
+                    
+                    .topic-choose {
+                        display: flex;
+                        width: 100%;
+
+                        select {
+                            width: 100%;
+                            height: 32px;
+                            border: 1px solid $color1 ;
+                            border-radius: 5px;
+                            padding: 0 5px;
+                        }
+
+                        select:focus {
+                            background-color: $color4;
+                            outline: none;
+                        }
+                    }
+
+                    .place-input{
+                        .place {
+                            display: flex;
+
+                            textarea {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                padding: 4px;
+                                font-size: 14px;
+                                background-color: #dfdfdf;
+                            }
+
+                            textarea:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+                        }
+
+                    }
+
+                    .place-input-add{
+                        .place {
+                            display: flex;
+
+                            textarea {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                padding: 4px;
+                                font-size: 14px;
+                            }
+
+                            textarea:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+                        }
+
+                    }
+
+
+                    .purpose-input{
+                        .purpose {
+                            display: flex;
+
+                            textarea {
+                                width: 100%;
+                                height: 32px;
+                                border: 1px solid $color1 ;
+                                border-radius: 5px;
+                                // padding: 0 5px;
+                                padding: 4px;
+                                font-size: 14px;
+                            }
+                            textarea:focus {
+                                outline: none;
+                                background-color: $color4;
+                            }
+                        }
+                    }
+
+                    .d-flex {
+                        .manage{
+                            button {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 100%;
+                                background-color: rgb(224, 60, 60);
+                                color: white;
+                                font-weight: bold;
+                                border: none;
+                            }
+                        }
+
+                        // .addLo{
+                        //     padding-left: 215px;
+                        //     button {
+                        //         width: 130px;
+                        //         height: 38px;
+                        //         background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                        //         border: none;
+                        //         color: white;
+                        //         border-radius: 5px;
+                        //         font-size: 12px;
+                        //         font-weight: bold;
+                        //         cursor: pointer;
+                        //         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                        //         transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                        //         background-size: 200% auto;
+
+                        //         p {
+                        //             font-size: 12px;
+                        //             font-weight: bold;
+                        //         }
+                        //     }
+
+                        //     button:hover {
+                        //         background-position: right center;
+                        //         background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                        //         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                        //         cursor: pointer;
+                        //     }
+
+                        // }
+
+
                     }
                 }
+            }
+
+            .table-title {
+                margin-top: 30px;
+                background-color: #265F61;
+                color: #ffffff;
+
+            }
+
+            .row {
+                margin-left: 10px;
             }
 
             .btn-wrap {
@@ -128,6 +610,64 @@ $color5: #A9A9AC;
 
                 .confirm-btn {
                     width: 100%;
+                    // background-color: $color1;
+                    background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                    background-size: 200% auto;
+
+                    p {
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-top: 10px;
+                    }
+                }
+
+                .confirm-btn:hover {
+                    background-position: right center;
+                    background-image: linear-gradient(to right, #085078 0%, #85D8CE 51%, #085078 100%);
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
+
+                .cancel-btn {
+                    margin-top: 16px;
+                    width: 100%;
+                    color: $color1;
+                    // background-color: $color4;
+                    background-image: linear-gradient(to right, #f46b45 0%, #eea849 51%, #f46b45 100%);
+                    border-radius: 5px;
+                    border: 0px;
+                    height: 41px;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                    background-size: 200% auto;
+
+                    p {
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-top: 10px;
+                    }
+                }
+
+                .cancel-btn:hover {
+                    background-position: right center;
+                    background-image: linear-gradient(to right, #dfdcd9 0%, #FFFFFF 51%, #dfdcd9 100%);
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    cursor: pointer;
+                }
+            }
+
+            .btn-wrap2 {
+                margin-top: 40px;
+
+                .location-btn {
+                    width: 30%;
                     background-color: $color1;
                     color: white;
                     font-weight: bold;
@@ -143,33 +683,14 @@ $color5: #A9A9AC;
                     }
                 }
 
-                .confirm-btn:hover {
+                .location-btn:hover {
                     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                     cursor: pointer;
                 }
 
-                .cancel-btn {
-                    margin-top: 16px;
-                    width: 100%;
-                    color: $color1;
-                    background-color: $color4;
-                    border-radius: 5px;
-                    border: 0px;
-                    height: 41px;
-                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-
-                    p {
-                        font-size: 12px;
-                        font-weight: bold;
-                    }
-                }
-
-                .cancel-btn:hover {
-                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                    cursor: pointer;
-                }
             }
+
+
         }
     }
 }
@@ -226,18 +747,78 @@ $color5: #A9A9AC;
 //----------------------------------------------------------------------------------------------------
 
 @media (min-width: 500px) {
-    .pass-form {
-        .pass-form-box {
-            .pass-form-wrap {
+    .edit-pass {
+        .edit-pass-box {
+            .edit-pass-wrap {
                 .form {
                     .form-wrap {
                         .form-item {
 
+                            topic{
+                                input{
+                                    width: 100%;
+                                    height: 30px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+
                             .departure-input,
+                            .go-input,
                             .return-input {
                                 input {
                                     width: 47%;
                                     height: 30px;
+                                }
+                            }
+
+                            .passenger-option{
+                                option{
+                                    width: 100%;
+                                    height: auto;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                    background-color: #dfdfdf;
+                                    overflow-wrap: break-word; /* บังคับให้ตัดคำเมื่อยาวเกิน */
+                                    word-break: break-word; /* ตัดคำถ้าข้อความยาว */
+                                    white-space: normal; /* ให้ข้อความแสดงหลายบรรทัด */
+                                }
+                            }
+
+                            .st-maileage-input{
+                                input{
+                                    width: 100%;
+                                    height: 30px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+    
+                            .end-maileage-input{
+                                input{
+                                    width: 100%;
+                                    height: 30px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+    
+                            .easy-pass-input{
+                                input{
+                                    width: 100%;
+                                    height: 30px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
                                 }
                             }
                         }
@@ -245,6 +826,21 @@ $color5: #A9A9AC;
                 }
 
                 .btn-wrap {
+                    margin: 30px 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .confirm-btn {
+                        width: 49%;
+                    }
+
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
+                }
+
+                .btn-wrap2 {
                     margin: 30px 0;
                     display: flex;
                     justify-content: space-between;
@@ -266,20 +862,81 @@ $color5: #A9A9AC;
 //----------------------------------------------------------------------------------------------------
 
 @media (min-width: 800px) {
-    .pass-form {
-        .pass-form-box {
-            .pass-form-wrap {
+    .edit-pass {
+        .edit-pass-box {
+            .edit-pass-wrap {
                 .form {
                     .form-wrap {
                         .form-item {
 
+                            .topic{
+                                input{
+                                    width: 100%;
+                                    height: 32px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+
                             .departure-input,
+                            .go-input,
                             .return-input {
                                 input {
                                     width: 48%;
                                     height: 30px;
                                 }
                             }
+
+                            .passenger-option{
+                                option{
+                                    width: 100%;
+                                    height: auto;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                    background-color: #dfdfdf;
+                                    overflow-wrap: break-word; /* บังคับให้ตัดคำเมื่อยาวเกิน */
+                                    word-break: break-word; /* ตัดคำถ้าข้อความยาว */
+                                    white-space: normal; /* ให้ข้อความแสดงหลายบรรทัด */
+                                }
+                            }
+
+                            .st-maileage-input{
+                                input{
+                                    width: 100%;
+                                    height: 32px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+    
+                            .end-maileage-input{
+                                input{
+                                    width: 100%;
+                                    height: 32px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+    
+                            .easy-pass-input{
+                                input{
+                                    width: 100%;
+                                    height: 32px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+                            
                         }
                     }
                 }
@@ -291,14 +948,14 @@ $color5: #A9A9AC;
 //----------------------------------------------------------------------------------------------------
 
 @media (min-width: 1024px) {
-    .pass-form {
+    .edit-pass {
         height: 100vh;
 
-        .pass-form-box {
+        .edit-pass-box {
             display: flex;
             justify-content: center;
 
-            .pass-form-wrap {
+            .edit-pass-wrap {
                 width: 50%;
 
                 .form {
@@ -306,9 +963,51 @@ $color5: #A9A9AC;
                         margin-top: 30px;
 
                         .form-item {
-                            margin-top: 30px;
+                            margin-top: 15px;
 
-                            .departure-input,
+                            .departure-input{
+
+                                display: flex;
+                                justify-content: space-between;
+                    
+                                input {
+                                    width: 47%;
+                                    height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 0 5px;
+                                    padding: 0 5px;
+                                    color: black;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+                                    appearance: none;
+                                    background-color: #dfdfdf;
+
+                                }
+                            }
+
+                            .go-input{
+
+                                display: flex;
+                                justify-content: space-between;
+                    
+                                input {
+                                    width: 47%;
+                                    height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 0 5px;
+                                    padding: 0 5px;
+                                    color: black;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+                                    appearance: none;
+
+                                }
+                            }
+
                             .return-input {
                                 display: flex;
                                 justify-content: space-between;
@@ -319,8 +1018,19 @@ $color5: #A9A9AC;
                                 }
                             }
 
-                            .passenger-car-input,
-                            .location-input {
+                            .car-input{
+
+                                option{
+                                    width: 100%;
+                                    height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 8px;
+                                    background-color: #dfdfdf;
+
+                                }
+                            
                                 select {
                                     height: 40px;
                                 }
@@ -331,12 +1041,209 @@ $color5: #A9A9AC;
                                 }
                             }
 
-                            .purpose-input,
-                            .other-input {
-                                display: flex;
+                            .purpose-input{
+                                .purpose {
+                                    display: flex;
+                                   
+                                    textarea {
+                                        width: 100%;
+                                        height: 40px;
+                                        border: 1px solid $color1 ;
+                                        border-radius: 5px;
+                                        padding: 8px;
+                                    }
+                                    textarea:focus {
+                                        outline: none;
+                                        background-color: $color4;
+                                    }
+                                }
+                            }
 
-                                input {
+                            .place-input{
+                                
+                                .place {
+                                    display: flex;
+        
+                                    textarea {
+                                        width: 100%;
+                                        height: 40px;
+                                        border: 1px solid $color1 ;
+                                        border-radius: 5px;
+                                        padding: 8px;
+
+                                    }
+        
+                                    textarea:focus {
+                                        outline: none;
+                                        background-color: $color4;
+                                    }
+                                }
+        
+                            }
+
+                            .place-input-add{
+                                
+                                .place {
+                                    display: flex;
+        
+                                    textarea {
+                                        width: 100%;
+                                        height: 40px;
+                                        border: 1px solid $color1 ;
+                                        border-radius: 5px;
+                                        padding: 8px;
+
+                                    }
+        
+                                    textarea:focus {
+                                        outline: none;
+                                        background-color: $color4;
+                                    }
+                                }
+        
+                            }
+
+                            .topic-input {
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: 14px;
+                                // margin-top: 40px;
+        
+        
+                                .topic {
+                                    display: flex;
+                                    width: 100%;
+
+                                    input {
+                                        width: 100%;
+                                        height: 40px;
+                                        border: 1px solid $color1 ;
+                                        border-radius: 5px;
+                                        font-size: 14px;
+                                        padding: 8px;
+                                        color: black;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        appearance: none;
+                                    }
+        
+                                    select {
+                                        width: 100%;
+                                        height: 40px;
+                                        border: 1px solid $color1 ;
+                                        border-radius: 5px;
+                                        padding: 0 5px;
+                                    }
+        
+                                    select:focus {
+                                        background-color: $color4;
+                                        outline: none;
+                                    }
+                                }
+
+                                .topic-etc {
+                                    display: flex;
+                                    width: 100%;
+
+                                    input {
+                                        width: 100%;
+                                        height: 40px;
+                                        border: 1px solid $color1 ;
+                                        border-radius: 5px;
+                                        font-size: 14px;
+                                        padding: 8px;
+                                        color: black;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        appearance: none;
+                                    }
+                                   
+                                }
+                            }
+
+                            .topic-choose {
+                                display: flex;
+                                width: 100%;
+    
+                                select {
+                                    width: 100%;
                                     height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    padding: 0 5px;
+                                }
+    
+                                select:focus {
+                                    background-color: $color4;
+                                    outline: none;
+                                }
+                            }
+
+                            .passenger-input{
+                                label{
+                                    margin-left: 8px;
+                                }
+                                input{
+                                    border-color: #265F61;
+                                }
+    
+                                input:checked{
+                                    background-color: $color5;
+                                }
+
+                                input:disabled{
+                                    background-color: $color5;
+                                }
+                                
+                            }
+
+                            .passenger-option{
+                                option{
+                                    width: 100%;
+                                    height: auto;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 8px;
+                                    background-color: #dfdfdf;
+                                    overflow-wrap: break-word; /* บังคับให้ตัดคำเมื่อยาวเกิน */
+                                    word-break: break-word; /* ตัดคำถ้าข้อความยาว */
+                                    white-space: normal; /* ให้ข้อความแสดงหลายบรรทัด */
+
+                                } 
+                                
+                            }
+
+                            .st-maileage-input{
+                                input{
+                                    width: 100%;
+                                    height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+    
+                            .end-maileage-input{
+                                input{
+                                    width: 100%;
+                                    height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
+                                }
+                            }
+    
+                            .easy-pass-input{
+                                input{
+                                    width: 100%;
+                                    height: 40px;
+                                    border: 1px solid $color1 ;
+                                    border-radius: 5px;
+                                    font-size: 14px;
+                                    padding: 5px;
                                 }
                             }
                         }
@@ -344,6 +1251,21 @@ $color5: #A9A9AC;
                 }
 
                 .btn-wrap {
+                    margin: 30px 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .confirm-btn {
+                        width: 49%;
+                    }
+
+                    .cancel-btn {
+                        margin-top: 0px;
+                        width: 49%;
+                    }
+                }
+
+                .btn-wrap2 {
                     margin: 30px 0;
                     display: flex;
                     justify-content: space-between;

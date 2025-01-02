@@ -8,6 +8,7 @@ $color5: #757575;
     width: 100%;
 
     .show-select {
+        height: fit-content;
         background-color: white;
         display: flex;
         justify-content: space-between;
@@ -15,11 +16,20 @@ $color5: #757575;
         border: 1px solid $color1;
         border-radius: 5px;
 
-        .placeholder {
-            color: $color5;
+        .placeholder-form {
+            background-color: #ffffff;
             margin-left: 7px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
+            height: 34px;
+            padding-left: 3px;
+            padding-top: 8px;
+
+            span {
+                cursor: context-menu;
+                font-size: 14px;
+
+            }
         }
 
         .display-data {
@@ -43,8 +53,8 @@ $color5: #757575;
                     color: black;
                 }
 
-                button:hover{
-                    cursor: pointer;
+                button:hover {
+                    cursor: context-menu;
                     background-color: red;
                     color: white;
                 }
@@ -53,7 +63,7 @@ $color5: #757575;
     }
 
     .show-select:hover {
-        cursor: pointer;
+        cursor: context-menu;
     }
 
     h4 {
@@ -76,15 +86,18 @@ $color5: #757575;
 
         .search {
             display: flex;
+            font-size: 14px;
 
             input {
                 width: 100%;
                 padding: 10px;
+                font-size: 14px;
             }
         }
 
         .select-item-box {
             margin: 0px;
+
             .select-item {
                 display: flex;
 
@@ -97,7 +110,7 @@ $color5: #757575;
                     align-items: center;
                     width: 100%;
                     padding: 7px;
-                    font-size: 12px;
+                    font-size: 14px;
                 }
 
                 label:hover {
@@ -114,26 +127,34 @@ $color5: #757575;
 @media (min-width: 1024px) {
     .multi-select {
         width: 100%;
-    
+
         .show-select {
+            height: fit-content;
             background-color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border: 1px solid $color1;
             border-radius: 5px;
-            
-            .placeholder {
-                color: $color5;
+
+            .placeholder-form {
+                color: #000000;
                 margin-left: 7px;
                 font-size: 12px;
-                font-weight: 500;
+                // font-weight: 500;
+                height: 38px;
+                padding-left: 3px;
+                padding-top: 8px;
+
+                span {
+                    cursor: context-menu;
+                }
             }
-    
+
             .display-data {
                 display: flex;
                 flex-wrap: wrap;
-    
+
                 P {
                     background-color: $color2;
                     padding: 5px;
@@ -141,7 +162,7 @@ $color5: #757575;
                     font-size: 12px;
                     border-radius: 5px;
                     margin: 5px;
-    
+
                     button {
                         background-color: white;
                         border: 0px;
@@ -152,19 +173,19 @@ $color5: #757575;
                 }
             }
         }
-    
+
         .show-select:hover {
-            cursor: pointer;
+            cursor: context-menu;
         }
-    
+
         h4 {
             margin-right: 10px;
             font-size: 16px;
             rotate: 270deg;
         }
-    
+
         .select-wrap {
-            width: 42.4%;            
+            width: 42.4%;
             border: solid 1px $color5;
             height: 200px;
             overflow-y: scroll;
@@ -172,22 +193,25 @@ $color5: #757575;
             border-radius: 5px;
             position: absolute;
             z-index: 999;
-    
+
             .search {
                 display: flex;
-    
+                font-size: 14px;
+
                 input {
                     width: 100%;
                     padding: 10px;
+                font-size: 14px;
+
                 }
             }
-    
+
             .select-item-box {
                 margin: 0px;
-    
+
                 .select-item {
                     display: flex;
-    
+
                     input {
                         margin-right: 10px;
                     }
@@ -197,7 +221,7 @@ $color5: #757575;
                         align-items: center;
                         width: 100%;
                         padding: 7px;
-                        font-size: 12px;
+                        font-size: 14px;
                     }
 
                     label:hover {

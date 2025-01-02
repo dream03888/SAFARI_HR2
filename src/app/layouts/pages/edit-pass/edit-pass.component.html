@@ -1,4 +1,4 @@
-<div class="pass-form">
+<!-- <div class="pass-form">
     <div class="container">
         <div class="pass-form-box">
             <div class="pass-form-wrap">
@@ -86,4 +86,253 @@
 <div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
     <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
         [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
+</div> -->
+
+<div class="edit-pass">
+    <div class="container">
+        <div class="edit-pass-box">
+            <div class="edit-pass-wrap">
+                <div class="head">
+                    <img src="/assets/icon/portfolio.svg" alt="pass">
+                    <h1>Employee Pass Edit Form</h1>
+                </div>
+                <div class="form">
+                    <div class="form-wrap">
+                        <div class="form-item">
+                            <label>Departure date/time</label>
+                            <div class="departure-input">
+                                <input disabled id="departure-date" name="departuredate" type="string"
+                                    [value]="allInfo[0].epf_go_date | date:'MM/dd/yyyy'">
+                                <input disabled id="departure-time" name="departuretime" type="time"
+                                    [(ngModel)]="this.allInfo[0].epf_go_time">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <!-- <label>Return date/time <span class="required"
+                                    *ngIf="!returnDate || !returnTime">*</span></label> -->
+                            <label>Return date/time</label>
+                            <div class="return-input">
+                                <!-- [value]="this.allInfo[0].epf_back_date | date:'yyyy-MM-dd'"
+                                 [(ngModel)]="this.allInfo[0].epf_go_date" -->
+                                <input id="return-date" type="date"
+                                    [(ngModel)]="this.allInfo[0].epf_back_date">
+                                <input id="return-time" name="returntime" type="time"
+                                    [(ngModel)]="this.allInfo[0].epf_back_time">
+                            </div>
+                        </div>
+                        <div class="sub-head">
+                            <hr class="hr-1">
+                            <div class="expenses-head">
+                                <label>Locations</label>
+                                <button (click)="addLocation()">Add New Location</button>
+                            </div>
+                            <hr class="hr-1">
+                        </div>
+                        <div *ngFor="let item of this.allInfo; let i = index" class="form-item">
+                            <div *ngFor="let data of this.allInfo[i].locations;  index as i">
+                                <div class="d-flex justify-content-end">
+                                    <div class="manage">
+                                        <button (click)="removeLocation(i)"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>Location <span class="required" *ngIf="item.locations[i].site_id == null">*</span></label>
+                                    <div class="topic-input">
+                                        <div class="topic">
+                                            <div class="topic" *ngIf="item.locations[i].epf_loc_id != ''">
+                                                <input disabled *ngIf="item.locations[i].site_name !== null" [(ngModel)]="item.locations[i].site_name">
+                                                <input disabled *ngIf="item.locations[i].site_name === null" placeholder="อื่นๆ">
+                                            </div>
+                                            <div class="topic-choose" *ngIf="item.locations[i].epf_loc_id == ''">
+                                                <select  [(ngModel)]="item.locations[i].site_id " name="topic-{{i}}" id="topic-{{i}}">
+                                                    <option value=null selected disabled >กรุณาเลือกสถานที่</option>
+                                                    <option *ngFor="let item of siteData" [value]="item.site_id" >{{ item.site_name }}</option>
+                                                    <option value= 0>อื่นๆ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ให้ใส่ location -->
+                                <div class="form-item" *ngIf="data.site_id == 0 && item.locations[i].epf_loc_id == ''">
+                                    <label for="purpose">Specify the location <span class="required" *ngIf="!item.locations[i].epf_location">*</span></label>
+                                    <div class="place-input-add">
+                                        <div class="place">
+                                            <textarea  type="text" [(ngModel)]="item.locations[i].epf_location"
+                                                id="place-{{i}}" name="place-{{i}}"
+                                                placeholder="ระบุสถานที่"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- disable ช่องระบุ location -->
+                                <div class="form-item" *ngIf="data.site_id == 0 && item.locations[i].epf_loc_id != ''">
+                                    <label for="purpose">Specify the location</label>
+                                    <div class="place-input">
+                                        <div class="place">
+                                            <textarea disabled type="text" [(ngModel)]="item.locations[i].epf_location"
+                                                id="place-{{i}}" name="place-{{i}}"
+                                                placeholder="ระบุสถานที่"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label for="purpose">Purpose of departure <span class="required"
+                                            *ngIf="!item.locations[i].epf_loc_work_des">*</span></label>
+                                    <div class="purpose-input">
+                                        <div class="purpose">
+                                            <textarea type="text" [(ngModel)]="item.locations[i].epf_loc_work_des"
+                                                placeholder="วัตถุประสงค์ในการเดินทาง"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Dep-date-time">
+                                    <div class="form-item">
+                                        <label>Go date/time <span class="required"
+                                                *ngIf="!item.locations[i].epf_loc_go_date || !item.locations[i].epf_loc_go_time || !item.locations[i].epf_loc_go_date>!item.locations[i].epf_loc_leave_date || ((!item.locations[i].epf_loc_go_date===!item.locations[i].epf_loc_leave_date) && (!item.locations[i].epf_loc_go_time>!item.locations[i].epf_loc_leave_time))">*</span></label>
+                                        <div class="go-input">
+                                            <input id="departure-date" name="departuredate" type="date"
+                                                [(ngModel)]="item.locations[i].epf_loc_go_date ">
+                                            <input id="departure-time" name="departuretime" type="time"
+                                                [(ngModel)]="item.locations[i].epf_loc_go_time">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Return-date-time">
+                                    <div class="form-item">
+                                        <label>Leave date/time </label>
+                                        <div class="return-input">
+                                            <input id="return-date" type="date"
+                                                [(ngModel)]="item.locations[i].epf_loc_leave_date">
+                                            <input id="return-time" name="returntime" type="time"
+                                                [(ngModel)]="item.locations[i].epf_loc_leave_time">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr-1">
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-item">
+                            <label for="location">Location <span class="required" *ngIf="!selectedLocation">*</span></label>
+                            <div class="location-input">
+                                <select id="location" name="selectedLocation" [(ngModel)]="selectedLocation">
+                                    <option value="" disabled selected hidden>กรุณาเลือกสถานที่</option>
+                                    <option *ngFor="let location of locations" [value]="location.value">{{ location.label }}</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="form-item" *ngIf="selectedLocation === '-1'">
+                            <label for="other">Other location <span class="required" *ngIf="!other">*</span></label>
+                            <div class="other-input">
+                                <input type="text" id="other" name="other" placeholder="ระบุสถานที่"
+                                    [(ngModel)]="other">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for="purpose">Purpose of departure <span class="required" *ngIf="!purpose">*</span></label>
+                            <div class="purpose-input">
+                                <input type="text" id="purpose" name="purpose" placeholder="วัตถุประสงค์ในการเดินทาง" [(ngModel)]="purpose">
+                            </div>
+                        </div> -->
+                        <!-- <div class="form-item">
+                            <label for="remark">Remark</label>
+                            <div class="remark-input">
+                                <textarea id="remark" name="remark" placeholder="หมายเหตุ"></textarea>
+                            </div>
+                        </div> -->
+
+                        <div class="form-item">
+                            <div class="passenger-input">
+                                <input disabled class="form-check-input" type="checkbox" id="passenger" name="isChecked"
+                                    [(ngModel)]="this.allInfo[0].cardetail">
+                                <label for="passenger">Vehicle Request Form (ฟอร์มขอใช้รถ)</label>
+                            </div>
+                        </div>
+                        <div class="form-item" *ngIf="this.allInfo[0].cardetail">
+                            <div class="form-item">
+                                <label for="car">Choose car</label>
+                                <div class="car-input">
+                                    <option disabled>
+                                        {{this.allInfo[0].cardetail[0].car_brand}}
+                                        {{this.allInfo[0].cardetail[0].car_model}}
+                                        {{this.allInfo[0].cardetail[0].car_year}}
+                                        {{this.allInfo[0].cardetail[0].car_plate}}
+                                    </option>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label>Passenger</label>
+                                <div class="passenger-option">
+                                    <option disabled >
+                                        <div *ngFor="let psg of this.allInfo[0].passengerdetail; let i = index">
+                                            {{psg.user_pname }}
+                                            {{psg.user_fname}}
+                                            {{psg.user_lname}},
+                                        </div>
+                                        <div *ngIf="this.allInfo[0].passengerdetail == null">
+                                            ไม่มีผู้โดยสาร
+                                        </div>
+                                    </option>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label for="st-maileage">Starting mileage number</label>
+                                <div class="st-maileage-input">
+                                    <input disabled id="st-maileage" name="st-maileage" type="number"
+                                        [(ngModel)]="this.allInfo[0].cardetail[0].trf_go_mileage"
+                                        placeholder="เลขไมล์ก่อนใช้">
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label for="end-maileage">Ending mileage number <span class="required"
+                                        *ngIf="!this.allInfo[0].cardetail[0].trf_back_mileage">*</span></label>
+                                <div class="end-maileage-input">
+                                    <input id="end-maileage" name="end-maileage" type="number"
+                                        [(ngModel)]="this.allInfo[0].cardetail[0].trf_back_mileage"
+                                        placeholder="เลขไมล์หลังใช้">
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label for="easy-pass">Easy pass remaining <span class="required"
+                                        *ngIf="!this.allInfo[0].cardetail[0].trf_ezpass_cash">*</span></label>
+                                <div class="easy-pass-input">
+                                    <input id="easy-pass" name="easy-pass" type="number"
+                                        [(ngModel)]="this.allInfo[0].cardetail[0].trf_ezpass_cash"
+                                        placeholder="Easy-pass คงเหลือ">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="btn-wrap">
+                        <button (click)="onAppClick()" type="submit" class="confirm-btn">
+                            <p>Confirm</p>
+                        </button>
+                        <button (click)="goBack()" class="cancel-btn">
+                            <p>Cancel</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn icon-cart circle" (click)="locModal()" data-toggle="button">
+        <i class="fa-solid fa-route fa-bouce"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        </span>
+    </button>
+
+    <div *ngIf="isWarningAlertVisible || isAnimating" class="backdrop" (click)="closeWarningAlert()">
+        <app-warning-alert [ngClass]="{'animate-alert-in': isWarningAlertVisible, 'animate-alert-out': isAnimating}"
+            [message]="alertMessage" (cancel)="closeWarningAlert()"></app-warning-alert>
+    </div>
+
+    <div *ngIf="isSuccessAlertVisible || isAnimating" class="backdrop" (click)="closeSuccessAlert()">
+        <app-success-alert [ngClass]="{'animate-alert-in': isSuccessAlertVisible, 'animate-alert-out': isAnimating}"
+            [message]="alertMessage" (cancel)="closeSuccessAlert()"></app-success-alert>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { Injectable, NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,9 +35,28 @@ import { VacationLeaveDataComponent } from './layouts/pages/vacation-leave-data/
 import { LeaveFormComponent } from './layouts/pages/leave-form/leave-form.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LocationModalComponent } from './layouts/pages/pass-form/location-modal/location-modal.component';
+import { environment } from 'src/environments/environmetnt';
+import { Socket } from 'ngx-socket-io';
+
+import {HttpClientModule} from '@angular/common/http';
 
 export function playerFactory() {
   return player;
+}
+
+@Injectable()
+export class SocketSupply extends Socket {
+  constructor() {
+    super({ url: environment.socketEndpoint, options: { autoConnect: true } });
+  }
+}
+
+@Injectable()
+export class SocketAuth extends Socket {
+  constructor() {
+    super({ url: environment.socketAuthEndpoint, options: { autoConnect: true } }); //path: '/sso/v1/',
+  }
 }
 
 
@@ -82,9 +101,12 @@ export function playerFactory() {
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    NgbModule
+    NgbModule,
+    HttpClientModule
+
   ],
-  providers: [{provide:APP_BASE_HREF, useValue:'/passport/v2'}],
+  // providers: [{provide:APP_BASE_HREF, useValue:'/passport/v2'}],
+  providers: [SocketSupply,SocketAuth ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

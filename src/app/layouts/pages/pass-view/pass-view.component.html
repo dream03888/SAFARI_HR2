@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="pass-view">
     <div class="container">
         <div class="pass-view-box">
@@ -7,7 +7,7 @@
                     <img src="/assets/icon/portfolio.svg" alt="pass">
                     <h1>Employee Pass View</h1>
                 </div>
-                <table class="pass-view-table">
+                <table class="pass-view-table" >
                     <colgroup>
                         <col>
                         <col>
@@ -21,35 +21,27 @@
                     <tbody>
                         <tr>
                             <td>Departure date</td>
-                            <td>03/05/2024</td>
+                            <td>{{epfDetails.epf_loc_go_date | date :'dd-MM-yyyy'}}</td>
                         </tr>
                         <tr>
                             <td>Departure time</td>
-                            <td>09:00</td>
+                            <td>{{epfDetails.epf_loc_go_time}}</td>
                         </tr>
                         <tr>
                             <td>Return date</td>
-                            <td>04/05/2024</td>
+                            <td>{{epfDetails.epf_loc_leave_date | date :'dd-MM-yyyy'}}</td>
                         </tr>
                         <tr>
                             <td>Return time</td>
-                            <td>09:00</td>
+                            <td>{{epfDetails.epf_loc_leave_time}}</td>
                         </tr>
                         <tr>
                             <td>Location</td>
-                            <td>รพ. พระนั่งเกล้า PNK</td>
+                            <td>{{epfDetails.site_name}}</td>
                         </tr>
                         <tr>
                             <td>Purpose</td>
-                            <td>สำรวจหน้างาน</td>
-                        </tr>
-                        <tr>
-                            <td>Remark</td>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                        </tr>
-                        <tr>
-                            <td>Passenger</td>
-                            <td>Isuzu D-Max 2016 (1ฒฮ 9363)</td>
+                            <td>{{epfDetails.epf_loc_work_des}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -69,5 +61,78 @@
 <div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
     <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}"
     (click)="$event.stopPropagation()" (cancel)="closeDeleteAlert()">
+    </app-delete-alert>
+</div> -->
+
+<div class="pass-view">
+    <div class="container">
+        <div class="head">
+            <img src="/assets/icon/portfolio.svg" alt="pass">
+            <h1>Employee Pass View</h1>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 8%;">No.</th>
+                        <th scope="col">Departure date/time</th>
+                        <th scope="col">Return date/time</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of this.allInfo[0].locations; let i = index">
+                        <td data-label="No.">{{i+1}}</td>
+                        <td data-label="Departure date/time">
+                            <div>
+                                {{row.epf_loc_go_date | date: "dd-MM-yyyy"}}
+                            </div>
+                            <div>
+                                {{row.epf_loc_go_time}}
+                            </div>
+                        </td>
+                        <td data-label="Return date/time">
+                            <div *ngIf="row.epf_loc_leave_date == null || row.epf_loc_leave_time == null">
+                                -
+                            </div>
+                            <div>
+                                {{ row.epf_loc_leave_date | date: "dd-MM-yyyy"}}
+                            </div>
+                            <div>
+                                {{row.epf_loc_leave_time}}
+                            </div>
+                        </td>
+
+                        <td data-label="Location">
+                            <div *ngIf="row.site_id !== 0">
+                                {{row.site_name}}
+                            </div>
+                            <div *ngIf="row.site_id === 0">
+                                {{row.epf_location}}
+                            </div>
+                            
+                        </td>
+                        <td data-label="Purpose">{{row.epf_loc_work_des}}</td>
+                        <td data-label="Options">
+                            <div class="Choice-wrap">
+                                <div class="row-2">
+                                    <a class="delete-button" title="ลบข้อมูล" (click)="onAppClick()">
+                                        <img src="assets/icon/recycle-bin.svg" alt="delete">
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isDeleteAlertVisible || isAnimating" class="backdrop" (click)="closeDeleteAlert()">
+    <app-delete-alert [ngClass]="{'animate-alert-in' : isDeleteAlertVisible, 'animate-alert-out' : isAnimating}"
+        (click)="$event.stopPropagation()" (cancel)="closeDeleteAlert()" (confirm)="deleteRow()">
     </app-delete-alert>
 </div>
