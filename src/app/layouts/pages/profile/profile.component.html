@@ -12,7 +12,7 @@
                         <div class="profile-pic">
                             <img [src]="profilePicUrl" alt="profile">
                             <div class="overlay">
-                                <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+                                <input type="file"  accept="image/*" />
                                 <img src="assets/icon/camera.svg" alt="">
                                 &nbsp;
                                 <p>Edit profile</p>
@@ -42,6 +42,13 @@
                             <div class="leave-item" routerLink="/personal-leave-data">
                                 <img src="assets/icon/personal.svg" alt="personal">
                                 <h1>Personal leave</h1>
+                                <hr style="width: 85%;" class="hr-2">
+                                <p>Used: 3 days</p>
+                                <p>Remain: 5 days</p>
+                            </div>
+                            <div class="leave-item" routerLink="/vacation-leave-data">
+                                <img src="assets/icon/vacation.svg" alt="vacation">
+                                <h1>Vacation leave</h1>
                                 <hr style="width: 85%;" class="hr-2">
                                 <p>Used: 3 days</p>
                                 <p>Remain: 5 days</p>

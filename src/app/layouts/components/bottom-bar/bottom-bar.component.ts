@@ -40,53 +40,53 @@ export class BottomBarComponent implements OnInit {
       path: '/profile' 
     },
     { 
-      type: "alert",
-      img: 'assets/icon/portfolio.svg', 
-      name: 'Employee Pass', 
-      path: '' 
+      type: "routing", 
+      img: "assets/icon/leave.svg", 
+      name: 'Leave',
+      path: "/leave-form"
     },
-    { 
-      type: "alert",
-      img: 'assets/icon/car.svg', 
-      name: 'Car Request', 
-      path: '' 
-    },
-    { 
-      type: "link",
-      img: 'assets/icon/customer-support.svg', 
-      name: 'Service', 
-      path: 'http://app.dms-isolutions.com:9600/helpdesk' 
-    },
-    { 
-      type: "link",
-      img: 'assets/icon/database.svg', 
-      name: 'NAS', 
-      path: 'https://dms-isolutions.sg3.quickconnect.to/?launchApp=SYNO.SDS.Drive.Application#/signin' 
-    },
-    { 
-      type: "link",
-      img: 'assets/icon/mail.svg', 
-      name: 'Mail', 
-      path: 'https://starter1.hosting.bangmod.cloud/roundcube/' 
-    },
-    { 
-      type: "link",
-      img: 'assets/icon/grocery-store.svg', 
-      name: 'DMS Purchase', 
-      path: 'http://app.dms-isolutions.com:8090/sign-in?id=' 
-    },
-    { 
-      type: "link",
-      img: 'assets/icon/grocery-store.svg', 
-      name: 'AERO Purchase', 
-      path: 'http://app.dms-isolutions.com:8060/aero/purchase/login' 
-    },
-    { 
-      type: "link",
-      img: 'assets/icon/github.svg', 
-      name: 'Github', 
-      path: 'https://github.com/orgs/DMS-Programmer-Team' 
-    },
+    // { 
+    //   type: "alert",
+    //   img: 'assets/icon/car.svg', 
+    //   name: 'Car Request', 
+    //   path: '' 
+    // },
+    // { 
+    //   type: "link",
+    //   img: 'assets/icon/customer-support.svg', 
+    //   name: 'Service', 
+    //   path: 'http://app.dms-isolutions.com:9600/helpdesk' 
+    // },
+    // { 
+    //   type: "link",
+    //   img: 'assets/icon/database.svg', 
+    //   name: 'NAS', 
+    //   path: 'https://dms-isolutions.sg3.quickconnect.to/?launchApp=SYNO.SDS.Drive.Application#/signin' 
+    // },
+    // { 
+    //   type: "link",
+    //   img: 'assets/icon/mail.svg', 
+    //   name: 'Mail', 
+    //   path: 'https://starter1.hosting.bangmod.cloud/roundcube/' 
+    // },
+    // { 
+    //   type: "link",
+    //   img: 'assets/icon/grocery-store.svg', 
+    //   name: 'DMS Purchase', 
+    //   path: 'http://app.dms-isolutions.com:8090/sign-in?id=' 
+    // },
+    // { 
+    //   type: "link",
+    //   img: 'assets/icon/grocery-store.svg', 
+    //   name: 'AERO Purchase', 
+    //   path: 'http://app.dms-isolutions.com:8060/aero/purchase/login' 
+    // },
+    // { 
+    //   type: "link",
+    //   img: 'assets/icon/github.svg', 
+    //   name: 'Github', 
+    //   path: 'https://github.com/orgs/DMS-Programmer-Team' 
+    // },
   ];
 
   appShow: App[] = [];

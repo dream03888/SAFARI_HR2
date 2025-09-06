@@ -5,7 +5,7 @@ $color3: #10A37F;
 nav {
     display: flex;
     // background-color: $color1;
-    background: radial-gradient(circle, rgb(86, 167, 185) 0%, rgba(69, 72, 117, 1)  100%);
+    background: #3B2313;
     height: 56px;
     position: fixed; 
     top: 0; 
@@ -25,7 +25,7 @@ nav {
 
             img {
                 width: auto;
-                height: 56px;
+                height: 65px;
                 filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.8));
             }
         }
@@ -90,7 +90,7 @@ nav {
     width: 250px;
     height: 100%;
     // background-color: $color2;
-    background: radial-gradient(circle, rgb(86, 167, 185) 0%, rgba(69, 72, 117, 1)  100%);
+    background: #553519;
     transition: left 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ nav {
         display: flex;
         padding: 0 16px;
         // background-color: $color1;
-        background: linear-gradient(180deg, rgba(69, 72, 117, 1) 0%, rgb(86, 167, 185) 100%);
+        background: #3B2313;
 
         display: flex;
         align-items: center;
@@ -168,7 +168,7 @@ nav {
         position: absolute;
         bottom: 0;
         // background-color: $color1;
-        background: linear-gradient(360deg, rgba(69, 72, 117, 1) 0%, rgb(86, 167, 185) 100%);
+        background: #3B2313;
 
 
         img {

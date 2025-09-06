@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { LayoutsRoutingModule } from './layouts-routing.module';
 import { LocationModalComponent } from './pages/pass-form/location-modal/location-modal.component';
 import { WorkModalComponent } from './components/work-modal/work-modal.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
 
 
 @NgModule({
   declarations: [
-    LocationModalComponent,
-    WorkModalComponent
+   
+  
+    EmployeeComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, NavigationEnd } from '@angular/router';
+import { Component, HostListener, ElementRef } from '@angular/core';
 import { WorkModalComponent } from '../work-modal/work-modal.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class NavbarComponent {
   constructor(private elementRef: ElementRef, 
     private router: Router,
     private modalSrv: NgbModal) {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         this.menuActive = false;
       }
