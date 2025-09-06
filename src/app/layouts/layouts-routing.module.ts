@@ -16,6 +16,7 @@ import { PersonalLeaveDataComponent } from './pages/personal-leave-data/personal
 import { VacationLeaveDataComponent } from './pages/vacation-leave-data/vacation-leave-data.component';
 import { LeaveFormComponent } from './pages/leave-form/leave-form.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { EmployeeScheduleComponent } from './pages/employee/employee-schedule/employee-schedule.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,7 +34,9 @@ const routes: Routes = [
   { path: 'personal-leave-data', component: PersonalLeaveDataComponent },
   { path: 'vacation-leave-data', component: VacationLeaveDataComponent },
   { path: 'leave-form', component: LeaveFormComponent},
-  { path: 'employee', component: EmployeeComponent }
+  { path: 'employee', component: EmployeeComponent },
+  { path: 'employee-schedule', component: EmployeeScheduleComponent }
+
 ];
 
 @NgModule({

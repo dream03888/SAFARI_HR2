@@ -1,0 +1,58 @@
+<div class="container mt-4">
+  <h4 class="mb-3">ตารางเวลาพนักงาน - เดือนกันยายน</h4>
+  
+  <table class="table table-bordered table-hover">
+    <thead class="table-light">
+      <tr>
+        <th>รหัส</th>
+        <th>ชื่อ</th>
+        <th>แผนก</th>
+        <th>รวมวันทำงาน</th>
+        <th>สิทธิ์หยุด</th>
+        <th>จัดการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.totalDays }} วัน</td>
+        <td>{{ emp.leaveQuota }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="viewDetail(emp)">
+            VIEW
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<ng-template #detailModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">{{ selectedEmployee?.name }} - รายละเอียดเวลาเข้าออก</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>วันที่</th>
+          <th>เวลาเข้า</th>
+          <th>เวลาออก</th>
+          <th>หมายเหตุ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of selectedEmployee?.days">
+          <td>{{ d.date }}</td>
+          <td>{{ d.inTime }}</td>
+          <td>{{ d.outTime }}</td>
+          <td>{{ d.note }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
